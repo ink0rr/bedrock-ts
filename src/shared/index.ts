@@ -7,7 +7,6 @@ export * from "./damage_source.js";
 export * from "./difficulty.js";
 export * from "./entity_identifier.js";
 export * from "./event_trigger.js";
-export * from "./family.js";
 export * from "./filter.js";
 export * from "./game_rule.js";
 export * from "./hex_color.js";
