@@ -1,4 +1,4 @@
-import { BlockIdentifier } from "../../shared/block_identifier.js";
+import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 
 /**
  * Allows an entity to jump to another random block.

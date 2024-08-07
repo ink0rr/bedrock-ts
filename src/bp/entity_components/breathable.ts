@@ -1,4 +1,4 @@
-import { BlockIdentifier } from "../../shared/block_identifier.js";
+import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 
 /**
  * Defines what blocks this entity can breathe in and gives them the ability to suffocate.

@@ -1,7 +1,7 @@
-import { ActionText } from "../../shared/action_text.js";
 import { EventTriggerFiltered } from "../../shared/event_trigger.js";
-import { ItemIdentifier } from "../../shared/item_identifier.js";
-import { ItemTag } from "../../shared/item_tag.js";
+import { ActionText } from "../../shared/literals/action_text.js";
+import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
+import { ItemTag } from "../../shared/literals/item_tag.js";
 
 /**
  * Defines an entity's behavior for having items equipped to it.

@@ -1,6 +1,6 @@
 import { LiteralUnion } from "../literal_union.js";
 
-export type VanillaAnimation = LiteralUnion<
+export type AnimationIdentifier = LiteralUnion<
   | "animation.actor.billboard"
   | "animation.agent.move"
   | "animation.agent.shrug"

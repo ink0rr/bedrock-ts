@@ -1,4 +1,4 @@
-import { EntityIdentifier } from "../../shared/entity_identifier.js";
+import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 
 /**
  * Projectile item component. Projectile items shoot out, like an arrow. In format versions prior to 1.20.10, this component requires the 'Holiday Creator Features' experimental toggle.

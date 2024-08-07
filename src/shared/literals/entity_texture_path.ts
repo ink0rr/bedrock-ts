@@ -1,4 +1,4 @@
-import { LiteralUnion } from "./literal_union.js";
+import { LiteralUnion } from "../literal_union.js";
 
 export type EntityTexturePath = LiteralUnion<
   | "textures/entity/acacia_hanging_sign"

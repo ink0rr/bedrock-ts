@@ -1,15 +1,15 @@
 import { HexColor } from "../shared/hex_color.js";
-import { ItemIcon } from "../shared/item_icon.js";
 import { LiteralUnion } from "../shared/literal_union.js";
+import { AnimationIdentifier } from "../shared/literals/animation_identifier.js";
+import { EntityTexturePath } from "../shared/literals/entity_texture_path.js";
+import { GeometryIdentifier } from "../shared/literals/geometry_identifier.js";
+import { ItemIcon } from "../shared/literals/item_icon.js";
+import { ParticleIdentifier } from "../shared/literals/particle_identifier.js";
+import { RenderControllerIdentifier } from "../shared/literals/render_controller_identifier.js";
+import { SoundDefinitionIdentifier } from "../shared/literals/sound_definition_identifier.js";
 import { Material } from "../shared/material.js";
 import { MoLang } from "../shared/molang.js";
-import { ParticleIdentifier } from "../shared/particle_identifier.js";
-import { EntityTexturePath } from "../shared/paths.js";
 import { StringOrRecord } from "../shared/string_or_record.js";
-import { VanillaAnimation } from "../shared/vanilla/animation.js";
-import { VanillaGeometry } from "../shared/vanilla/geometry.js";
-import { VanillaRenderController } from "../shared/vanilla/render_controller.js";
-import { VanillaSoundDefinition } from "../shared/vanilla/sound_definition.js";
 
 export type ResourceEntity = {
   format_version: string;
@@ -60,12 +60,12 @@ export type ResourceEntity = {
       /**
        * Defines the geometries used in the entity.
        */
-      geometry: Record<LiteralUnion<"default">, VanillaGeometry>;
-      queryable_geometry?: VanillaGeometry;
+      geometry: Record<LiteralUnion<"default">, GeometryIdentifier>;
+      queryable_geometry?: GeometryIdentifier;
       /**
        * Defines animations and animation controllers to be used in this entity.
        */
-      animations?: Record<string, VanillaAnimation>;
+      animations?: Record<string, AnimationIdentifier>;
       /**
        * Calculates variables to be used on the entity pre-animation and can run animations.
        */
@@ -103,12 +103,12 @@ export type ResourceEntity = {
       /**
        * Defines the sounds to be played on the entity.
        */
-      sound_effects?: Record<string, VanillaSoundDefinition>;
+      sound_effects?: Record<string, SoundDefinitionIdentifier>;
       /**
        * References all render controllers used to render the entity.
        */
       render_controllers: Array<
-        Partial<Record<VanillaRenderController, MoLang>> | VanillaRenderController
+        Partial<Record<RenderControllerIdentifier, MoLang>> | RenderControllerIdentifier
       >;
       /**
        * Defines the particles to be played on the entity.

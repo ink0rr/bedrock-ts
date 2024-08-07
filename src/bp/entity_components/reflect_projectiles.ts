@@ -1,4 +1,4 @@
-import { EntityIdentifier } from "../../shared/entity_identifier.js";
+import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { MoLang } from "../../shared/molang.js";
 
 export type EntityReflectProjectilesComponent = {

@@ -1,6 +1,6 @@
-import { LiteralUnion } from "./literal_union.js";
+import { LiteralUnion } from "../literal_union.js";
 
-export type LootTable = LiteralUnion<
+export type LootTablePath = LiteralUnion<
   | "loot_tables/chests/abandoned_mineshaft.json"
   | "loot_tables/chests/ancient_city.json"
   | "loot_tables/chests/ancient_city_ice_box.json"

@@ -1,4 +1,4 @@
-import { BlockIdentifier } from "../../shared/block_identifier.js";
+import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 
 /**
  * Enables an entity to float on the specified liquid blocks.

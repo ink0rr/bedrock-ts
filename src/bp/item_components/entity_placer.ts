@@ -1,5 +1,5 @@
-import { BlockIdentifier } from "../../shared/block_identifier.js";
-import { EntityIdentifier } from "../../shared/entity_identifier.js";
+import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
+import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 
 /**
  * Allows the item to place specified entities into the world. In format versions prior to 1.20.0, this component requires the 'Holiday Creator Features' experimental toggle.

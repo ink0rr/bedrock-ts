@@ -1,4 +1,4 @@
-import { ItemIdentifier } from "../../shared/item_identifier.js";
+import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 
 /**
  * Defines what items can be used to control this entity while ridden.

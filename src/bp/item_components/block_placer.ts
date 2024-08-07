@@ -1,4 +1,4 @@
-import { BlockIdentifier } from "../../shared/block_identifier.js";
+import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 
 /**
  * Block Placer item component. Items with this component will place a block when used. Experimental toggles required: Holiday Creator Features (in format versions before 1.20.10).

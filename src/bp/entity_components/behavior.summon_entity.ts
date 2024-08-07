@@ -1,5 +1,5 @@
-import { EntityIdentifier } from "../../shared/entity_identifier.js";
 import { Filter, FilterSubject } from "../../shared/filter.js";
+import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 
 /**

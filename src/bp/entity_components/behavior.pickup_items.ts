@@ -1,4 +1,4 @@
-import { ItemIdentifier } from "../../shared/item_identifier.js";
+import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 
 /**
  * Allows the mob to pick up items on the ground.

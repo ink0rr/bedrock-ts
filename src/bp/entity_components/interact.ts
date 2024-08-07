@@ -1,8 +1,8 @@
-import { ActionText } from "../../shared/action_text.js";
-import { EntityIdentifier } from "../../shared/entity_identifier.js";
 import { EventTriggerFiltered } from "../../shared/event_trigger.js";
-import { ItemIdentifier } from "../../shared/item_identifier.js";
-import { LootTable } from "../../shared/loot_table.js";
+import { ActionText } from "../../shared/literals/action_text.js";
+import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
+import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
+import { LootTablePath } from "../../shared/literals/loot_table_path.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 import { EntityBehaviorParticleDefinition } from "../entity_behavior/particle.js";
 
@@ -14,7 +14,7 @@ export type Interaction = {
     /**
      * File path, relative to the Behavior Pack's path, to the loot table file.
      */
-    table?: LootTable;
+    table?: LootTablePath;
   };
   /**
    * Time in seconds before this entity can be interacted with again.
@@ -77,7 +77,7 @@ export type Interaction = {
    * Loot table with items to drop on the ground upon successful interaction.
    */
   spawn_items?: {
-    table?: LootTable;
+    table?: LootTablePath;
   };
   /**
    * If true, the player will do the 'swing' animation when interacting with this entity.

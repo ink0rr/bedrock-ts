@@ -1,4 +1,4 @@
-import { LiteralUnion } from "./literal_union.js";
+import { LiteralUnion } from "../literal_union.js";
 
 export type ItemIdentifier = LiteralUnion<
   | "minecraft:acacia_boat"

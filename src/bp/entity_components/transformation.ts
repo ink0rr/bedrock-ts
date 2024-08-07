@@ -1,5 +1,5 @@
-import { BlockIdentifier } from "../../shared/block_identifier.js";
-import { EntityIdentifier } from "../../shared/entity_identifier.js";
+import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
+import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 
 /**

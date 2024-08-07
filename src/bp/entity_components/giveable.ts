@@ -1,6 +1,6 @@
 import { EventTriggerFiltered } from "../../shared/event_trigger.js";
-import { ItemIdentifier } from "../../shared/item_identifier.js";
-import { ItemTag } from "../../shared/item_tag.js";
+import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
+import { ItemTag } from "../../shared/literals/item_tag.js";
 
 /**
  * Defines sets of items that can be used to trigger events when used on this entity. The item will also be taken and placed in the entity's inventory.

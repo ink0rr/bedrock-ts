@@ -1,4 +1,4 @@
-import { ItemIdentifier } from "../../shared/item_identifier.js";
+import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 
 /**
  * Allows the mob to take a load off and snack on food that it found nearby.

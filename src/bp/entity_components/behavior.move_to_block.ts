@@ -1,4 +1,4 @@
-import { BlockIdentifier } from "../../shared/block_identifier.js";
+import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { EventTriggerFiltered } from "../../shared/event_trigger.js";
 import { Filter } from "../../shared/filter.js";
 

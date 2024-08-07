@@ -1,4 +1,4 @@
-import { EntityIdentifier } from "../../shared/entity_identifier.js";
+import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 
 /**
  * Allows an entity to go to the village bell and mingle with other entities.

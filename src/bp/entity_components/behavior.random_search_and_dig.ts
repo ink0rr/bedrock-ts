@@ -1,6 +1,6 @@
-import { BlockIdentifier } from "../../shared/block_identifier.js";
+import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { EventTriggerFiltered } from "../../shared/event_trigger.js";
-import { LootTable } from "../../shared/loot_table.js";
+import { LootTablePath } from "../../shared/literals/loot_table_path.js";
 
 /**
  * Allows this entity to locate a random target block that it can path find to. Once found, the entity will move towards it and dig up an item (Default target block types: Dirt, Grass, Podzol, DirtWithRoots, MossBlock, Mud, MuddyMangroveRoots).
@@ -27,7 +27,7 @@ export type EntityBehaviorRandomSearchAndDigComponent = {
   /**
    * File path relative to the behavior pack root for items to spawn list (loot table format).
    */
-  item_table?: LootTable;
+  item_table?: LootTablePath;
   /**
    * Event to run when the goal ends searching has begins digging.
    */

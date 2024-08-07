@@ -1,6 +1,6 @@
-import { EntityIdentifier } from "../../shared/entity_identifier.js";
 import { EventTriggerFiltered } from "../../shared/event_trigger.js";
-import { LegacyParticle } from "../../shared/legacy_particle.js";
+import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
+import { LegacyParticle } from "../../shared/literals/legacy_particle.js";
 import { MoLang } from "../../shared/molang.js";
 import { PotionId } from "../../shared/potion_id.js";
 import { SoundEvent } from "../../shared/sound_event.js";

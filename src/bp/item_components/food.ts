@@ -1,4 +1,4 @@
-import { ItemIdentifier } from "../../shared/item_identifier.js";
+import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 
 /**
  * When an item has a food component, it becomes edible to the player. Must have the minecraft:use_modifiers component in order to function properly.

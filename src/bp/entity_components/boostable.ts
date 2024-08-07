@@ -1,4 +1,4 @@
-import { ItemIdentifier } from "../../shared/item_identifier.js";
+import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 
 /**
  * Defines the conditions and behavior of a rideable entity's boost.

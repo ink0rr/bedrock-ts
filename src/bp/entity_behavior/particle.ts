@@ -1,4 +1,4 @@
-import { ParticleIdentifier } from "../../shared/particle_identifier.js";
+import { ParticleIdentifier } from "../../shared/literals/particle_identifier.js";
 
 export type EntityBehaviorParticleDefinition = {
   /**

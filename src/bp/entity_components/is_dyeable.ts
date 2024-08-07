@@ -1,4 +1,4 @@
-import { ActionText } from "../../shared/action_text.js";
+import { ActionText } from "../../shared/literals/action_text.js";
 
 /**
  * Allows dyes to be used on this entity to change its color.

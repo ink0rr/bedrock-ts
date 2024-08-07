@@ -1,6 +1,6 @@
-import { EntityIdentifier } from "../shared/entity_identifier.js";
 import { EventTriggerFiltered } from "../shared/event_trigger.js";
 import { Filter, FilterSubject } from "../shared/filter.js";
+import { EntityIdentifier } from "../shared/literals/entity_identifier.js";
 import { MoLang } from "../shared/molang.js";
 import { StringOrRecord } from "../shared/string_or_record.js";
 import { VanillaEntityEvent } from "./entity_behavior/event.js";

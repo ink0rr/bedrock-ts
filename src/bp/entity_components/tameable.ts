@@ -1,5 +1,5 @@
 import { EventTriggerFiltered } from "../../shared/event_trigger.js";
-import { ItemIdentifier } from "../../shared/item_identifier.js";
+import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 
 /**
  * Defines the rules for a mob to be tamed by the player.

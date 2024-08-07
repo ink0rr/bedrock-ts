@@ -1,7 +1,7 @@
 import { EventTriggerFiltered } from "../../shared/event_trigger.js";
 import { Filter } from "../../shared/filter.js";
-import { ItemIdentifier } from "../../shared/item_identifier.js";
-import { ItemTag } from "../../shared/item_tag.js";
+import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
+import { ItemTag } from "../../shared/literals/item_tag.js";
 
 /**
  * Adds a timer for the entity to grow up. It can be accelerated by giving the entity the items it likes as defined by feedItems.

@@ -1,9 +1,9 @@
-import { BlockIdentifier } from "../../shared/block_identifier.js";
-import { EntityIdentifier } from "../../shared/entity_identifier.js";
 import { EventTriggerFiltered } from "../../shared/event_trigger.js";
 import { Filter } from "../../shared/filter.js";
-import { ItemIdentifier } from "../../shared/item_identifier.js";
-import { ItemTag } from "../../shared/item_tag.js";
+import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
+import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
+import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
+import { ItemTag } from "../../shared/literals/item_tag.js";
 import { EntityComponents } from "./index.js";
 
 /**

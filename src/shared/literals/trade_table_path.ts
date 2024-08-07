@@ -1,6 +1,6 @@
-import { LiteralUnion } from "./literal_union.js";
+import { LiteralUnion } from "../literal_union.js";
 
-export type TradeTable = LiteralUnion<
+export type TradeTablePath = LiteralUnion<
   | "trading/armorer_trades.json"
   | "trading/butcher_trades.json"
   | "trading/cartographer_trades.json"

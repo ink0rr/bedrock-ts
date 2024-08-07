@@ -1,6 +1,6 @@
-import { ActionText } from "../../shared/action_text.js";
-import { Family } from "../../shared/family.js";
+import { ActionText } from "../../shared/literals/action_text.js";
 import { MoLang } from "../../shared/molang.js";
+import { TypeFamily } from "../../shared/type_family.js";
 
 /**
  * Determines whether this entity can be ridden. Allows specifying the different seat positions and quantity.
@@ -18,7 +18,7 @@ export type EntityRideableComponent = {
   /**
    * List of entities that can ride this entity.
    */
-  family_types?: Array<Family>;
+  family_types?: Array<TypeFamily>;
   /**
    * The text to display when the player can interact with the entity when playing with Touch-screen controls.
    */

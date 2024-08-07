@@ -1,5 +1,5 @@
-import { EntityIdentifier } from "../../shared/entity_identifier.js";
 import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 import { EntityBehaviorType } from "../entity_behavior/type.js";
 

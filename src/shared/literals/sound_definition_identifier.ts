@@ -1,6 +1,6 @@
 import { LiteralUnion } from "../literal_union.js";
 
-export type VanillaSoundDefinition = LiteralUnion<
+export type SoundDefinitionIdentifier = LiteralUnion<
   | "ambient.weather.lightning.impact"
   | "ambient.weather.rain"
   | "ambient.weather.thunder"

@@ -1,6 +1,6 @@
 import { LiteralUnion } from "../literal_union.js";
 
-export type VanillaRenderController = LiteralUnion<
+export type RenderControllerIdentifier = LiteralUnion<
   | "controller.render.agent"
   | "controller.render.allay"
   | "controller.render.armadillo"

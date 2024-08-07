@@ -1,5 +1,5 @@
 import { EventTriggerFiltered } from "../../shared/event_trigger.js";
-import { LootTable } from "../../shared/loot_table.js";
+import { LootTablePath } from "../../shared/literals/loot_table_path.js";
 import { EntityBehaviorType } from "../entity_behavior/type.js";
 
 /**
@@ -29,7 +29,7 @@ export type EntityBehaviorDropItemForComponent = {
   /**
    * The loot table that contains the possible loot the entity can drop with this goal.
    */
-  loot_table?: LootTable;
+  loot_table?: LootTablePath;
   /**
    * Maximum distance in blocks this mob will look for entities to drop an item for.
    */

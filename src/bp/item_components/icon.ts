@@ -1,4 +1,4 @@
-import { ItemIcon } from "../../shared/item_icon.js";
+import { ItemIcon } from "../../shared/literals/item_icon.js";
 
 /**
  * Determines the icon to represent the item in the UI and elsewhere. In format versions before 1.20.10, this component requires the 'Holiday Creator Features' experimental toggle.

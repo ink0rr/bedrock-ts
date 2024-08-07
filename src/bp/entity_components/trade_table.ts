@@ -1,4 +1,4 @@
-import { TradeTable } from "../../shared/trade_table.js";
+import { TradeTablePath } from "../../shared/literals/trade_table_path.js";
 
 /**
  * Defines this entity's ability to trade with players.
@@ -11,7 +11,7 @@ export type EntityTradeTableComponent = {
   /**
    * File path relative to the behavior pack root for this entity's trades.
    */
-  table?: TradeTable;
+  table?: TradeTablePath;
   /**
    * Used to determine if trading with entity opens the new trade screen.
    */

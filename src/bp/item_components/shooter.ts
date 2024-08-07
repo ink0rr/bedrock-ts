@@ -1,4 +1,4 @@
-import { ItemIdentifier } from "../../shared/item_identifier.js";
+import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 
 /**
  * Shooter Item Component. Must have the minecraft:use_modifiers component in order to function properly. In format versions prior to 1.20.10, this component requires the 'Holiday Creator Features' experimental toggle.

@@ -1,4 +1,4 @@
-import { LootTable } from "../../shared/loot_table.js";
+import { LootTablePath } from "../../shared/literals/loot_table_path.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 
 /**
@@ -18,7 +18,7 @@ export type EntityBehaviorEatMobComponent = {
   /**
    * The loot table for loot to be dropped when eating a mob.
    */
-  loot_table?: LootTable;
+  loot_table?: LootTablePath;
   /**
    * Sets the force which the mob-to-be-eaten is pulled towards the eating mob.
    * @default 1

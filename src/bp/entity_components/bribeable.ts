@@ -1,5 +1,5 @@
-import { ItemIdentifier } from "../../shared/item_identifier.js";
-import { ItemTag } from "../../shared/item_tag.js";
+import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
+import { ItemTag } from "../../shared/literals/item_tag.js";
 
 /**
  * Defines the way an entity can get into the 'bribed' state.

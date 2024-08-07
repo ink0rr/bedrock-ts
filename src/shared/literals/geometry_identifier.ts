@@ -1,6 +1,6 @@
 import { LiteralUnion } from "../literal_union.js";
 
-export type VanillaGeometry = LiteralUnion<
+export type GeometryIdentifier = LiteralUnion<
   | "geometry.agent"
   | "geometry.allay"
   | "geometry.armadillo"

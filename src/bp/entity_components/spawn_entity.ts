@@ -1,6 +1,6 @@
-import { EntityIdentifier } from "../../shared/entity_identifier.js";
 import { Filter } from "../../shared/filter.js";
-import { ItemIdentifier } from "../../shared/item_identifier.js";
+import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
+import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 import { VanillaEntityEvent } from "../entity_behavior/event.js";
 
