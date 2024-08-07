@@ -1,4 +1,4 @@
-import { Inventory } from "../../shared/inventory.js";
+import { ContainerType } from "../../shared/container_type.js";
 
 /**
  * Defines this entity's inventory properties.
@@ -15,7 +15,7 @@ export type EntityInventoryComponent = {
   /**
    * Type of container this entity has. Can be horse, minecart_chest, minecart_hopper, inventory, container or hopper.
    */
-  container_type?: Inventory;
+  container_type?: ContainerType;
   /**
    * Number of slots the container has.
    * @default 5

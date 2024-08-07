@@ -1,6 +1,6 @@
-import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { EventTriggerFiltered } from "../../shared/event_trigger.js";
 import { Filter } from "../../shared/filter.js";
+import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 
 /**
  * Fires off a specified event when a block in the block list is broken within the sensor range.

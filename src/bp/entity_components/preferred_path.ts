@@ -1,5 +1,5 @@
-import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { BlockState } from "../../shared/block_state.js";
+import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 
 /**
  * Specifies costing information for mobs that prefer to walk on preferred paths.

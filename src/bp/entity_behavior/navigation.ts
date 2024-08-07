@@ -1,5 +1,5 @@
-import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { BlockState } from "../../shared/block_state.js";
+import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 
 export type EntityBehaviorNavigation = {

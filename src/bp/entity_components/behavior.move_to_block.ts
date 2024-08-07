@@ -1,6 +1,6 @@
-import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { EventTriggerFiltered } from "../../shared/event_trigger.js";
 import { Filter } from "../../shared/filter.js";
+import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 
 /**
  * Allows mob to move towards a certain block.

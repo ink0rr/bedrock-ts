@@ -1,5 +1,5 @@
-import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { Filter } from "../../shared/filter.js";
+import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 
 /**
  * Causes an entity to leave a trail of blocks as it moves about the world.

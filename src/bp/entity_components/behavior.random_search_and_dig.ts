@@ -1,5 +1,5 @@
-import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { LootTablePath } from "../../shared/literals/loot_table_path.js";
 
 /**
