@@ -1,0 +1,44 @@
+import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { Filter } from "../../shared/filter.js";
+import { ItemIdentifier } from "../../shared/item_identifier.js";
+import { ItemTag } from "../../shared/item_tag.js";
+
+/**
+ * Adds a timer for the entity to grow up. It can be accelerated by giving the entity the items it likes as defined by feedItems.
+ */
+export type EntityAgeableComponent = {
+  /**
+   * Amount of time before the entity grows up, -1 for always a baby.
+   * @default 1200
+   */
+  duration?: number;
+  /**
+   * List of items that can be fed to the entity. Includes 'item' for the item name and 'growth' to define how much time it grows up by.
+   */
+  feed_items?:
+    | Array<
+        | {
+            item?:
+              | ItemIdentifier
+              | {
+                  any_tag?: Array<ItemTag>;
+                };
+            growth?: number;
+          }
+        | ItemIdentifier
+      >
+    | ItemIdentifier;
+  /**
+   * List of items that the entity drops when it grows up.
+   */
+  drop_items?: Array<ItemIdentifier>;
+  /**
+   * Event to run when this entity grows up.
+   */
+  grow_up?: EventTriggerFiltered;
+  transform_to_item?: ItemIdentifier;
+  /**
+   * List of conditions to meet so that the entity can be fed.
+   */
+  interact_filters?: Filter;
+};

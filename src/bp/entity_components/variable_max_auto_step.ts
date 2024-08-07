@@ -1,0 +1,20 @@
+/**
+ * Entities with this component will have a maximum auto step height that is different depending on whether they are on a block that prevents jumping. Incompatible with 'runtime_identifier' of 'minecraft:horse'.
+ */
+export type EntityVariableMaxAutoStepComponent = {
+  /**
+   * The maximum auto step height when on any other block.
+   * @default 0.5625
+   */
+  base_value?: number;
+  /**
+   * The maximum auto step height when on a block that prevents jumping.
+   * @default 0.5625
+   */
+  jump_prevented_value?: number;
+  /**
+   * The maximum auto step height when on any other block and controlled by the player.
+   * @default 0.5625
+   */
+  controlled_value?: number;
+};

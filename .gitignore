@@ -1,0 +1,8 @@
+dist/
+node_modules/
+temp/
+
+*.tgz
+
+.DS_Store
+package-lock.json
