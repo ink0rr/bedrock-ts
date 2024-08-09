@@ -1,4 +1,4 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Allows the NPC to use the composter POI to convert excess seeds into bone meal.
@@ -45,7 +45,7 @@ export type EntityBehaviorWorkComposterComponent = {
   /**
    * Event to run when the mob reaches their jobsite.
    */
-  on_arrival?: EventTrigger;
+  on_arrival?: EntityEventTrigger;
   /**
    * Movement speed multiplier of the mob when using this AI Goal.
    * @default 0.5

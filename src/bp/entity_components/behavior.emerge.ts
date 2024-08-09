@@ -1,4 +1,4 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Allows this entity to emerge from the ground.
@@ -18,5 +18,5 @@ export type EntityBehaviorEmergeComponent = {
   /**
    * Trigger to be executed when the goal execution is about to end.
    */
-  on_done?: EventTrigger;
+  on_done?: EntityEventTrigger;
 };

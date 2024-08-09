@@ -1,6 +1,6 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { Filter } from "../../shared/filter.js";
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Allows mob to move towards a certain block.
@@ -56,11 +56,11 @@ export type EntityBehaviorMoveToBlockComponent = {
   /**
    * Event to run on block reached.
    */
-  on_stay_completed?: EventTrigger | Array<EventTrigger>;
+  on_stay_completed?: EntityEventTrigger | Array<EntityEventTrigger>;
   /**
    * Event to run on block reached.
    */
-  on_reach?: EventTrigger | Array<EventTrigger>;
+  on_reach?: EntityEventTrigger | Array<EntityEventTrigger>;
   /**
    * Filter which blocks can be targeted.
    */

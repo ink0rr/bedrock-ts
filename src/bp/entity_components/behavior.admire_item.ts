@@ -1,5 +1,5 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { SoundEvent } from "../../shared/sound_event.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 export type EntityBehaviorAdmireItemComponent = {
   priority?: number;
@@ -14,6 +14,6 @@ export type EntityBehaviorAdmireItemComponent = {
     range_min?: number;
     range_max?: number;
   };
-  on_admire_item_start?: EventTrigger;
-  on_admire_item_stop?: EventTrigger;
+  on_admire_item_start?: EntityEventTrigger;
+  on_admire_item_stop?: EntityEventTrigger;
 };

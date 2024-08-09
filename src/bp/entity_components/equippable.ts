@@ -1,7 +1,7 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { ActionText } from "../../shared/literals/action_text.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { ItemTag } from "../../shared/literals/item_tag.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Defines an entity's behavior for having items equipped to it.
@@ -31,11 +31,11 @@ export type EntityEquippableComponent = {
     /**
      * Event to trigger when this entity is equipped with this item.
      */
-    on_equip?: EventTrigger;
+    on_equip?: EntityEventTrigger;
     /**
      * Event to trigger when this item is removed from this entity.
      */
-    on_unequip?: EventTrigger;
+    on_unequip?: EntityEventTrigger;
     /**
      * The slot number of this slot.
      */

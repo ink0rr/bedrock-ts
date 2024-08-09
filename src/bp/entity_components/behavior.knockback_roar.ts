@@ -1,5 +1,5 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { Filter } from "../../shared/filter.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Allows the mob to perform a damaging knockback that affects all nearby entities.
@@ -53,7 +53,7 @@ export type EntityBehaviorKnockbackRoarComponent = {
   /**
    * Event that is triggered when the roar ends.
    */
-  on_roar_end?: EventTrigger;
+  on_roar_end?: EntityEventTrigger;
   /**
    * The maximum height for vertical knockback.
    * @default 0.4

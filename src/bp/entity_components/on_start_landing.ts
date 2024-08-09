@@ -1,6 +1,6 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Only usable by the Ender Dragon. Adds a trigger to call when this entity lands.
  */
-export type EntityOnStartLandingComponent = EventTrigger;
+export type EntityOnStartLandingComponent = EntityEventTrigger;

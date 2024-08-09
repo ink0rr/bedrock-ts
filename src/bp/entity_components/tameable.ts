@@ -1,5 +1,5 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Defines the rules for a mob to be tamed by the player.
@@ -17,5 +17,5 @@ export type EntityTameableComponent = {
   /**
    * Event to run when this entity becomes tamed.
    */
-  tame_event?: EventTrigger;
+  tame_event?: EntityEventTrigger;
 };

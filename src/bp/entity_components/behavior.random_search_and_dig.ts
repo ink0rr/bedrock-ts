@@ -1,6 +1,6 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { LootTablePath } from "../../shared/literals/loot_table_path.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Allows this entity to locate a random target block that it can path find to. Once found, the entity will move towards it and dig up an item (Default target block types: Dirt, Grass, Podzol, DirtWithRoots, MossBlock, Mud, MuddyMangroveRoots).
@@ -31,27 +31,27 @@ export type EntityBehaviorRandomSearchAndDigComponent = {
   /**
    * Event to run when the goal ends searching has begins digging.
    */
-  on_digging_start?: EventTrigger;
+  on_digging_start?: EntityEventTrigger;
   /**
    * Event to run when the goal failed while in digging state.
    */
-  on_fail_during_digging?: EventTrigger;
+  on_fail_during_digging?: EntityEventTrigger;
   /**
    * Event to run when the goal failed while in searching state.
    */
-  on_fail_during_searching?: EventTrigger;
+  on_fail_during_searching?: EntityEventTrigger;
   /**
    * Event to run when the goal find a item.
    */
-  on_item_found?: EventTrigger;
+  on_item_found?: EntityEventTrigger;
   /**
    * Event to run when the goal starts searching.
    */
-  on_searching_start?: EventTrigger;
+  on_searching_start?: EntityEventTrigger;
   /**
    * Event to run when searching and digging has ended.
    */
-  on_success?: EventTrigger;
+  on_success?: EntityEventTrigger;
   /**
    * Width and length of the volume around the entity used to find a valid target position.
    */

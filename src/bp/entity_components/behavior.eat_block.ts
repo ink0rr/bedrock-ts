@@ -1,6 +1,6 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { MoLang } from "../../shared/molang.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Allows the entity to consume a block, replace the eaten block with another block, and trigger an event as a result.
@@ -27,5 +27,5 @@ export type EntityBehaviorEatBlockComponent = {
   /**
    * the event to trigger when the block eating animation has completed.
    */
-  on_eat?: EventTrigger;
+  on_eat?: EntityEventTrigger;
 };

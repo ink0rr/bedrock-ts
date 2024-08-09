@@ -1,4 +1,4 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Allows this entity to be named (e.g. using a name tag).
@@ -16,7 +16,7 @@ export type EntityNameableComponent = {
   /**
    * Trigger to run when the entity gets named.
    */
-  default_trigger?: EventTrigger;
+  default_trigger?: EntityEventTrigger;
   /**
    * Describes the special names for this entity and the events to call when the entity acquires those names.
    */
@@ -28,6 +28,6 @@ export type EntityNameableComponent = {
     /**
      * Event to be called when this entity acquires the name specified in 'name_filter'.
      */
-    on_named?: EventTrigger;
+    on_named?: EntityEventTrigger;
   }>;
 };

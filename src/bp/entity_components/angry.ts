@@ -1,6 +1,6 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { Filter } from "../../shared/filter.js";
 import { SoundEvent } from "../../shared/sound_event.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Defines the entity's 'angry' state using a timer.
@@ -47,7 +47,7 @@ export type EntityAngryComponent = {
   /**
    * Event to run after the number of seconds specified in duration expires (when the entity stops being 'angry').
    */
-  calm_event?: EventTrigger;
+  calm_event?: EntityEventTrigger;
   /**
    * The amount of time in seconds that the entity will be angry.
    * @default 25

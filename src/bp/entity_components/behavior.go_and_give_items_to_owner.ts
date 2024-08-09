@@ -1,5 +1,5 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { SoundEvent } from "../../shared/sound_event.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Sets the vertical throw force.
@@ -9,7 +9,7 @@ export type EntityBehaviorGoAndGiveItemsToOwnerComponent = {
   /**
    * Event(s) to run when this mob throws items.
    */
-  on_item_throw?: Array<EventTrigger> | EventTrigger;
+  on_item_throw?: Array<EntityEventTrigger> | EntityEventTrigger;
   /**
    * Sets the desired distance to be reached before giving items to owner.
    * @default 3

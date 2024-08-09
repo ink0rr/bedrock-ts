@@ -1,4 +1,4 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Allows this entity to be leashed and defines the conditions and events for this entity when is leashed.
@@ -22,11 +22,11 @@ export type EntityLeashableComponent = {
   /**
    * Event to call when this entity is leashed.
    */
-  on_leash?: EventTrigger;
+  on_leash?: EntityEventTrigger;
   /**
    * Event to call when this entity is unleashed.
    */
-  on_unleash?: EventTrigger;
+  on_unleash?: EntityEventTrigger;
   /**
    * Event to call when this entity is unleashed.
    */

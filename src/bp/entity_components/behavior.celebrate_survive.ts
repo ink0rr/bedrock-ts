@@ -1,4 +1,4 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Allows this entity to celebrate surviving a raid by shooting fireworks.
@@ -20,5 +20,5 @@ export type EntityBehaviorCelebrateSurviveComponent = {
   /**
    * The event to trigger when the goal's duration expires.
    */
-  on_celebration_end_event?: EventTrigger;
+  on_celebration_end_event?: EntityEventTrigger;
 };

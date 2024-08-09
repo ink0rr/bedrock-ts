@@ -1,4 +1,4 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Allows an entity to deal damage through a melee attack.
@@ -46,8 +46,8 @@ export type EntityBehaviorMeleeAttackComponent = {
       refresh_period_delta?: number;
     }>;
   };
-  on_attack?: EventTrigger;
-  on_kill?: EventTrigger;
+  on_attack?: EntityEventTrigger;
+  on_kill?: EntityEventTrigger;
   /**
    * Cooldown time (in seconds) between attacks.
    * @default 1

@@ -1,10 +1,10 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { LegacyParticle } from "../../shared/literals/legacy_particle.js";
 import { MoLang } from "../../shared/molang.js";
 import { PotionId } from "../../shared/potion_id.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 import { SpellEffects } from "../../shared/spell_effects.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Allows the entity to be a thrown entity.
@@ -17,7 +17,7 @@ export type EntityProjectileComponent = {
       affect_target?: boolean;
       affect_splash_area?: boolean;
       splash_area?: number;
-      event_trigger?: EventTrigger;
+      event_trigger?: EntityEventTrigger;
     };
     grant_xp?: {
       minXP?: number;

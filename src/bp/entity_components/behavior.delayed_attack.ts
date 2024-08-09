@@ -1,6 +1,6 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { SoundEvent } from "../../shared/sound_event.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 import { EntityBehaviorType } from "../entity_behavior/type.js";
 
 /**
@@ -78,7 +78,7 @@ export type EntityBehaviorDelayedAttackComponent = {
   /**
    * Defines the event to trigger when this entity successfully attacks.
    */
-  on_attack?: EventTrigger;
+  on_attack?: EntityEventTrigger;
   /**
    * Time (in seconds) to add to attack path recalculation when the target is beyond the 'path_outer_boundary'.
    * @default 0.5

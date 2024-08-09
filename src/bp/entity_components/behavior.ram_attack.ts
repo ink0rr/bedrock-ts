@@ -1,5 +1,5 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { SoundEvent } from "../../shared/sound_event.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Allows this entity to damage a target by using a running attack.
@@ -23,7 +23,7 @@ export type EntityBehaviorRamAttackComponent = {
   /**
    * The event to trigger when attacking.
    */
-  on_start?: EventTrigger | Array<EventTrigger>;
+  on_start?: EntityEventTrigger | Array<EntityEventTrigger>;
   /**
    * The modifier to knockback that babies have.
    * @default 0.333333

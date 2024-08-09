@@ -1,6 +1,6 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { SoundEvent } from "../../shared/sound_event.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Allows the mob to lay an egg block on a sand block if the mob is pregnant.
@@ -33,7 +33,7 @@ export type EntityBehaviorLayEggComponent = {
   /**
    * Event to run when this mob lays the egg.
    */
-  on_lay?: EventTrigger;
+  on_lay?: EntityEventTrigger;
   /**
    * Allows the mob to lay its eggs from below the target if it can't get there. This is useful if the target block is water with air above, since mobs may not be able to get to the air block above water.
    */

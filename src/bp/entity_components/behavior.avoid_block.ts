@@ -1,6 +1,6 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { SoundEvent } from "../../shared/sound_event.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Allows this entity to avoid certain blocks.
@@ -41,7 +41,7 @@ export type EntityBehaviorAvoidBlockComponent = {
   /**
    * Escape trigger.
    */
-  on_escape?: EventTrigger | Array<EventTrigger>;
+  on_escape?: EntityEventTrigger | Array<EntityEventTrigger>;
   /**
    * The sound event to play when the mob is avoiding a block.
    */

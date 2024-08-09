@@ -1,4 +1,4 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Allows an entity to attack using stomp AoE damage behavior.
@@ -73,7 +73,7 @@ export type EntityBehaviorStompAttackComponent = {
   /**
    * Defines the event to trigger when this entity successfully attacks.
    */
-  on_attack?: EventTrigger;
+  on_attack?: EntityEventTrigger;
   /**
    * Time (in seconds) to add to attack path recalculation when the target is beyond the 'path_outer_boundary'.
    * @default 0.5

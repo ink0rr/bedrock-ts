@@ -1,9 +1,9 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { ActionText } from "../../shared/literals/action_text.js";
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { LootTablePath } from "../../shared/literals/loot_table_path.js";
 import { SoundEvent } from "../../shared/sound_event.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 import { EntityBehaviorParticleDefinition } from "../entity_behavior/particle.js";
 
 export type Interaction = {
@@ -60,7 +60,7 @@ export type Interaction = {
   /**
    * Event to fire when the interaction occurs.
    */
-  on_interact?: EventTrigger;
+  on_interact?: EntityEventTrigger;
   /**
    * Particle effect that will be triggered at the start of the interaction.
    */

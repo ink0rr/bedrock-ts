@@ -1,5 +1,5 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { SoundEvent } from "../../shared/sound_event.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Allows this entity to celebrate surviving a raid by making celebration sounds and jumping.
@@ -32,5 +32,5 @@ export type EntityBehaviorCelebrateComponent = {
   /**
    * The event to trigger when the goal's duration expires.
    */
-  on_celebration_end_event?: EventTrigger;
+  on_celebration_end_event?: EntityEventTrigger;
 };

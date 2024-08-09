@@ -1,7 +1,7 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { Filter } from "../../shared/filter.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { ItemTag } from "../../shared/literals/item_tag.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Adds a timer for the entity to grow up. It can be accelerated by giving the entity the items it likes as defined by feedItems.
@@ -35,7 +35,7 @@ export type EntityAgeableComponent = {
   /**
    * Event to run when this entity grows up.
    */
-  grow_up?: EventTrigger;
+  grow_up?: EntityEventTrigger;
   transform_to_item?: ItemIdentifier;
   /**
    * List of conditions to meet so that the entity can be fed.

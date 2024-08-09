@@ -1,5 +1,5 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { SoundEvent } from "../../shared/sound_event.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * The entity will attempt to toss the items from its inventory to a nearby recently played noteblock.
@@ -13,7 +13,7 @@ export type EntityBehaviorGoAndGiveItemsToNoteblockComponent = {
   /**
    * Event(s) to run when this mob throws items.
    */
-  on_item_throw?: Array<EventTrigger> | EventTrigger;
+  on_item_throw?: Array<EntityEventTrigger> | EntityEventTrigger;
   /**
    * Sets the desired distance to be reached before throwing the items towards the block.
    * @default 3

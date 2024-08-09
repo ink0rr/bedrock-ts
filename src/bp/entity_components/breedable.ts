@@ -1,9 +1,9 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { Filter } from "../../shared/filter.js";
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { ItemTag } from "../../shared/literals/item_tag.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 import { EntityComponents } from "./index.js";
 
 /**
@@ -55,7 +55,7 @@ export type EntityBreedableComponent = {
         /**
          * Event to run when this entity breeds.
          */
-        breed_event?: EventTrigger;
+        breed_event?: EntityEventTrigger;
       }
     | Array<{
         /**
@@ -69,7 +69,7 @@ export type EntityBreedableComponent = {
         /**
          * Event to run when this entity breeds.
          */
-        breed_event?: EventTrigger;
+        breed_event?: EntityEventTrigger;
       }>;
   /**
    * If true, the entity will become pregnant instead of spawning a baby.

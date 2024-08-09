@@ -1,4 +1,4 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Allows the mob to move back to the position they were spawned.
@@ -23,11 +23,11 @@ export type EntityBehaviorGoHomeComponent = {
   /**
    * Event to run when this mob gets home.
    */
-  on_home?: EventTrigger | Array<EventTrigger>;
+  on_home?: EntityEventTrigger | Array<EntityEventTrigger>;
   /**
    * Event to run if this entity fails to get home.
    */
-  on_failed?: EventTrigger | Array<EventTrigger>;
+  on_failed?: EntityEventTrigger | Array<EntityEventTrigger>;
   /**
    * Specify a distance in blocks that the mob is considered close enough to the end of the current path. A new path will then be calculated to continue toward home.
    * @default 2

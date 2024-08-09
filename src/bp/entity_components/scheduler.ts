@@ -1,4 +1,4 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Fires off scheduled mob events at time of day events.
@@ -9,5 +9,5 @@ export type EntitySchedulerComponent = {
   /**
    * The list of triggers that fire when the conditions match the given filter criteria. If any filter criteria overlap the first defined event will be picked.
    */
-  scheduled_events?: Array<EventTrigger>;
+  scheduled_events?: Array<EntityEventTrigger>;
 };

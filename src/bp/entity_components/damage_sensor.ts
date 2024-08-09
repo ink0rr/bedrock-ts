@@ -1,6 +1,6 @@
 import { DamageSource } from "../../shared/damage_source.js";
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { SoundEvent } from "../../shared/sound_event.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Defines what events to call when this entity is damaged by specific entities or items.
@@ -11,7 +11,7 @@ export type EntityDamageSensorComponent = {
         /**
          * Specifies filters for entity definitions and events.
          */
-        on_damage?: EventTrigger;
+        on_damage?: EntityEventTrigger;
         /**
          * Type of damage that triggers the events.
          * @default none
@@ -40,7 +40,7 @@ export type EntityDamageSensorComponent = {
         /**
          * Specifies filters for entity definitions and events.
          */
-        on_damage?: EventTrigger;
+        on_damage?: EntityEventTrigger;
         /**
          * Type of damage that triggers the events.
          * @default none

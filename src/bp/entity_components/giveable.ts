@@ -1,6 +1,6 @@
-import { EventTrigger } from "../../shared/event_trigger.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { ItemTag } from "../../shared/literals/item_tag.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
  * Defines sets of items that can be used to trigger events when used on this entity. The item will also be taken and placed in the entity's inventory.
@@ -24,7 +24,7 @@ export type EntityGiveableComponent = {
         /**
          * Event to fire when the correct item is given.
          */
-        on_give?: EventTrigger;
+        on_give?: EntityEventTrigger;
       }>
     | {
         /**
@@ -43,6 +43,6 @@ export type EntityGiveableComponent = {
         /**
          * Event to fire when the correct item is given.
          */
-        on_give?: EventTrigger;
+        on_give?: EntityEventTrigger;
       };
 };
