@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { MoLang } from "../../shared/molang.js";
 
@@ -27,5 +27,5 @@ export type EntityBehaviorEatBlockComponent = {
   /**
    * the event to trigger when the block eating animation has completed.
    */
-  on_eat?: EventTriggerFiltered;
+  on_eat?: EventTrigger;
 };

@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { LootTablePath } from "../../shared/literals/loot_table_path.js";
 
@@ -31,27 +31,27 @@ export type EntityBehaviorRandomSearchAndDigComponent = {
   /**
    * Event to run when the goal ends searching has begins digging.
    */
-  on_digging_start?: EventTriggerFiltered;
+  on_digging_start?: EventTrigger;
   /**
    * Event to run when the goal failed while in digging state.
    */
-  on_fail_during_digging?: EventTriggerFiltered;
+  on_fail_during_digging?: EventTrigger;
   /**
    * Event to run when the goal failed while in searching state.
    */
-  on_fail_during_searching?: EventTriggerFiltered;
+  on_fail_during_searching?: EventTrigger;
   /**
    * Event to run when the goal find a item.
    */
-  on_item_found?: EventTriggerFiltered;
+  on_item_found?: EventTrigger;
   /**
    * Event to run when the goal starts searching.
    */
-  on_searching_start?: EventTriggerFiltered;
+  on_searching_start?: EventTrigger;
   /**
    * Event to run when searching and digging has ended.
    */
-  on_success?: EventTriggerFiltered;
+  on_success?: EventTrigger;
   /**
    * Width and length of the volume around the entity used to find a valid target position.
    */

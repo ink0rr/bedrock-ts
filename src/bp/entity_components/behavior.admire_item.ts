@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 
 export type EntityBehaviorAdmireItemComponent = {
@@ -14,6 +14,6 @@ export type EntityBehaviorAdmireItemComponent = {
     range_min?: number;
     range_max?: number;
   };
-  on_admire_item_start?: EventTriggerFiltered;
-  on_admire_item_stop?: EventTriggerFiltered;
+  on_admire_item_start?: EventTrigger;
+  on_admire_item_stop?: EventTrigger;
 };

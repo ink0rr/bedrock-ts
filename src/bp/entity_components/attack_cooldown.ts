@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 
 /**
  * Adds a cooldown to a mob. The intention of this cooldown is to be used to prevent the mob from attempting to aquire new attack targets.
@@ -11,5 +11,5 @@ export type EntityAttackCooldownComponent = {
   /**
    * Event to be runned when the cooldown is complete.
    */
-  attack_cooldown_complete_event?: EventTriggerFiltered;
+  attack_cooldown_complete_event?: EventTrigger;
 };

@@ -1,5 +1,5 @@
 import { BlockState } from "../../shared/block_state.js";
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 
 /**
@@ -11,7 +11,7 @@ export type EntityInsideBlockNotifierComponent = {
       name?: BlockIdentifier;
       states?: BlockState;
     };
-    entered_block_event?: EventTriggerFiltered;
-    exited_block_event?: EventTriggerFiltered;
+    entered_block_event?: EventTrigger;
+    exited_block_event?: EventTrigger;
   }>;
 };

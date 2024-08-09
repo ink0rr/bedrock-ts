@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { Filter } from "../../shared/filter.js";
 
 /**
@@ -26,7 +26,7 @@ export type EntityLookatComponent = {
   /**
    * The event identifier to run when the entities specified in filters look at this entity.
    */
-  look_event?: EventTriggerFiltered;
+  look_event?: EventTrigger;
   /**
    * If true, invulnerable entities (e.g. Players in creative mode) are considered valid targets.
    */

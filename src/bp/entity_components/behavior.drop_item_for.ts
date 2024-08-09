@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { LootTablePath } from "../../shared/literals/loot_table_path.js";
 import { EntityBehaviorType } from "../entity_behavior/type.js";
 
@@ -52,7 +52,7 @@ export type EntityBehaviorDropItemForComponent = {
   /**
    * The event to trigger when the entity attempts to drop an item.
    */
-  on_drop_attempt?: EventTriggerFiltered;
+  on_drop_attempt?: EventTrigger;
   /**
    * The number of blocks each tick that the entity will check within its search range and height for a valid block to move to. A value of 0 will have the mob check every block within range in one tick.
    */

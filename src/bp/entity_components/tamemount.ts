@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { ItemTag } from "../../shared/literals/item_tag.js";
 
@@ -61,5 +61,5 @@ export type EntityTamemountComponent = {
   /**
    * Event that triggers when the entity becomes tamed.
    */
-  tame_event?: EventTriggerFiltered;
+  tame_event?: EventTrigger;
 };

@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 
 /**
  * Defines the ravager's response to their melee attack being blocked.
@@ -14,6 +14,6 @@ export type EntityRavagerBlockedComponent = {
    */
   reaction_choices?: Array<{
     weight?: number;
-    value?: EventTriggerFiltered;
+    value?: EventTrigger;
   }>;
 };

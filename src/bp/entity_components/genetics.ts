@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 
 /**
  * Defines the way a mob's genes and alleles are passed on to it's offspring, and how those traits manifest in the child. Compatible parent genes are crossed together, the alleles are handed down from the parents to the child, and any matching genetic variants fire off JSON events to modify the child and express the traits.
@@ -79,7 +79,7 @@ export type EntityGeneticsComponent = {
       /**
        * Event to run when this mob is created and matches the above allele conditions.
        */
-      birth_event?: EventTriggerFiltered;
+      birth_event?: EventTrigger;
     }>;
     /**
      * If this value is non-negative, overrides the chance for this gene that an allele will be replaced with a random one instead of the parent's allele during birth. Non-negative values greater than 1 will be the same as the value 1.

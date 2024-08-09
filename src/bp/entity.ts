@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../shared/event_trigger.js";
+import { EventTrigger } from "../shared/event_trigger.js";
 import { Filter, FilterSubject } from "../shared/filter.js";
 import { EntityIdentifier } from "../shared/literals/entity_identifier.js";
 import { MoLang } from "../shared/molang.js";
@@ -80,7 +80,7 @@ export type EntityEvent = {
   /**
    * Trigger an event.
    */
-  trigger?: EventTriggerFiltered | EntityEventIdentifier;
+  trigger?: EventTrigger | EntityEventIdentifier;
   /**
    * Triggers a slash command or a list of slash commands.
    */

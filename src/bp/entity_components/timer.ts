@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 
 /**
  * Adds a timer after which an event will fire.
@@ -33,5 +33,5 @@ export type EntityTimerComponent = {
   /**
    * Event to fire when the time on the timer runs out.
    */
-  time_down_event?: EventTriggerFiltered;
+  time_down_event?: EventTrigger;
 };

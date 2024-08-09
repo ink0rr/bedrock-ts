@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 
 /**
@@ -17,5 +17,5 @@ export type EntityTrustingComponent = {
   /**
    * Event to run when this entity becomes trusting.
    */
-  trust_event?: EventTriggerFiltered;
+  trust_event?: EventTrigger;
 };

@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 
 /**
  * Defines the entity's range within which it can see or sense other entities to target them.
@@ -17,15 +17,15 @@ export type EntityTargetNearbySensorComponent = {
   /**
    * Event to call when an entity gets in the inside range. Can specify 'event' for the name of the event and 'target' for the target of the event.
    */
-  on_inside_range?: EventTriggerFiltered;
+  on_inside_range?: EventTrigger;
   /**
    * Event to call when an entity gets in the outside range. Can specify 'event' for the name of the event and 'target' for the target of the event.
    */
-  on_outside_range?: EventTriggerFiltered;
+  on_outside_range?: EventTrigger;
   /**
    * Event to call when an entity exits visual range. Can specify 'event' for the name of the event and 'target' for the target of the event.
    */
-  on_vision_lost_inside_range?: EventTriggerFiltered;
+  on_vision_lost_inside_range?: EventTrigger;
   /**
    * Whether the other entity needs to be visible to trigger 'inside' events.
    */

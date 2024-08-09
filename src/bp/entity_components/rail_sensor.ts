@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 
 /**
  * Triggers based on rail conditions
@@ -20,11 +20,11 @@ export type EntityRailSensorComponent = {
   /**
    * Event to call when the rail is activated.
    */
-  on_activate?: EventTriggerFiltered;
+  on_activate?: EventTrigger;
   /**
    * Event to call when the rail is deactivated.
    */
-  on_deactivate?: EventTriggerFiltered;
+  on_deactivate?: EventTrigger;
   /**
    * If true, command blocks will start ticking when passing over an activated rail.
    * @default true

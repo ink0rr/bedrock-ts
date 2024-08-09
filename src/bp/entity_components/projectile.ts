@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { LegacyParticle } from "../../shared/literals/legacy_particle.js";
 import { MoLang } from "../../shared/molang.js";
@@ -17,7 +17,7 @@ export type EntityProjectileComponent = {
       affect_target?: boolean;
       affect_splash_area?: boolean;
       splash_area?: number;
-      event_trigger?: EventTriggerFiltered;
+      event_trigger?: EventTrigger;
     };
     grant_xp?: {
       minXP?: number;

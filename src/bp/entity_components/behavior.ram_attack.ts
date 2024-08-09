@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 
 /**
@@ -23,7 +23,7 @@ export type EntityBehaviorRamAttackComponent = {
   /**
    * The event to trigger when attacking.
    */
-  on_start?: EventTriggerFiltered | Array<EventTriggerFiltered>;
+  on_start?: EventTrigger | Array<EventTrigger>;
   /**
    * The modifier to knockback that babies have.
    * @default 0.333333

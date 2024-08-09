@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 
 /**
@@ -32,5 +32,5 @@ export type EntityBehaviorCelebrateComponent = {
   /**
    * The event to trigger when the goal's duration expires.
    */
-  on_celebration_end_event?: EventTriggerFiltered;
+  on_celebration_end_event?: EventTrigger;
 };

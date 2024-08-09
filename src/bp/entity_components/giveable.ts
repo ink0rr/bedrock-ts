@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { ItemTag } from "../../shared/literals/item_tag.js";
 
@@ -24,7 +24,7 @@ export type EntityGiveableComponent = {
         /**
          * Event to fire when the correct item is given.
          */
-        on_give?: EventTriggerFiltered;
+        on_give?: EventTrigger;
       }>
     | {
         /**
@@ -43,6 +43,6 @@ export type EntityGiveableComponent = {
         /**
          * Event to fire when the correct item is given.
          */
-        on_give?: EventTriggerFiltered;
+        on_give?: EventTrigger;
       };
 };

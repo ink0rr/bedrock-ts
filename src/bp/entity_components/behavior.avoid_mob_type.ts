@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 import { EntityBehaviorType } from "../entity_behavior/type.js";
@@ -48,7 +48,7 @@ export type EntityBehaviorAvoidMobTypeComponent = {
   /**
    * Event that is triggered when escaping from a mob.
    */
-  on_escape_event?: EventTriggerFiltered;
+  on_escape_event?: EventTrigger;
   /**
    * The sound event to play when the mob is avoiding another mob.
    */

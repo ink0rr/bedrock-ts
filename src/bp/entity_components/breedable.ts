@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { Filter } from "../../shared/filter.js";
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
@@ -55,7 +55,7 @@ export type EntityBreedableComponent = {
         /**
          * Event to run when this entity breeds.
          */
-        breed_event?: EventTriggerFiltered;
+        breed_event?: EventTrigger;
       }
     | Array<{
         /**
@@ -69,7 +69,7 @@ export type EntityBreedableComponent = {
         /**
          * Event to run when this entity breeds.
          */
-        breed_event?: EventTriggerFiltered;
+        breed_event?: EventTrigger;
       }>;
   /**
    * If true, the entity will become pregnant instead of spawning a baby.

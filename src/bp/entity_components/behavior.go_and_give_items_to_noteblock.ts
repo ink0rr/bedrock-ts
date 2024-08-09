@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 
 /**
@@ -13,7 +13,7 @@ export type EntityBehaviorGoAndGiveItemsToNoteblockComponent = {
   /**
    * Event(s) to run when this mob throws items.
    */
-  on_item_throw?: Array<EventTriggerFiltered> | EventTriggerFiltered;
+  on_item_throw?: Array<EventTrigger> | EventTrigger;
   /**
    * Sets the desired distance to be reached before throwing the items towards the block.
    * @default 3

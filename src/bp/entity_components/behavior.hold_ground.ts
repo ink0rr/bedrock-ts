@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 
 /**
  * The mob freezes and looks at the mob they are targeting.
@@ -21,5 +21,5 @@ export type EntityBehaviorHoldGroundComponent = {
   /**
    * Event to run when target is within the radius. This event is broadcasted if broadcast is true.
    */
-  within_radius_event?: EventTriggerFiltered;
+  within_radius_event?: EventTrigger;
 };

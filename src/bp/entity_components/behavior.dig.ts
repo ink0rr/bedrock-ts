@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 
 /**
  * Allows this entity to dig into the ground before despawning.
@@ -32,5 +32,5 @@ export type EntityBehaviorDigComponent = {
   /**
    * Event(s) to run when the goal starts.
    */
-  on_start?: EventTriggerFiltered;
+  on_start?: EventTrigger;
 };

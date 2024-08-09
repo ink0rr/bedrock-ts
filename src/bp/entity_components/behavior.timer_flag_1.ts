@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 
 /**
  * Fires an event when this behavior starts, then waits for a duration before stopping.
@@ -13,6 +13,6 @@ export type EntityBehaviorTimerFlag_1Component = {
    * Goal duration range in seconds.
    */
   duration_range?: Array<number>;
-  on_start?: EventTriggerFiltered;
-  on_end?: EventTriggerFiltered;
+  on_start?: EventTrigger;
+  on_end?: EventTrigger;
 };

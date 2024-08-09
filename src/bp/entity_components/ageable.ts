@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { Filter } from "../../shared/filter.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { ItemTag } from "../../shared/literals/item_tag.js";
@@ -35,7 +35,7 @@ export type EntityAgeableComponent = {
   /**
    * Event to run when this entity grows up.
    */
-  grow_up?: EventTriggerFiltered;
+  grow_up?: EventTrigger;
   transform_to_item?: ItemIdentifier;
   /**
    * List of conditions to meet so that the entity can be fed.

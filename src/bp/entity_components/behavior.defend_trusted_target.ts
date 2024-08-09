@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 import { EntityBehaviorType } from "../entity_behavior/type.js";
 
@@ -24,7 +24,7 @@ export type EntityBehaviorDefendTrustedTargetComponent = {
    */
   aggro_sound?: SoundEvent;
   sound_chance?: number;
-  on_defend_start?: EventTriggerFiltered;
+  on_defend_start?: EventTrigger;
   /**
    * Determines the amount of time in seconds that this mob will look for a target before forgetting about it and looking for a new one when the target isn't visible any more.
    * @default 3

@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { Filter } from "../../shared/filter.js";
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 
@@ -56,11 +56,11 @@ export type EntityBehaviorMoveToBlockComponent = {
   /**
    * Event to run on block reached.
    */
-  on_stay_completed?: EventTriggerFiltered | Array<EventTriggerFiltered>;
+  on_stay_completed?: EventTrigger | Array<EventTrigger>;
   /**
    * Event to run on block reached.
    */
-  on_reach?: EventTriggerFiltered | Array<EventTriggerFiltered>;
+  on_reach?: EventTrigger | Array<EventTrigger>;
   /**
    * Filter which blocks can be targeted.
    */

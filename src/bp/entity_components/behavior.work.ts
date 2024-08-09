@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 
 /**
  * Allows the NPC to use the POI.
@@ -38,5 +38,5 @@ export type EntityBehaviorWorkComponent = {
   /**
    * Event to run when the mob reaches their jobsite and finishes working.
    */
-  on_arrival?: EventTriggerFiltered;
+  on_arrival?: EventTrigger;
 };

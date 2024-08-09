@@ -1,5 +1,5 @@
 import { DamageSource } from "../../shared/damage_source.js";
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 
 /**
@@ -11,7 +11,7 @@ export type EntityDamageSensorComponent = {
         /**
          * Specifies filters for entity definitions and events.
          */
-        on_damage?: EventTriggerFiltered;
+        on_damage?: EventTrigger;
         /**
          * Type of damage that triggers the events.
          * @default none
@@ -40,7 +40,7 @@ export type EntityDamageSensorComponent = {
         /**
          * Specifies filters for entity definitions and events.
          */
-        on_damage?: EventTriggerFiltered;
+        on_damage?: EventTrigger;
         /**
          * Type of damage that triggers the events.
          * @default none

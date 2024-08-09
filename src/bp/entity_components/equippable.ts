@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { ActionText } from "../../shared/literals/action_text.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { ItemTag } from "../../shared/literals/item_tag.js";
@@ -31,11 +31,11 @@ export type EntityEquippableComponent = {
     /**
      * Event to trigger when this entity is equipped with this item.
      */
-    on_equip?: EventTriggerFiltered;
+    on_equip?: EventTrigger;
     /**
      * Event to trigger when this item is removed from this entity.
      */
-    on_unequip?: EventTriggerFiltered;
+    on_unequip?: EventTrigger;
     /**
      * The slot number of this slot.
      */

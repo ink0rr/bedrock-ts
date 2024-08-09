@@ -1,4 +1,4 @@
-import { EventTriggerFiltered } from "../../shared/event_trigger.js";
+import { EventTrigger } from "../../shared/event_trigger.js";
 import { Filter } from "../../shared/filter.js";
 
 /**
@@ -53,7 +53,7 @@ export type EntityBehaviorKnockbackRoarComponent = {
   /**
    * Event that is triggered when the roar ends.
    */
-  on_roar_end?: EventTriggerFiltered;
+  on_roar_end?: EventTrigger;
   /**
    * The maximum height for vertical knockback.
    * @default 0.4
