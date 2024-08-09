@@ -1,4 +1,4 @@
-import { VanillaEntityEvent } from "../entity_behavior/event.js";
+import { EntityEventIdentifier } from "../entity_behavior/event.js";
 
 /**
  * Causes the mob to ignore attackable targets for a given duration.
@@ -13,5 +13,5 @@ export type EntityAdmireItemComponent = {
    * Duration, in seconds, for which mob won't admire items if it was hurt.
    */
   cooldown_after_being_attacked?: number;
-  spawn_event?: VanillaEntityEvent;
+  spawn_event?: EntityEventIdentifier;
 };

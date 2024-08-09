@@ -2,7 +2,7 @@ import { Filter } from "../../shared/filter.js";
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { SoundEvent } from "../../shared/sound_event.js";
-import { VanillaEntityEvent } from "../entity_behavior/event.js";
+import { EntityEventIdentifier } from "../entity_behavior/event.js";
 
 /**
  * Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior).
@@ -36,7 +36,7 @@ export type EntitySpawnEntityComponent = {
         /**
          * Event to call when the entity is spawned.
          */
-        spawn_event?: VanillaEntityEvent;
+        spawn_event?: EntityEventIdentifier;
         /**
          * Item identifier of the item to spawn.
          * @default egg
@@ -87,7 +87,7 @@ export type EntitySpawnEntityComponent = {
         /**
          * Event to call when the entity is spawned.
          */
-        spawn_event?: VanillaEntityEvent;
+        spawn_event?: EntityEventIdentifier;
         /**
          * Item identifier of the item to spawn.
          * @default egg

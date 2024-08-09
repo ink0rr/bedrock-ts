@@ -3,7 +3,7 @@ import { Filter, FilterSubject } from "../shared/filter.js";
 import { EntityIdentifier } from "../shared/literals/entity_identifier.js";
 import { MoLang } from "../shared/molang.js";
 import { StringOrRecord } from "../shared/string_or_record.js";
-import { VanillaEntityEvent } from "./entity_behavior/event.js";
+import { EntityEventIdentifier } from "./entity_behavior/event.js";
 import { EntityComponents } from "./entity_components/index.js";
 
 export type Entity = {
@@ -64,7 +64,7 @@ export type Entity = {
     };
     components?: EntityComponents;
     component_groups?: Record<string, EntityComponents>;
-    events?: Partial<Record<VanillaEntityEvent, EntityEvent>>;
+    events?: Partial<Record<EntityEventIdentifier, EntityEvent>>;
     do_not_upgrade?: Record<never, never>;
   };
 };
@@ -80,7 +80,7 @@ export type EntityEvent = {
   /**
    * Trigger an event.
    */
-  trigger?: EventTriggerFiltered | VanillaEntityEvent;
+  trigger?: EventTriggerFiltered | EntityEventIdentifier;
   /**
    * Triggers a slash command or a list of slash commands.
    */

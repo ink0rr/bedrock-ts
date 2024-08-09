@@ -1,5 +1,5 @@
 import { Filter } from "../../shared/filter.js";
-import { VanillaEntityEvent } from "../entity_behavior/event.js";
+import { EntityEventIdentifier } from "../entity_behavior/event.js";
 
 /**
  * A component that owns multiple subsensors, each one firing an event when a set of conditions are met by other entities within the defined range
@@ -19,7 +19,7 @@ export type EntityEntitySensorComponent = {
      * @default -1
      */
     cooldown?: number;
-    event?: VanillaEntityEvent;
+    event?: EntityEventIdentifier;
     event_filters?: Filter;
     /**
      * The maximum number of entities that must pass the filter conditions for the event to send.
