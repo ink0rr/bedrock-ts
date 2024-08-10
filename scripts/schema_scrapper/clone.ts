@@ -15,10 +15,11 @@ export async function cloneBridge() {
   }
   const buffer = await Bun.file("./temp/editor-packages.zip").arrayBuffer();
   const zip = await JSZip.loadAsync(buffer);
-  zip.forEach(async (filepath, file) => {
+  const promises = Object.entries(zip.files).map(async ([filepath, file]) => {
     if (file.dir) return;
     const buffer = await file.async("arraybuffer");
     if (buffer.byteLength === 0) return;
-    await Bun.write(path.join("./temp", filepath), buffer);
+    return await Bun.write(path.join("./temp", filepath), buffer);
   });
+  await Promise.all(promises);
 }
