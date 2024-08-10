@@ -441,6 +441,7 @@ function parsePropertyType(prop: SchemaProperty): string {
       if (obj === "{\n}") {
         return "Record<string, never>";
       }
+      return obj;
       // return s.join(" | ") + " | " + createObject(prop);
     }
 
@@ -491,14 +492,13 @@ export function parseSchema(json: SchemaProperty, name: string, options?: Parser
   let hasNamespace = false;
   const parsedDefinitions = new Set<string>();
 
-  // Namespace
-  if (options?.useNamespace) {
-    hasNamespace = true;
-    s.push(`export namespace ${name} {`);
-  }
-
   // Definitions
   if (definitions) {
+    // Namespace
+    if (options?.useNamespace) {
+      hasNamespace = true;
+      s.push(`export namespace ${name} {`);
+    }
     for (const [k, v] of Object.entries(definitions)) {
       const typeName = snakeToPascal(k);
       s.push(`export type ${typeName} = ${parseProperty(k, v, true)};`);
@@ -507,7 +507,7 @@ export function parseSchema(json: SchemaProperty, name: string, options?: Parser
   }
 
   // Close namespace
-  if (options?.useNamespace) {
+  if (hasNamespace) {
     const last = s[s.length - 1];
     if (last === `export namespace ${name} {`) {
       s.pop();
