@@ -1,9 +1,13 @@
 import path from "node:path/posix";
 import { readJson, writeFile } from "../util/fs";
+import { info } from "../util/log";
 import { SchemaProperty } from "../util/schema_parser";
 import { parseComponentSchemas } from "./parser";
+import { getVersion } from "./version";
 
-export async function parseItemComponent(version: string = "v1.21.10") {
+export async function parseItemComponent() {
+  const version = await getVersion("item");
+  info(`version ${version}`);
   const parsed = await parseComponentSchemas("item");
 
   // Patch for icon
