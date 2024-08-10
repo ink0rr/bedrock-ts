@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to look at the entity they are targetting.
  */

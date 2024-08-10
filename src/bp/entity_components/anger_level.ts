@@ -1,3 +1,4 @@
+// auto generated
 import { Filter } from "../../shared/filter.js";
 import { MoLang } from "../../shared/molang.js";
 import { SoundEvent } from "../../shared/sound_event.js";

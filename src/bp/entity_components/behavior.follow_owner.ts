@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to follow the player that owns them.
  */
@@ -32,4 +33,8 @@ export type EntityBehaviorFollowOwnerComponent = {
    * @default 60
    */
   max_distance?: number;
+  /**
+   * Defines how far (in blocks) the entity will be from its owner after teleporting. If not specified, it defaults to 'stop_distance' + 1, allowing the entity to seamlessly resume navigation.
+   */
+  post_teleport_distance?: number;
 };

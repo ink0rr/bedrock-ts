@@ -1,11 +1,9 @@
+// auto generated
 /**
- * Determines whether an item interacts with liquid blocks on use.
+ * Whether the item interacts with liquid blocks on use.
  */
 export type ItemLiquidClippedComponent =
+  | boolean
   | {
-      /**
-       * Whether an item interacts with liquid blocks on use.
-       */
       value?: boolean;
-    }
-  | boolean;
+    };

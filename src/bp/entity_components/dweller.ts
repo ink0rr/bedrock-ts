@@ -1,8 +1,9 @@
+// auto generated
 /**
  * Defines the entity as a dweller in a village.
  */
 export type EntityDwellerComponent = {
-  dwelling_type?: string;
+  dwelling_type?: "village";
   dweller_role?: "hostile" | "inhabitant" | "defender" | "passive";
   update_interval_base?: number;
   update_interval_variant?: number;

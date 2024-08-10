@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Sets the strength of the entity's jump.
  */

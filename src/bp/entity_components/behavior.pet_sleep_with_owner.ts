@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the pet mob to move onto a bed with it's owner while sleeping.
  */

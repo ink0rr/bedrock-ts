@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Applies defined amount of damage to the entity at specified intervals.
  */

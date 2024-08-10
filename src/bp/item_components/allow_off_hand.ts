@@ -1,11 +1,9 @@
+// auto generated
 /**
- * Determine whether an item can be placed in the off-hand slot of the inventory.
+ * Whether the item can be placed inside of the off hand.
  */
 export type ItemAllowOffHandComponent =
+  | boolean
   | {
-      /**
-       * Whether the item can be placed in the off-hand slot.
-       */
       value?: boolean;
-    }
-  | boolean;
+    };

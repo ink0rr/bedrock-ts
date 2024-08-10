@@ -1,3 +1,4 @@
+// auto generated
 import { MoLang } from "../../shared/molang.js";
 
 /**

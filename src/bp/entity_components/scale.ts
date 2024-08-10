@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Sets the entity's visual size.
  */

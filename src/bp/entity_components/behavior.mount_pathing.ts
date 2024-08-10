@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to move around on its own while mounted seeking a target to attack.
  */

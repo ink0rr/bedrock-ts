@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to look at the player they are trading with.
  */

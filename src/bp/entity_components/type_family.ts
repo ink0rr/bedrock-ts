@@ -1,3 +1,4 @@
+// auto generated
 import { TypeFamily } from "../../shared/type_family.js";
 
 /**

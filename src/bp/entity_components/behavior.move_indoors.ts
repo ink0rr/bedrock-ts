@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows this entity to move indoors.
  */

@@ -1,3 +1,4 @@
+// auto generated
 /**
  * This move control causes the mob to hop as it moves.
  */

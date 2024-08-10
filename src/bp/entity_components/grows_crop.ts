@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Could increase crop growth when entity walks over crop.
  */

@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Defines the player's saturation.
  */

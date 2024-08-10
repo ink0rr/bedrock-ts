@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Defines the entity's movement on the rails. An entity with this component is only allowed to move on the rail.
  */

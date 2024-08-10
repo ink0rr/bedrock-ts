@@ -1,11 +1,9 @@
+// auto generated
 /**
- * Determines if the item will break blocks in Creative Mode while swinging.
+ * Whether the item can destroy blocks while in creative.
  */
 export type ItemCanDestroyInCreativeComponent =
+  | boolean
   | {
-      /**
-       * Defines whether the item can destroy blocks while in creative.
-       */
       value?: boolean;
-    }
-  | boolean;
+    };

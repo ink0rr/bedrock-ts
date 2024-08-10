@@ -1,3 +1,4 @@
+// auto generated
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { LootTablePath } from "../../shared/literals/loot_table_path.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";

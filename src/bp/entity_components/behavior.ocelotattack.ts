@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows an entity to attack by sneaking and pouncing.
  */

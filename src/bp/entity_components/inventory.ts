@@ -1,3 +1,4 @@
+// auto generated
 import { ContainerType } from "../../shared/container_type.js";
 
 /**

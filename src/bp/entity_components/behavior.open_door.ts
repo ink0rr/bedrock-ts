@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to open doors. Requires the mob to be able to path through doors, otherwise the mob won't even want to try opening them.
  */

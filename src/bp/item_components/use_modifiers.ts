@@ -1,5 +1,6 @@
+// auto generated
 /**
- * Modifies use effects, including how long an item takes to use and the player's speed when used in combination with components like Shooter, Throwable or Food.
+ * Modifies use effects, including how long the item takes to use and the player's speed when used in combination with components like Shooter, Throwable, or Food.
  */
 export type ItemUseModifiersComponent = {
   /**

@@ -1,3 +1,4 @@
+// auto generated
 /**
  * The follow range for the entity.
  */

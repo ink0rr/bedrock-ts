@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Gives the entity the npc menu when interacted with.
  */

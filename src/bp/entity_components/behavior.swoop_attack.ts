@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows an entity to attack using swoop attack behavior; Ideal for use with flying mobs. The behavior ends if the entity has a horizontal collision or gets hit.
  */

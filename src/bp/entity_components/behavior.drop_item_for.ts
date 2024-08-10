@@ -1,3 +1,4 @@
+// auto generated
 import { LootTablePath } from "../../shared/literals/loot_table_path.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";
 import { EntityBehaviorType } from "../entity_behavior/type.js";

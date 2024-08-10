@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Gives the entity the ability to jump.
  */

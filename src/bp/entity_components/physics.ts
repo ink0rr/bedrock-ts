@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Defines physics properties of an actor, including if it is affected by gravity or if it collides with objects.
  */

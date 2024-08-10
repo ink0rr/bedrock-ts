@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Defines the entity's size interpolation based on the entity's age.
  */

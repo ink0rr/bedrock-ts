@@ -1,3 +1,4 @@
+// auto generated
 import { EntityBehaviorPrioritizedType } from "../entity_behavior/prioritized_type.js";
 
 /**

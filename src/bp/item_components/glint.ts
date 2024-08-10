@@ -1,11 +1,9 @@
+// auto generated
 /**
- * Determines whether the item has the enchanted glint render effect on it.
+ * Whether the item has the glint effect.
  */
 export type ItemGlintComponent =
+  | boolean
   | {
-      /**
-       * Whether the item has the enchanted glint render effect.
-       */
       value?: boolean;
-    }
-  | boolean;
+    };

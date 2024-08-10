@@ -1,3 +1,4 @@
+// auto generated
 import { EntityEventIdentifier } from "../entity_behavior/event.js";
 
 /**

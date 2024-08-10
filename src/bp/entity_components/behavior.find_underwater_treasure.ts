@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to move towards the nearest underwater ruin or shipwreck.
  */

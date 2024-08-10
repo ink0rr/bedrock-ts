@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the a mob to become scared when the weather outside is thundering.
  */

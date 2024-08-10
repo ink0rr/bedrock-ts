@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the creeper to swell up when a player is nearby. It can only be used by Creepers.
  */

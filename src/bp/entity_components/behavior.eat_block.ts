@@ -1,3 +1,4 @@
+// auto generated
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { MoLang } from "../../shared/molang.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";

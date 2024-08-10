@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Sets that this entity can hide from hostile mobs while invisible.
  */

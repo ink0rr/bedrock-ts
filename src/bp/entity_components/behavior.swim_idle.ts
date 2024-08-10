@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the entity go idle, if swimming. Entity must be in water.
  */

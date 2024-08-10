@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Defines whether an entity should be persistent in the game world.
  */

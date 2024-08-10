@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Sets this entity's default head rotation angle.
  */

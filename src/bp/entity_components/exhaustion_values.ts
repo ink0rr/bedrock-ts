@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Defines how much exhaustion each player action should take.
  */

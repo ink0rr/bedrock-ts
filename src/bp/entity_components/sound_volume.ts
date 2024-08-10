@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Sets the entity's base volume for sound effects.
  */

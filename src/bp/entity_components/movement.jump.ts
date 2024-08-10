@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Move control that causes the mob to jump as it moves with a specified delay between jumps.
  */

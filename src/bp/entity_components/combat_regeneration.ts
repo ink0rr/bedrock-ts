@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Gives Regeneration I and removes Mining Fatigue from the mob that kills the Actor's attack target.
  */
