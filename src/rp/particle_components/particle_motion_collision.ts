@@ -22,5 +22,14 @@ export type ParticleParticleMotionCollisionComponent = {
    * Used to minimize interpenetration of particles with the environment, note that this must be less than or equal to 1/2 block
    */
   collision_radius?: number;
-  events?: Array<Record<string, never>>;
+  events?: Array<{
+    /**
+     * Triggers the specified event if the conditions are met
+     */
+    event?: string;
+    /**
+     * Optional minimum speed for event triggering
+     */
+    min_speed?: number;
+  }>;
 };

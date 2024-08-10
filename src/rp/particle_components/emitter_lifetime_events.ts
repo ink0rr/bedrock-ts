@@ -19,5 +19,11 @@ export type ParticleEmitterLifetimeEventsComponent = {
   /**
    * A series of events that occur at set intervals. These get fired every time the emitter has moved the specified input distance from the last time it was fired.
    */
-  looping_travel_distance_events?: Array<Record<string, never>>;
+  looping_travel_distance_events?: Array<{
+    distance?: number;
+    /**
+     * This effect must be defined events within the particle_effect
+     */
+    effects?: Array<string> | string;
+  }>;
 };

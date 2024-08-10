@@ -337,11 +337,10 @@ function resolveImports(data: string) {
       value.name + " |",
       value.name + ";",
       value.name + ",", // for the last item
+      `: ${value.name} }`, // value of pair type
       "&" + value.name,
     ];
     for (const test of tests) {
-      if (value.name === "TrimPalette<ItemTexturePath>") {
-      }
       if (data.includes(test)) {
         s.add(value.path);
       }
