@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Entities with this component will have a maximum auto step height that is different depending on whether they are on a block that prevents jumping. Incompatible with 'runtime_identifier' of 'minecraft:horse'.
  */

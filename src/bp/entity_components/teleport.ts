@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Defines an entity's teleporting behavior.
  */

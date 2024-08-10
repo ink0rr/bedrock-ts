@@ -1,10 +1,10 @@
+// auto generated
 import { Filter } from "../../shared/filter.js";
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { ItemTag } from "../../shared/literals/item_tag.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";
-import { EntityComponents } from "./index.js";
 
 /**
  * Defines the way an entity can get into the 'love' state.
@@ -15,7 +15,7 @@ export type EntityBreedableComponent = {
    */
   allow_sitting?: boolean;
   /**
-   * If true, the entities will blend their attributes in the offspring after they breed.
+   * If true, the entities will blend their attributes in the offspring after they breed. For example, horses blend their health, movement, and jump_strength in their offspring.
    * @default true
    */
   blend_attributes?: boolean;
@@ -159,25 +159,4 @@ export type EntityBreedableComponent = {
    * If true, the entity needs to be at full health before it can breed.
    */
   require_full_health?: boolean;
-  /**
-   * The breed item used will transform to this item upon successful interaction.
-   */
-  transform_to_item?: ItemIdentifier;
-  /**
-   * Strategy used for mutating variants and extra variants for offspring.
-   * @default none
-   */
-  mutation_strategy?: "random" | "none";
-  /**
-   * Range used to determine random extra variant.
-   */
-  random_extra_variant_mutation_interval?: Array<number>;
-  /**
-   * Range used to determine random variant.
-   */
-  random_variant_mutation_interval?: Array<number>;
-  /**
-   * List of attributes that should benefit from parent centric attribute blending. For example, horses blend their health, movement, and jump_strength in their offspring.
-   */
-  parent_centric_attribute_blending?: Array<keyof EntityComponents>;
 };

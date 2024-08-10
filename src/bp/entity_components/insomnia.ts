@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Adds a timer since last rested to see if phantoms should spawn.
  */

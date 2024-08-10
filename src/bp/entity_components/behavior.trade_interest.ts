@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to look at a player that is holding a tradable item.
  */

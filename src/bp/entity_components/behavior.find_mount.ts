@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to look around for another mob to ride atop it.
  */

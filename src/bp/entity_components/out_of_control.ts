@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Defines the entity's 'out of control' state.
  */

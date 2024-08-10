@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to automatically start avoiding the sun when its a clear day out.
  */

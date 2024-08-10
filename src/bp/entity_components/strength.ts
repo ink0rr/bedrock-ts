@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Defines the entity's strength to carry items.
  */

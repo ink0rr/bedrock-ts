@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the entity to wander around while swimming, when not path-finding.
  */

@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Used to differentiate the component group of a variant of an entity from others. (e.g. ocelot, villager)
  */

@@ -1,3 +1,4 @@
+// auto generated
 import { Filter } from "../../shared/filter.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { ItemTag } from "../../shared/literals/item_tag.js";

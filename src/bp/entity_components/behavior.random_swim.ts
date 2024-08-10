@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows an entity to randomly move through water.
  */

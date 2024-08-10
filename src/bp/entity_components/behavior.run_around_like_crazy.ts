@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to run around aimlessly.
  */

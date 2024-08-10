@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows this entity to move towards a 'suspicious' position based on data gathered in minecraft:suspect_tracking.
  */

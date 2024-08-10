@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to move into a random location within a village within the search range.
  */

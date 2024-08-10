@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Ability for a ridable entity to dash.
  */

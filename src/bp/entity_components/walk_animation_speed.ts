@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Sets the speed multiplier for this entity's walk animation speed.
  */

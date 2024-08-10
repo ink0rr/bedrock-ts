@@ -1,3 +1,4 @@
+// auto generated
 import { ActionText } from "../../shared/literals/action_text.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { ItemTag } from "../../shared/literals/item_tag.js";

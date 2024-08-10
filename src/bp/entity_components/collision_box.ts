@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Sets the width and height of the Entity's collision box.
  */

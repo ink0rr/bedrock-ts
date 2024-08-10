@@ -1,3 +1,4 @@
+// auto generated
 import { EntityBehaviorNavigation } from "../entity_behavior/navigation.js";
 
 /**

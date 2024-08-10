@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Causes an entity to circle around an anchor point placed near a point or target.
  */

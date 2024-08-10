@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Sets the health for the entity.
  */

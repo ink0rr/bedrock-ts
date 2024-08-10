@@ -1,3 +1,4 @@
+// auto generated
 /**
  * The entity puts on the desired equipment.
  */

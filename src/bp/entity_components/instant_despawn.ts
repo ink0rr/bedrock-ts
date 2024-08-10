@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Despawns the Actor immediately.
  */

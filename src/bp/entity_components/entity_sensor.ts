@@ -1,3 +1,4 @@
+// auto generated
 import { Filter } from "../../shared/filter.js";
 import { EntityEventIdentifier } from "../entity_behavior/event.js";
 
@@ -32,9 +33,10 @@ export type EntityEntitySensorComponent = {
      */
     minimum_count?: number;
     /**
-     * The maximum horizontal and vertical distance another entity can be from this and have the filters checked against it.
+     * The maximum distance another entity can be from this and have the filters checked against it.
+     * @default 10
      */
-    range?: Array<number>;
+    range?: number;
     /**
      * If true requires all nearby entities to pass the filter conditions for the events to send.
      */

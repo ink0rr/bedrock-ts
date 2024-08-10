@@ -1,3 +1,4 @@
+// auto generated
 /**
  * This move causes the mob to glide.
  */

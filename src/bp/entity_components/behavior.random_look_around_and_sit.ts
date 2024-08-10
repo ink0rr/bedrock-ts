@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to randomly sit and look around for a duration. Note: Must have a sitting animation set up to use this.
  */

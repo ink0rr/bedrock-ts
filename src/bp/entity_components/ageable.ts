@@ -1,4 +1,4 @@
-import { Filter } from "../../shared/filter.js";
+// auto generated
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { ItemTag } from "../../shared/literals/item_tag.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";
@@ -36,9 +36,4 @@ export type EntityAgeableComponent = {
    * Event to run when this entity grows up.
    */
   grow_up?: EntityEventTrigger;
-  transform_to_item?: ItemIdentifier;
-  /**
-   * List of conditions to meet so that the entity can be fed.
-   */
-  interact_filters?: Filter;
 };

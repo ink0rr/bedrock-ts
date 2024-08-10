@@ -1,3 +1,4 @@
+// auto generated
 /**
  * The entity will attempt to toss the items from its inventory to a nearby recently played noteblock.
  */

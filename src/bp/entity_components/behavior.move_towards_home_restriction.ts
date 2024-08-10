@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows Guardians, Iron Golems and Villagers to move within their pre-defined area that the mob should be restricted to. Other mobs don't have a restriction defined.
  */

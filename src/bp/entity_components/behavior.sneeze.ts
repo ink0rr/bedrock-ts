@@ -1,3 +1,4 @@
+// auto generated
 import { SoundEvent } from "../../shared/sound_event.js";
 import { EntityBehaviorType } from "../entity_behavior/type.js";
 

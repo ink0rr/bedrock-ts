@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allow slimes to float in water / lava. Can only be used by Slime and Magma Cubes.
  */

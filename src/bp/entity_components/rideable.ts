@@ -1,3 +1,4 @@
+// auto generated
 import { ActionText } from "../../shared/literals/action_text.js";
 import { MoLang } from "../../shared/molang.js";
 import { TypeFamily } from "../../shared/type_family.js";

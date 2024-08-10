@@ -1,3 +1,4 @@
+// auto generated
 import { Filter } from "../../shared/filter.js";
 import { HexColor } from "../../shared/hex_color.js";
 import { SoundEvent } from "../../shared/sound_event.js";

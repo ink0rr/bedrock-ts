@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to stay afloat while swimming. Passengers will be kicked out the moment the mob's head goes underwater, which may not happen for tall mobs.
  */

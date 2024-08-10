@@ -1,3 +1,4 @@
+// auto generated
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";

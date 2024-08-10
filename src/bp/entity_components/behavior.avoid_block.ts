@@ -1,3 +1,4 @@
+// auto generated
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";
@@ -33,7 +34,7 @@ export type EntityBehaviorAvoidBlockComponent = {
   /**
    * Block search method.
    */
-  target_selection_method?: string;
+  target_selection_method?: "nearest";
   /**
    * List of block types this mob avoids.
    */

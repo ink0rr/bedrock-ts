@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to stay indoors during night time.
  */

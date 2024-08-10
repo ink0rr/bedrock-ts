@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows to mob to be able to sit in place like the ocelot.
  */

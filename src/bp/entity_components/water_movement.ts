@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Sets the entity's movement speed in water.
  */

@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows mobs with the dweller component to move toward their Village area that the mob should be restricted to.
  */

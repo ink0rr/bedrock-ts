@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to stay put while it is in a sitting state instead of doing something else.
  */

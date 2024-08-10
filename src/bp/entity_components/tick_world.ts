@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Defines if the entity ticks the world and the radius around it to tick.
  */

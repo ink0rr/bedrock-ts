@@ -1,3 +1,4 @@
+// auto generated
 import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**

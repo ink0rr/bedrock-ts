@@ -1,3 +1,4 @@
+// auto generated
 import { EntityBehaviorType } from "../entity_behavior/type.js";
 
 /**

@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to attack its target by running at it.
  */

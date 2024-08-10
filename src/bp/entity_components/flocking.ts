@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows entities to flock in groups in water or not.
  */

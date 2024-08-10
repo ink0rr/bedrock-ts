@@ -1,3 +1,4 @@
+// auto generated
 export type EntityWindBurstComponent = {
   radius?: number;
   particle_effect?: string;

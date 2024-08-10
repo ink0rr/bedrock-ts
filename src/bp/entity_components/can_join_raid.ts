@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Determines that this entity can join an existing raid.
  */

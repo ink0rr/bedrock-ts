@@ -1,3 +1,4 @@
+// auto generated
 import { DamageSource } from "../../shared/damage_source.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 

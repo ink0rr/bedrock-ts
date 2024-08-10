@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Speed in Blocks that this entity flies at.
  */

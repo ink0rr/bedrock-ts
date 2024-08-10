@@ -1,3 +1,4 @@
+// auto generated
 import { DamageSource } from "../../shared/damage_source.js";
 import { Filter } from "../../shared/filter.js";
 

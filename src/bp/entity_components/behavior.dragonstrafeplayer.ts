@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows this entity to fly around looking for a player to shoot fireballs at. Can only be used by the Ender Dragon.
  */

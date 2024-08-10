@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows an entity to emit `entityMove`, `swim` and `flap` game events, depending on the block the entity is moving through. It is added by default to every mob. Add it again to override its behavior.
  */
