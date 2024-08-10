@@ -5,12 +5,15 @@ import { SchemaProperty, snakeToPascal } from "../util/schema_parser";
 import { parseComponentSchemas } from "./parser";
 import { getVersion } from "./version";
 
-async function canPowerJump() {
+function camelToSnake(str: string) {
+  return str.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
+}
+
+// Make sure the function name is in camelCase
+
+function canPowerJump() {
   const text = `export type EntityCanPowerJumpComponent = Record<string, never>;`;
-  await writeFile(`./src/bp/entity_components/can_power_jump.ts`, text, {
-    parser: "typescript",
-  });
-  return ["can_power_jump", "EntityCanPowerJumpComponent"];
+  return [text, "EntityCanPowerJumpComponent"];
 }
 
 const patches = [canPowerJump];
@@ -20,9 +23,13 @@ export async function parseEntityComponent() {
   info(`version ${version}`);
   const parsed = await parseComponentSchemas("entity");
   const parsedPatches = await Promise.all(
-    patches.map((x) => {
+    patches.map(async (x) => {
       info(`Patching: ${x.name}`);
-      return x();
+      const [text, typeName] = x();
+      await writeFile(`./src/bp/entity_components/${camelToSnake(x.name)}.ts`, text, {
+        parser: "typescript",
+      });
+      return [camelToSnake(x.name), typeName];
     }),
   );
 
