@@ -1,5 +1,6 @@
 import path from "node:path/posix";
 import { readJson, writeFile } from "../util/fs";
+import { info } from "../util/log";
 import { parseSchema, SchemaProperty, snakeToPascal } from "../util/schema_parser";
 
 type ParseSchemasOptions = {
@@ -42,7 +43,7 @@ export async function parseComponentSchemas(type: string, options: ParseSchemasO
       continue;
     }
 
-    console.log(`Processing: ${filename}`);
+    info(`Processing: ${filename}`);
     await writeFile(`./src/bp/${type}_components/${filename}.ts`, ts, {
       parser: "typescript",
     });

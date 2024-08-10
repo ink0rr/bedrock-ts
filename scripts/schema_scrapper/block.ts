@@ -1,9 +1,21 @@
 import path from "node:path/posix";
 import { readJson, writeFile } from "../util/fs";
+import { info } from "../util/log";
 import { SchemaProperty } from "../util/schema_parser";
 import { parseComponentSchemas } from "./parser";
 
-export async function parseBlockComponent(version: string = "v1.21.10") {
+async function getVersion() {
+  const glob = new Bun.Glob(
+    "./temp/editor-packages-main/packages/minecraftBedrock/schema/block/v**/main.json",
+  ).scan();
+  for await (const _f of glob) {
+    return path.basename(path.dirname(_f.replace(/\\/g, "/")));
+  }
+}
+
+export async function parseBlockComponent() {
+  const version = await getVersion();
+  info(`Parsing block components for version ${version}`);
   const parsed = await parseComponentSchemas("block");
   const mainString: string[] = ["export type BlockComponents = {"];
   const excludeRefs = ["holidayCreatorFeatures.json", "enableGameTestFramework.json"];

@@ -1,4 +1,5 @@
 import * as path from "node:path";
+import { warning } from "./log";
 
 function snakeToCamel(s: string) {
   return s.replace(/([-_.][a-z])/gi, ($1) => {
@@ -393,7 +394,7 @@ function parsePropertyType(prop: SchemaProperty): string {
       if (refType) {
         return refType;
       } else {
-        console.log(`Unknown ref: ${prop.$ref}`);
+        warning(`Unknown ref: ${prop.$ref}`);
       }
     }
 
@@ -520,7 +521,7 @@ export function parseSchema(json: SchemaProperty, name: string, options?: Parser
         s.push(`export type ${name} = ${refType};`);
       } else {
         s.push(`export type ${name} = Record<string, never>;`);
-        console.log(`Unknown ref: ${json.$ref}`);
+        warning(`Unknown ref: ${json.$ref}`);
       }
     } else {
       // Empty object
