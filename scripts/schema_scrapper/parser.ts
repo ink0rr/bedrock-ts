@@ -44,7 +44,7 @@ export async function parseComponentSchemas(type: string, options: ParseSchemasO
     }
 
     info(`Processing: ${filename}`);
-    await writeFile(`./src/bp/${type}_components/${filename}.ts`, ts, {
+    await writeFile(`./src/bp/${type}_components/${filename}.ts`, `// auto generated\n${ts}`, {
       parser: "typescript",
     });
   }
