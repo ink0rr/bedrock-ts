@@ -7,6 +7,7 @@ export * from "./difficulty.js";
 export * from "./filter.js";
 export * from "./game_rule.js";
 export * from "./hex_color.js";
+export * from "./literal_number.js";
 export * from "./literal_union.js";
 export * from "./literals/index.js";
 export * from "./material.js";
