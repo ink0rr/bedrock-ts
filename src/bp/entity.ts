@@ -5,6 +5,29 @@ import { StringOrRecord } from "../shared/string_or_record.js";
 import { EntityEventIdentifier, EntityEventTrigger } from "./entity_behavior/event.js";
 import { EntityComponents } from "./entity_components/index.js";
 
+export type EntityProperty = {
+  /**
+   * The data type of the property.
+   */
+  type: "int" | "float" | "bool" | "enum";
+  /**
+   * The default value of the property, supports an integer value or a molang string.
+   */
+  default: MoLang;
+  /**
+   * Defaults to false, allows the property to be queried on the client.
+   */
+  client_sync?: boolean;
+  /**
+   * The range of values of the property.
+   */
+  range?: [number, number];
+  /**
+   * The enum values of the property.
+   */
+  values?: string[];
+};
+
 export type Entity = {
   format_version: string;
   "minecraft:entity": {
@@ -33,31 +56,7 @@ export type Entity = {
          */
         animate?: StringOrRecord[];
       };
-      properties?: Record<
-        string,
-        {
-          /**
-           * The data type of the property.
-           */
-          type: "int" | "float" | "bool" | "enum";
-          /**
-           * The default value of the property, supports an integer value or a molang string.
-           */
-          default: MoLang;
-          /**
-           * Defaults to false, allows the property to be queried on the client.
-           */
-          client_sync?: boolean;
-          /**
-           * The range of values of the property.
-           */
-          range?: [number, number];
-          /**
-           * The enum values of the property.
-           */
-          values?: string[];
-        }
-      >;
+      properties?: Record<string, EntityProperty>;
       aliases?: Record<string, Record<string, MoLang>>;
       spawn_category?: "ambient" | "axolotls" | "creature" | "monster" | "water_ambient";
     };
