@@ -32,7 +32,10 @@ type ParserOptions = {
   useNamespace?: boolean;
 };
 
-const types = new Map<string, string>([["integer", "number"]]);
+const types = new Map<string, string>([
+  ["integer", "number"],
+  ["object", "Record<string, never>"],
+]);
 type IMap = {
   name: string;
   path: string;
@@ -69,8 +72,8 @@ const importMap = new Map<string, IMap>([
   [
     "family",
     {
-      name: "Family",
-      path: 'import { Family } from "../../shared/family.js";',
+      name: "TypeFamily",
+      path: 'import { TypeFamily } from "../../shared/type_family.js";',
     },
   ],
   [
@@ -112,7 +115,7 @@ const importMap = new Map<string, IMap>([
     "actionText",
     {
       name: "ActionText",
-      path: 'import { ActionText } from "../../shared/action_text.js";',
+      path: 'import { ActionText } from "../../shared/literals/action_text.js";',
     },
   ],
   [
@@ -125,8 +128,8 @@ const importMap = new Map<string, IMap>([
   [
     "inventoryType",
     {
-      name: "Inventory",
-      path: 'import { Inventory } from "../../shared/inventory.js";',
+      name: "ContainerType",
+      path: 'import { ContainerType } from "../../shared/container_type.js";',
     },
   ],
   [
@@ -139,8 +142,8 @@ const importMap = new Map<string, IMap>([
   [
     "trade_table_paths",
     {
-      name: "TradeTable",
-      path: 'import { TradeTable } from "../../shared/trade_table.js";',
+      name: "TradeTablePath",
+      path: 'import { TradeTablePath } from "../../shared/literals/trade_table_path.js";',
     },
   ],
   [
@@ -216,8 +219,8 @@ const importMap = new Map<string, IMap>([
   [
     "eventEnum",
     {
-      name: "VanillaEntityEvent",
-      path: 'import { VanillaEntityEvent } from "../entity_behavior/event.js";',
+      name: "EntityEventIdentifier",
+      path: 'import { EntityEventIdentifier } from "../entity_behavior/event.js";',
     },
   ],
   [
@@ -231,7 +234,7 @@ const importMap = new Map<string, IMap>([
     "particleName",
     {
       name: "LegacyParticle",
-      path: 'import { LegacyParticle } from "../../shared/legacy_particle.js";',
+      path: 'import { LegacyParticle } from "../../shared/literals/legacy_particle.js";',
     },
   ],
   [
@@ -360,6 +363,9 @@ function parsePropertyType(prop: SchemaProperty): string {
 
   // Constants
   if (prop.const) {
+    if (typeof prop.const === "string") {
+      return `"${prop.const}"`;
+    }
     return prop.const;
   }
 
@@ -369,6 +375,8 @@ function parsePropertyType(prop: SchemaProperty): string {
         s.push(createObject(p));
       }
       return s.join(" | ");
+    } else if (prop.type === "boolean") {
+      return "boolean";
     } else {
       for (const p of prop.anyOf) {
         s.push(parsePropertyType(p));
@@ -396,6 +404,10 @@ function parsePropertyType(prop: SchemaProperty): string {
       } else {
         warning(`Unknown ref: ${prop.$ref}`);
       }
+    }
+
+    if (prop.type && Array.isArray(prop.type)) {
+      return prop.type.map((v) => types.get(v) || v).join(" | ");
     }
 
     if (prop.type === "array") {
