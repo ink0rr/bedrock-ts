@@ -1,5 +1,6 @@
 export * from "./animation_controllers.js";
 export * from "./animations.js";
+export * from "./block.js";
 export * from "./entity.js";
 export * from "./entity_behavior/index.js";
 export * from "./entity_components/index.js";
