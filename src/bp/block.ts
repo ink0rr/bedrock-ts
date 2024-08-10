@@ -4,6 +4,7 @@ import { MoLang } from "../shared/molang.js";
 import { BlockComponents } from "./block_components/index.js";
 
 export type Block = {
+  format_version: string;
   "minecraft:block"?: {
     description: BlockDescription;
     components?: BlockComponents;
