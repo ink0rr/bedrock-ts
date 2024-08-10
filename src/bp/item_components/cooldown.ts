@@ -1,5 +1,5 @@
 /**
- * Cool down time for a component. After use, all items in a specified 'cool down category' become unusable for a determined amount of time defined in the component. In format versions before 1.20.10, this component requires the 'Holiday Creator Features' experimental toggle.
+ * Cool down time for a component. After you use an item it becomes unusable for the duration specified by the 'cool down time' setting in this component.
  */
 export type ItemCooldownComponent = {
   /**
@@ -7,7 +7,7 @@ export type ItemCooldownComponent = {
    */
   category?: string;
   /**
-   * The duration of time (in seconds) items with a matching category will spend cooling down before becoming usable again.
+   * The duration of time this item will spend cooling down before becoming usable again.
    */
   duration?: number;
 };

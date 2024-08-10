@@ -1,9 +1,8 @@
+import { ItemTag } from "../../shared/literals/item_tag.js";
+
 /**
- * The tags component determines which tags are attached to an item.
+ * Determines which tags an item has on it.
  */
 export type ItemTagsComponent = {
-  /**
-   * An array which can contain multiple item tags.
-   */
-  tags?: Array<string>;
+  tags?: Array<ItemTag>;
 };

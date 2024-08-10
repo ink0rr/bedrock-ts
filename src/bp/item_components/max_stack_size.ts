@@ -1,11 +1,8 @@
 /**
- * Determines how many of the item can be stacked.
+ * The max stack size of the item.
  */
 export type ItemMaxStackSizeComponent =
+  | number
   | {
-      /**
-       * How many of an item that can be stacked together.
-       */
       value?: number;
-    }
-  | number;
+    };

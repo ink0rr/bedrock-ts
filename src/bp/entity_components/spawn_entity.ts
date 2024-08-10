@@ -45,7 +45,7 @@ export type EntitySpawnEntityComponent = {
         /**
          * Method to use to spawn the entity.
          */
-        spawn_method?: string;
+        spawn_method?: "born";
         /**
          * Identifier of the sound effect to play when the entity is spawned.
          * @default plop
@@ -96,7 +96,7 @@ export type EntitySpawnEntityComponent = {
         /**
          * Method to use to spawn the entity.
          */
-        spawn_method?: string;
+        spawn_method?: "born";
         /**
          * Identifier of the sound effect to play when the entity is spawned.
          * @default plop

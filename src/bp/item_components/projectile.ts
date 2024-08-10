@@ -1,15 +1,10 @@
-import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
-
 /**
- * Projectile item component. Projectile items shoot out, like an arrow. In format versions prior to 1.20.10, this component requires the 'Holiday Creator Features' experimental toggle.
+ * Sets the projectile used by minecraft:shooter and minecraft:throwable.
  */
 export type ItemProjectileComponent = {
   /**
-   * Defines the time a projectile needs to charge in order to critically hit
+   * The entity to use as the projectile for this item when it is used as ammunition.
    */
+  projectile_entity?: string;
   minimum_critical_power?: number;
-  /**
-   * The entity to be fired as a projectile. If no namespace is specified, it is assumed to be minecraft
-   */
-  projectile_entity?: EntityIdentifier;
 };

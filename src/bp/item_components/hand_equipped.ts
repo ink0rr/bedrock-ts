@@ -1,11 +1,8 @@
 /**
- * Determines if an item is rendered like a tool while in hand.
+ * Whether the item is rendered like a tool while in hand.
  */
 export type ItemHandEquippedComponent =
+  | boolean
   | {
-      /**
-       * Determines if the item is rendered like a tool in-hand.
-       */
       value?: boolean;
-    }
-  | boolean;
+    };

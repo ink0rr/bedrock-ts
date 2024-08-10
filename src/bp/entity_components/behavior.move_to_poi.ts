@@ -11,5 +11,5 @@ export type EntityBehaviorMoveToPoiComponent = {
   /**
    * Tells the goal what POI type it should be looking for.
    */
-  poi_type?: string;
+  poi_type?: "bed";
 };

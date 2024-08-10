@@ -11,7 +11,7 @@ export type EntityBehaviorHideComponent = {
   /**
    * Defines what POI type to hide at.
    */
-  poi_type?: string;
+  poi_type?: "bed";
   /**
    * Amount of time in seconds that the mob reacts.
    * @default 1

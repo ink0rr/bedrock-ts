@@ -3,7 +3,7 @@
  */
 export type ItemEnchantableComponent = {
   /**
-   * What enchantments can be applied (ex. Using bow would allow this item to be enchanted as if it were a bow).
+   * What enchantments can be applied.
    */
   slot?:
     | "armor_feet"
@@ -24,8 +24,5 @@ export type ItemEnchantableComponent = {
     | "shovel"
     | "sword"
     | "all";
-  /**
-   * The value of the enchantment (minimum of 0).
-   */
   value?: number;
 };

@@ -33,7 +33,7 @@ export type EntityBehaviorAvoidBlockComponent = {
   /**
    * Block search method.
    */
-  target_selection_method?: string;
+  target_selection_method?: "nearest";
   /**
    * List of block types this mob avoids.
    */
