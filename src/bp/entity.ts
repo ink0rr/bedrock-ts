@@ -1,9 +1,8 @@
-import { EventTrigger } from "../shared/event_trigger.js";
 import { Filter, FilterSubject } from "../shared/filter.js";
 import { EntityIdentifier } from "../shared/literals/entity_identifier.js";
 import { MoLang } from "../shared/molang.js";
 import { StringOrRecord } from "../shared/string_or_record.js";
-import { EntityEventIdentifier } from "./entity_behavior/event.js";
+import { EntityEventIdentifier, EntityEventTrigger } from "./entity_behavior/event.js";
 import { EntityComponents } from "./entity_components/index.js";
 
 export type Entity = {
@@ -80,7 +79,7 @@ export type EntityEvent = {
   /**
    * Trigger an event.
    */
-  trigger?: EventTrigger | EntityEventIdentifier;
+  trigger?: EntityEventTrigger | EntityEventIdentifier;
   /**
    * Triggers a slash command or a list of slash commands.
    */
