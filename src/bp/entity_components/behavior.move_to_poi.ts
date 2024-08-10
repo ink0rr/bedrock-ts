@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to move to a POI if able to.
  */
@@ -11,5 +12,5 @@ export type EntityBehaviorMoveToPoiComponent = {
   /**
    * Tells the goal what POI type it should be looking for.
    */
-  poi_type?: string;
+  poi_type?: "bed";
 };

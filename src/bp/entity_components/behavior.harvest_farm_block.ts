@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the entity to search within an area for farmland with air above it. If found, the entity will replace the air block by planting a seed item from its inventory on the farmland block. This goal requires 'minecraft:inventory' and 'minecraft:navigation' to execute. This goal will not execute if the entity does not have an item in its inventory.
  */

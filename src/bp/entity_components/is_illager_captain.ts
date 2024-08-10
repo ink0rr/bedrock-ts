@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Sets that this entity is an illager captain.
  */

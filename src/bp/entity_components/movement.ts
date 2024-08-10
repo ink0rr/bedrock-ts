@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Defines the movement speed for the entity.
  */

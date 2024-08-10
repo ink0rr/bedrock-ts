@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Sets the offset used to determine the next step distance for playing a movement sound.
  */

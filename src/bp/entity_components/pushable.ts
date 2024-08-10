@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Defines what can push an entity between other entities and pistons.
  */

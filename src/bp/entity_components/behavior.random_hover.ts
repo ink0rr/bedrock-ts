@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to hover around randomly, close to the surface.
  */

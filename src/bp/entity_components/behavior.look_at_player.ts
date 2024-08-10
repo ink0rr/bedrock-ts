@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to look at the player when the player is nearby.
  */

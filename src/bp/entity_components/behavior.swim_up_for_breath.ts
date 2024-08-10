@@ -1,3 +1,4 @@
+// auto generated
 export type EntityBehaviorSwimUpForBreathComponent = {
   priority?: number;
   /**

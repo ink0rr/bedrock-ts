@@ -1,3 +1,4 @@
+// auto generated
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 

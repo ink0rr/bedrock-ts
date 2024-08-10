@@ -1,3 +1,4 @@
+// auto generated
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { MoLang } from "../../shared/molang.js";
 

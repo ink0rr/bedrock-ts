@@ -1,3 +1,4 @@
+// auto generated
 /**
  * The current state of the boss for updating the boss HUD.
  */

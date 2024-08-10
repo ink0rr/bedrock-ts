@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Vibrations emitted by this entity will be ignored.
  */

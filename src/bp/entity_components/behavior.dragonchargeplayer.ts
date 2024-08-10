@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows this entity to attack a player by charging at them. The player is chosen by the 'minecraft:behavior.dragonscanning'. Can only be used by the Ender Dragon.
  */

@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows this mob to stomp turtle eggs.
  */

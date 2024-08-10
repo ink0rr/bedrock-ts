@@ -1,3 +1,4 @@
+// auto generated
 import { Filter } from "../../shared/filter.js";
 import { EntityEventIdentifier } from "../entity_behavior/event.js";
 

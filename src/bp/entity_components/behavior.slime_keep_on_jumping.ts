@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the entity to continuously jump around like a slime.
  */

@@ -1,0 +1,12 @@
+// auto generated
+/**
+ * Describes the destructible by explosion properties for this block. If set to true, the block will have the default explosion resistance. If set to false, this block is indestructible by explosion. If the component is omitted, the block will have the default explosion resistance.
+ */
+export type BlockDestructibleByExplosionComponent =
+  | {
+      /**
+       * Sets the explosion resistance for the block. Greater values result in greater resistance to explosions. The scale will be different for different explosion power levels. A negative value or 0 means it will easily explode; larger numbers increase level of resistance.
+       */
+      explosion_resistance?: number;
+    }
+  | boolean;

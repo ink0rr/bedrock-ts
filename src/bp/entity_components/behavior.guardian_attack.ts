@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows this entity to use a laser beam attack. Can only be used by Guardians and Elder Guardians.
  */

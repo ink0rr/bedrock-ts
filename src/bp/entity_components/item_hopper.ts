@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Determines that this entity is an item hopper.
  */

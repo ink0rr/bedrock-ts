@@ -1,3 +1,4 @@
+// auto generated
 import { Filter } from "../../shared/filter.js";
 import { PotionId } from "../../shared/potion_id.js";
 

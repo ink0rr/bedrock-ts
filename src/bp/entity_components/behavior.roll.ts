@@ -1,3 +1,4 @@
+// auto generated
 /**
  * This allows the mob to roll forward.
  */

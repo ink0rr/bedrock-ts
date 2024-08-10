@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows monsters to jump at and attack their target. Can only be used by hostile mobs.
  */

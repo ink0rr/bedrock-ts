@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Causes the entity to grow tired every once in a while, while attacking.
  */

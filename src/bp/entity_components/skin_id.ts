@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Skin ID value. Can be used to differentiate skins, such as base skins for villagers.
  */

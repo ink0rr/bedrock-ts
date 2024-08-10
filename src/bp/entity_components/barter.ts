@@ -1,3 +1,4 @@
+// auto generated
 import { LootTablePath } from "../../shared/literals/loot_table_path.js";
 
 /**

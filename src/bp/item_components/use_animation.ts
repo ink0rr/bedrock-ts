@@ -1,11 +1,19 @@
+// auto generated
 /**
- * Determines which animation plays when using an item.
+ * The animation to use when this item is being used, e.g when the item is being eaten.
  */
 export type ItemUseAnimationComponent =
+  | "block"
+  | "bow"
+  | "brush"
+  | "camera"
+  | "crossbow"
+  | "eat"
+  | "drink"
+  | "none"
+  | "spear"
+  | "spyglass"
   | {
-      /**
-       * Which animation to play when using an item.
-       */
       value?:
         | "block"
         | "bow"
@@ -17,16 +25,4 @@ export type ItemUseAnimationComponent =
         | "none"
         | "spear"
         | "spyglass";
-    }
-  | (
-      | "block"
-      | "bow"
-      | "brush"
-      | "camera"
-      | "crossbow"
-      | "eat"
-      | "drink"
-      | "none"
-      | "spear"
-      | "spyglass"
-    );
+    };

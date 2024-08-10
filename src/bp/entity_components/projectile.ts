@@ -1,3 +1,4 @@
+// auto generated
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { LegacyParticle } from "../../shared/literals/legacy_particle.js";
 import { MoLang } from "../../shared/molang.js";

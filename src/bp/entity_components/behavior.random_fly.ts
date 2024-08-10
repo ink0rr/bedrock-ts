@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows a mob to randomly fly around.
  */

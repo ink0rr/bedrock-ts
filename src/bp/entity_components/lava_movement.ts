@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Sets the movement speed of the entity in lava.
  */

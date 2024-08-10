@@ -1,3 +1,4 @@
+// auto generated
 import { TradeTablePath } from "../../shared/literals/trade_table_path.js";
 
 /**

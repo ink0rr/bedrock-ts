@@ -1,3 +1,4 @@
+// auto generated
 import { ActionText } from "../../shared/literals/action_text.js";
 
 /**

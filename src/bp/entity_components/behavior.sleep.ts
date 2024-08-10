@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows mobs that own a bed to in a village to move to and sleep in it.
  */

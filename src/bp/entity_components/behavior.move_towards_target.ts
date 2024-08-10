@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows mob to move towards its current target.
  */

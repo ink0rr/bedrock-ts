@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows this entity to climb up ladders.
  */

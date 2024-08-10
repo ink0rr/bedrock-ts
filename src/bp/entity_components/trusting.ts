@@ -1,3 +1,4 @@
+// auto generated
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";
 

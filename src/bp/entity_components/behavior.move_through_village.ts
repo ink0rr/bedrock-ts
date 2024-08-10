@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Can only be used by Villagers. Allows the villagers to create paths around the village.
  */

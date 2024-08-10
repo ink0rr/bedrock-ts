@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Gives the entity resistance to knockback.
  */

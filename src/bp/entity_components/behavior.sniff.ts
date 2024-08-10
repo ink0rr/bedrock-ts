@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows this entity to detect the nearest player within 'sniffing_radius' and update its 'minecraft:suspect_tracking' component state.
  */

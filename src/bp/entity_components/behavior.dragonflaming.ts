@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows this entity to use a flame-breath attack. Can only be used by the Ender Dragon.
  */

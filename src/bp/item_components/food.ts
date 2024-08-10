@@ -1,23 +1,24 @@
+// auto generated
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 
 /**
- * When an item has a food component, it becomes edible to the player. Must have the minecraft:use_modifiers component in order to function properly.
+ * When an item has a food component, it becomes edible to the player
  */
 export type ItemFoodComponent = {
   /**
-   * If true you can always eat this item (even when not hungry).
-   */
-  can_always_eat?: boolean;
-  /**
-   * The value that is added to the actor's nutrition when the item is used.
+   * How much nutrition does this food item give the player when eaten.
    */
   nutrition?: number;
+  /**
+   * If true you can always eat this item (even when not hungry), defaults to false.
+   */
+  can_always_eat?: boolean;
   /**
    * Saturation Modifier is used in this formula: (nutrition * saturation_modifier * 2) when applying the saturation buff.
    */
   saturation_modifier?: number;
   /**
-   * When used, converts to the item specified by the string in this field.
+   * When used, convert the *this* item to the one specified by 'using_converts_to'.
    */
   using_converts_to?: ItemIdentifier;
 };

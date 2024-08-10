@@ -1,3 +1,4 @@
+// auto generated
 import { Filter } from "../../shared/filter.js";
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
@@ -45,7 +46,7 @@ export type EntitySpawnEntityComponent = {
         /**
          * Method to use to spawn the entity.
          */
-        spawn_method?: string;
+        spawn_method?: "born";
         /**
          * Identifier of the sound effect to play when the entity is spawned.
          * @default plop
@@ -96,7 +97,7 @@ export type EntitySpawnEntityComponent = {
         /**
          * Method to use to spawn the entity.
          */
-        spawn_method?: string;
+        spawn_method?: "born";
         /**
          * Identifier of the sound effect to play when the entity is spawned.
          * @default plop

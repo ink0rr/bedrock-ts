@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows mobs to lay down at times.
  */

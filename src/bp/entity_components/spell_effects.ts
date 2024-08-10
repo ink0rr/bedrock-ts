@@ -1,3 +1,4 @@
+// auto generated
 import { SpellEffects } from "../../shared/spell_effects.js";
 import { SpellEffectDefinition } from "../entity_behavior/spell_effect.js";
 

@@ -1,3 +1,4 @@
+// auto generated
 /**
  * List of hitboxes for melee and ranged hits against the entity.
  */

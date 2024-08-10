@@ -1,3 +1,4 @@
+// auto generated
 /**
  * This component accents the movement of an entity.
  */

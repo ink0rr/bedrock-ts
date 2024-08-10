@@ -1,3 +1,4 @@
+// auto generated
 import { SpellEffects } from "../../shared/spell_effects.js";
 
 /**

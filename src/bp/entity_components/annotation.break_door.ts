@@ -1,3 +1,4 @@
+// auto generated
 import { Difficulty } from "../../shared/difficulty.js";
 
 /**

@@ -1,3 +1,4 @@
+// auto generated
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { PotionId } from "../../shared/potion_id.js";
 import { SoundEvent } from "../../shared/sound_event.js";

@@ -1,3 +1,4 @@
+// auto generated
 /**
  * Allows the mob to randomly sit for a duration.
  */
