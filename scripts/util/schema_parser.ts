@@ -27,9 +27,12 @@ export type SchemaProperty = {
   definitions?: Record<string, SchemaProperty>;
   doNotSuggest?: boolean;
   const?: never;
+  patternProperties?: Record<string, SchemaProperty>;
 };
-type ParserOptions = {
+export type ParserOptions = {
   useNamespace?: boolean;
+  refParser?: (ref: string) => string | undefined;
+  importResolver?: (data: string) => string;
 };
 
 const types = new Map<string, string>([
@@ -288,7 +291,7 @@ const importMap = new Map<string, IMap>([
   ],
 ]);
 
-function parseRef(ref: string) {
+function _parseRef(ref: string) {
   switch (ref) {
     case "../../../blockCulling/dynamic/identifierEnum.json":
       return "string";
@@ -318,6 +321,7 @@ function parseRef(ref: string) {
 
   return undefined;
 }
+let parseRef = _parseRef;
 
 function resolveImports(data: string) {
   const s = new Set<string>();
@@ -422,17 +426,26 @@ function parsePropertyType(prop: SchemaProperty): string {
       }
     }
 
-    if (prop.type === "object") {
-      return createObject(prop);
+    if (prop.type === "object" || prop.properties) {
+      // Pattern
+      if (prop.patternProperties) {
+        for (const [k, v] of Object.entries(prop.patternProperties)) {
+          s.push(`{ [key: string]: ${parsePropertyType(v)} }`);
+        }
+      }
+      const obj = createObject(prop);
+      // Check result
+      if (obj === "{\n}" && s.length > 0) {
+        return s.join(" | ");
+      }
+      if (obj === "{\n}") {
+        return "Record<string, never>";
+      }
+      // return s.join(" | ") + " | " + createObject(prop);
     }
 
     if (prop.enum) {
       return prop.enum.map((v) => JSON.stringify(v)).join(" | ");
-    }
-
-    // Has properties
-    if (prop.properties) {
-      return createObject(prop);
     }
 
     // Doesn't have type but has default
@@ -463,6 +476,7 @@ function parseProperty(name: string, prop: SchemaProperty, skipField = false) {
 }
 
 export function parseSchema(json: SchemaProperty, name: string, options?: ParserOptions) {
+  parseRef = options?.refParser ?? _parseRef;
   const { properties: fields, definitions, doNotSuggest, type } = json;
   if (doNotSuggest) return "";
 
@@ -541,9 +555,11 @@ export function parseSchema(json: SchemaProperty, name: string, options?: Parser
     }
   }
 
-  const imports = resolveImports(s.join("\n"));
+  const importResolver = options?.importResolver ?? resolveImports;
+
+  const imports = importResolver(s.join("\n"));
   if (imports) {
-    s.unshift(resolveImports(s.join("\n")), "");
+    s.unshift(importResolver(s.join("\n")), "");
   }
 
   // Idiot way for resolving namespaces
