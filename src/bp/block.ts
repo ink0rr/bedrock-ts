@@ -5,7 +5,7 @@ import { BlockComponents } from "./block_components/index.js";
 
 export type Block = {
   format_version: string;
-  "minecraft:block"?: {
+  "minecraft:block": {
     description: BlockDescription;
     components?: BlockComponents;
     /**
