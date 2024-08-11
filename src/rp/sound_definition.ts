@@ -25,6 +25,7 @@ export type SoundDefinition = {
             stream?: boolean;
             load_on_low_memory?: boolean;
             volume?: number;
+            pitch?: number;
           }
         | SoundPath
       >;
