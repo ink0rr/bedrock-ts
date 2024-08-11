@@ -1,4 +1,4 @@
-import { BlockTag, MoLang } from "../shared/index.js";
+import { BlockTag, LiteralUnion, MoLang } from "../shared/index.js";
 import { BlockIdentifier } from "../shared/literals/block_identifier.js";
 import { ItemIdentifier } from "../shared/literals/item_identifier.js";
 import { ItemTag } from "../shared/literals/item_tag.js";
@@ -27,17 +27,19 @@ export type RecipeSmithingTrim = {
      * Defines where this recipe can be made.
      */
     tags: Array<
-      | "material_reducer"
-      | "blast_furnace"
-      | "brewing_stand"
-      | "campfire"
-      | "cartography_table"
-      | "crafting_table"
-      | "furnace"
-      | "smoker"
-      | "stonecutter"
-      | "soul_campfire"
-      | "smithing_table"
+      LiteralUnion<
+        | "material_reducer"
+        | "blast_furnace"
+        | "brewing_stand"
+        | "campfire"
+        | "cartography_table"
+        | "crafting_table"
+        | "furnace"
+        | "smoker"
+        | "stonecutter"
+        | "soul_campfire"
+        | "smithing_table"
+      >
     >;
     /**
      * The template needed to perform the trim operation. It defines the pattern which will be applied to the item. In case of stackable items, only 1 item is consumed. Items must have the 'minecraft:trim_templates' tag to be accepted into the respective UI slot.
@@ -81,17 +83,19 @@ export type RecipeSmithingTransform = {
      * Defines where this recipe can be made.
      */
     tags: Array<
-      | "material_reducer"
-      | "blast_furnace"
-      | "brewing_stand"
-      | "campfire"
-      | "cartography_table"
-      | "crafting_table"
-      | "furnace"
-      | "smoker"
-      | "stonecutter"
-      | "soul_campfire"
-      | "smithing_table"
+      LiteralUnion<
+        | "material_reducer"
+        | "blast_furnace"
+        | "brewing_stand"
+        | "campfire"
+        | "cartography_table"
+        | "crafting_table"
+        | "furnace"
+        | "smoker"
+        | "stonecutter"
+        | "soul_campfire"
+        | "smithing_table"
+      >
     >;
     /**
      * The item to transform to.
