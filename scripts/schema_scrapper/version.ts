@@ -1,7 +1,7 @@
 import { semver } from "bun";
 import path from "node:path/posix";
 
-export async function getVersion(type: "entity" | "item" | "block") {
+export async function getVersion(type: "entity" | "item" | "block" | "particle") {
   const glob = new Bun.Glob(
     `./temp/editor-packages-main/packages/minecraftBedrock/schema/${type}/v**/main.json`,
   ).scan();

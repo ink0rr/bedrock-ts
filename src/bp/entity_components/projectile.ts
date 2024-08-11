@@ -83,11 +83,11 @@ export type EntityProjectileComponent = {
     stick_in_ground?: {
       shake_time?: number;
     };
-    thrown_potion_effect?: {};
-    douse_fire?: {};
-    arrow_effect?: {};
-    remove_on_hit?: {};
-    teleport_owner?: {};
+    thrown_potion_effect?: Record<string, never>;
+    douse_fire?: Record<string, never>;
+    arrow_effect?: Record<string, never>;
+    remove_on_hit?: Record<string, never>;
+    teleport_owner?: Record<string, never>;
     particle_on_hit?: {
       particle_type?: LegacyParticle;
       num_particles?: number;
@@ -105,7 +105,7 @@ export type EntityProjectileComponent = {
        */
       on_fire_time?: number;
     };
-    wind_burst_on_hit?: {};
+    wind_burst_on_hit?: Record<string, never>;
   } & {
     /**
      * Freezes water on hit.
