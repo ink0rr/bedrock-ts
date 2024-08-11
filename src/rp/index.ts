@@ -4,5 +4,6 @@ export * from "./attachable.js";
 export * from "./entity.js";
 export * from "./item_texture.js";
 export * from "./particle.js";
+export * from "./particle_components/index.js";
 export * from "./sound_definition.js";
 export * from "./sounds.js";
