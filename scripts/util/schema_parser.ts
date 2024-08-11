@@ -27,6 +27,7 @@ export type SchemaProperty = {
   definitions?: Record<string, SchemaProperty>;
   doNotSuggest?: boolean;
   const?: never;
+  additionalProperties?: SchemaProperty | boolean;
 };
 type ParserOptions = {
   useNamespace?: boolean;
@@ -286,6 +287,13 @@ const importMap = new Map<string, IMap>([
       path: 'import { WearableSlot } from "../../shared/slot.js";',
     },
   ],
+  [
+    "terrainTexture",
+    {
+      name: "TerrainTextureIdentifier",
+      path: 'import { TerrainTextureIdentifier } from "../../shared/literals/terrain_texture_identifier.js";',
+    },
+  ],
 ]);
 
 function parseRef(ref: string) {
@@ -463,7 +471,7 @@ function parseProperty(name: string, prop: SchemaProperty, skipField = false) {
 }
 
 export function parseSchema(json: SchemaProperty, name: string, options?: ParserOptions) {
-  const { properties: fields, definitions, doNotSuggest, type } = json;
+  const { properties: fields, definitions, doNotSuggest, type, additionalProperties } = json;
   if (doNotSuggest) return "";
 
   // Direct type
@@ -518,26 +526,32 @@ export function parseSchema(json: SchemaProperty, name: string, options?: Parser
     }
     s.push(`}`);
   } else {
-    if (json.anyOf) {
-      s.push(`export type ${name} = `);
-      s.push(`  ${json.anyOf.map((v: any) => parsePropertyType(v)).join(" | ")};`);
-    } else if (json.oneOf) {
-      s.push(`export type ${name} = `);
-      s.push(`  ${json.oneOf.map((v: any) => parsePropertyType(v)).join(" | ")};`);
-    } else if (json.allOf) {
-      s.push(`export type ${name} = `);
-      s.push(`  ${json.allOf.map((v: any) => parsePropertyType(v)).join(" & ")};`);
-    } else if (json.$ref) {
-      const refType = parseRef(json.$ref);
-      if (refType) {
-        s.push(`export type ${name} = ${refType};`);
-      } else {
-        s.push(`export type ${name} = Record<string, never>;`);
-        warning(`Unknown ref: ${json.$ref}`);
-      }
+    // Additional properties, just workaround for blocks/material instances
+    if (typeof additionalProperties === "object") {
+      s.push(`export type ${name} =`);
+      s.push(parsePropertyType(additionalProperties));
     } else {
-      // Empty object
-      s.push(`export type ${name} = Record<string, never>;`);
+      if (json.anyOf) {
+        s.push(`export type ${name} = `);
+        s.push(`  ${json.anyOf.map((v: any) => parsePropertyType(v)).join(" | ")};`);
+      } else if (json.oneOf) {
+        s.push(`export type ${name} = `);
+        s.push(`  ${json.oneOf.map((v: any) => parsePropertyType(v)).join(" | ")};`);
+      } else if (json.allOf) {
+        s.push(`export type ${name} = `);
+        s.push(`  ${json.allOf.map((v: any) => parsePropertyType(v)).join(" & ")};`);
+      } else if (json.$ref) {
+        const refType = parseRef(json.$ref);
+        if (refType) {
+          s.push(`export type ${name} = ${refType};`);
+        } else {
+          s.push(`export type ${name} = Record<string, never>;`);
+          warning(`Unknown ref: ${json.$ref}`);
+        }
+      } else {
+        // Empty object
+        s.push(`export type ${name} = Record<string, never>;`);
+      }
     }
   }
 
