@@ -294,6 +294,13 @@ const importMap = new Map<string, IMap>([
       path: 'import { TerrainTextureIdentifier } from "../../shared/literals/terrain_texture_identifier.js";',
     },
   ],
+  [
+    "block_tags",
+    {
+      name: "BlockTag",
+      path: 'import { BlockTag } from "../../shared/literals/block_tag.js";',
+    },
+  ],
 ]);
 
 function parseRef(ref: string) {
