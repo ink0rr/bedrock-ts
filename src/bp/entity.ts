@@ -5,29 +5,6 @@ import { StringOrRecord } from "../shared/string_or_record.js";
 import { EntityEventIdentifier, EntityEventTrigger } from "./entity_behavior/event.js";
 import { EntityComponents } from "./entity_components/index.js";
 
-export type EntityProperty = {
-  /**
-   * The data type of the property.
-   */
-  type: "int" | "float" | "bool" | "enum";
-  /**
-   * The default value of the property, supports an integer value or a molang string.
-   */
-  default: MoLang;
-  /**
-   * Defaults to false, allows the property to be queried on the client.
-   */
-  client_sync?: boolean;
-  /**
-   * The range of values of the property.
-   */
-  range?: [number, number];
-  /**
-   * The enum values of the property.
-   */
-  values?: string[];
-};
-
 export type Entity = {
   format_version: string;
   "minecraft:entity": {
@@ -65,6 +42,29 @@ export type Entity = {
     events?: Partial<Record<EntityEventIdentifier, EntityEvent>>;
     do_not_upgrade?: Record<never, never>;
   };
+};
+
+export type EntityProperty = {
+  /**
+   * The data type of the property.
+   */
+  type: "int" | "float" | "bool" | "enum";
+  /**
+   * The default value of the property, supports an integer value or a molang string.
+   */
+  default: MoLang;
+  /**
+   * Defaults to false, allows the property to be queried on the client.
+   */
+  client_sync?: boolean;
+  /**
+   * The range of values of the property.
+   */
+  range?: [number, number];
+  /**
+   * The enum values of the property.
+   */
+  values?: string[];
 };
 
 export type EntityEvent = {

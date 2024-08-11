@@ -1,9 +1,9 @@
-export type ResourceAnimations = {
+export type ClientAnimations = {
   format_version: string;
-  animations: Record<string, ResourceAnimation>;
+  animations: Record<string, ClientAnimation>;
 };
 
-export type ResourceAnimation = {
+export type ClientAnimation = {
   anim_time_update?: string | number;
   animation_length?: number;
   blend_weight?: number;

@@ -11,7 +11,7 @@ import { Material } from "../shared/material.js";
 import { MoLang } from "../shared/molang.js";
 import { StringOrRecord } from "../shared/string_or_record.js";
 
-export type ResourceEntity = {
+export type ClientEntity = {
   format_version: string;
   /**
    * The resource description of the entity.

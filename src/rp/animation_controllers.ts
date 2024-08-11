@@ -1,16 +1,16 @@
 import { StringOrRecord } from "../shared/string_or_record.js";
 
-export type ResourceAnimationControllers = {
+export type ClientAnimationControllers = {
   format_version: string;
-  animation_controllers: Record<string, ResourceAnimationController>;
+  animation_controllers: Record<string, ClientAnimationController>;
 };
 
-export type ResourceAnimationController = {
+export type ClientAnimationController = {
   initial_state?: string;
-  states: Record<string, ResourceAnimationControllerState>;
+  states: Record<string, ClientAnimationControllerState>;
 };
 
-export type ResourceAnimationControllerState = {
+export type ClientAnimationControllerState = {
   animations?: StringOrRecord[];
   blend_transition?: number;
   blend_via_shortest_path?: boolean;

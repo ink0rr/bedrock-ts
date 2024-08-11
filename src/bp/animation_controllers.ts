@@ -1,16 +1,16 @@
 import { StringOrRecord } from "../shared/string_or_record.js";
 
-export type BehaviorAnimationControllers = {
+export type AnimationControllers = {
   format_version: string;
-  animation_controllers: Record<string, BehaviorAnimationController>;
+  animation_controllers: Record<string, AnimationController>;
 };
 
-export type BehaviorAnimationController = {
+export type AnimationController = {
   initial_state?: string;
-  states: Record<string, BehaviorAnimationControllerState>;
+  states: Record<string, AnimationControllerState>;
 };
 
-export type BehaviorAnimationControllerState = {
+export type AnimationControllerState = {
   animations?: StringOrRecord[];
   on_entry?: string[];
   on_exit?: string[];

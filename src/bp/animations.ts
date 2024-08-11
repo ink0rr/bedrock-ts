@@ -1,9 +1,9 @@
-export type BehaviorAnimations = {
+export type Animations = {
   format_version: string;
-  animations: Record<string, BehaviorAnimation>;
+  animations: Record<string, Animation>;
 };
 
-export type BehaviorAnimation = {
+export type Animation = {
   anim_time_update?: string | number;
   animation_length?: number;
   loop?: boolean;
