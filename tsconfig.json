@@ -6,13 +6,6 @@
     "declaration": true,
     "emitDeclarationOnly": true
   },
-  "include": [
-    "./src"
-  ],
-  "exclude": [
-    "./node_modules",
-    "./dist",
-    "./scripts",
-    "./temp"
-  ]
+  "include": ["./src"],
+  "exclude": ["./node_modules", "./dist", "./scripts", "./temp"]
 }
