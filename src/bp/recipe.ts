@@ -128,16 +128,18 @@ export type RecipeFurnace = {
      * Defines where this recipe can be made.
      */
     tags: Array<
-      | "material_reducer"
-      | "blast_furnace"
-      | "brewing_stand"
-      | "campfire"
-      | "cartography_table"
-      | "crafting_table"
-      | "furnace"
-      | "smoker"
-      | "stonecutter"
-      | "soul_campfire"
+      LiteralUnion<
+        | "material_reducer"
+        | "blast_furnace"
+        | "brewing_stand"
+        | "campfire"
+        | "cartography_table"
+        | "crafting_table"
+        | "furnace"
+        | "smoker"
+        | "stonecutter"
+        | "soul_campfire"
+      >
     >;
     group?: string;
     /**
@@ -168,16 +170,18 @@ export type RecipeShaped = {
      * Defines where this recipe can be made.
      */
     tags: Array<
-      | "material_reducer"
-      | "blast_furnace"
-      | "brewing_stand"
-      | "campfire"
-      | "cartography_table"
-      | "crafting_table"
-      | "furnace"
-      | "smoker"
-      | "stonecutter"
-      | "soul_campfire"
+      LiteralUnion<
+        | "material_reducer"
+        | "blast_furnace"
+        | "brewing_stand"
+        | "campfire"
+        | "cartography_table"
+        | "crafting_table"
+        | "furnace"
+        | "smoker"
+        | "stonecutter"
+        | "soul_campfire"
+      >
     >;
     group?: string;
     /**
@@ -231,16 +235,18 @@ export type RecipeShapeless = {
      * Defines where this recipe can be made.
      */
     tags: Array<
-      | "material_reducer"
-      | "blast_furnace"
-      | "brewing_stand"
-      | "campfire"
-      | "cartography_table"
-      | "crafting_table"
-      | "furnace"
-      | "smoker"
-      | "stonecutter"
-      | "soul_campfire"
+      LiteralUnion<
+        | "material_reducer"
+        | "blast_furnace"
+        | "brewing_stand"
+        | "campfire"
+        | "cartography_table"
+        | "crafting_table"
+        | "furnace"
+        | "smoker"
+        | "stonecutter"
+        | "soul_campfire"
+      >
     >;
     group?: string;
     /**
@@ -296,16 +302,18 @@ export type RecipeBrewingMix = {
      * Defines where this recipe can be made.
      */
     tags: Array<
-      | "material_reducer"
-      | "blast_furnace"
-      | "brewing_stand"
-      | "campfire"
-      | "cartography_table"
-      | "crafting_table"
-      | "furnace"
-      | "smoker"
-      | "stonecutter"
-      | "soul_campfire"
+      LiteralUnion<
+        | "material_reducer"
+        | "blast_furnace"
+        | "brewing_stand"
+        | "campfire"
+        | "cartography_table"
+        | "crafting_table"
+        | "furnace"
+        | "smoker"
+        | "stonecutter"
+        | "soul_campfire"
+      >
     >;
     /**
      * Input potion used in the brewing container recipe.
@@ -334,16 +342,18 @@ export type RecipeBrewingContainer = {
      * Defines where this recipe can be made.
      */
     tags?: Array<
-      | "material_reducer"
-      | "blast_furnace"
-      | "brewing_stand"
-      | "campfire"
-      | "cartography_table"
-      | "crafting_table"
-      | "furnace"
-      | "smoker"
-      | "stonecutter"
-      | "soul_campfire"
+      LiteralUnion<
+        | "material_reducer"
+        | "blast_furnace"
+        | "brewing_stand"
+        | "campfire"
+        | "cartography_table"
+        | "crafting_table"
+        | "furnace"
+        | "smoker"
+        | "stonecutter"
+        | "soul_campfire"
+      >
     >;
     /**
      * Input potion used in the brewing container recipe.
