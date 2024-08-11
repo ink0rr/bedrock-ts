@@ -7,3 +7,4 @@ export * from "./entity_components/index.js";
 export * from "./item.js";
 export * from "./item_components/index.js";
 export * from "./loot_table.js";
+export * from "./recipe.js";

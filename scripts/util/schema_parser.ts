@@ -11,6 +11,11 @@ export function snakeToPascal(s: string) {
   return snakeToCamel(s).replace(/^[a-z]/, (l) => l.toUpperCase());
 }
 
+function wrapQuote(s: string) {
+  const regex = /^[a-zA-Z_][a-zA-Z0-9_]*$/;
+  return regex.test(s) ? s : `'${s}'`;
+}
+
 export type SchemaProperty = {
   title?: string;
   description?: string;
@@ -297,6 +302,13 @@ const importMap = new Map<string, IMap>([
       path: 'import { TerrainTextureIdentifier } from "../../shared/literals/terrain_texture_identifier.js";',
     },
   ],
+  [
+    "block_tags",
+    {
+      name: "BlockTag",
+      path: 'import { BlockTag } from "../../shared/literals/block_tag.js";',
+    },
+  ],
 ]);
 
 function _parseRef(ref: string) {
@@ -361,7 +373,8 @@ function createObject(prop: SchemaProperty) {
   const s = [`{`];
   const fields = prop.properties ?? {};
   for (const [k, v] of Object.entries(fields)) {
-    s.push(parseProperty(k, v));
+    const name = wrapQuote(k);
+    s.push(parseProperty(name, v));
   }
   s.push(`}`);
 
@@ -508,7 +521,8 @@ export function parseSchema(json: SchemaProperty, name: string, options?: Parser
     }
     for (const [k, v] of Object.entries(definitions)) {
       const typeName = snakeToPascal(k);
-      s.push(`export type ${typeName} = ${parseProperty(k, v, true)};`);
+      const kk = wrapQuote(k);
+      s.push(`export type ${typeName} = ${parseProperty(kk, v, true)};`);
       parsedDefinitions.add(typeName);
     }
   }
@@ -534,7 +548,7 @@ export function parseSchema(json: SchemaProperty, name: string, options?: Parser
     s.push(`export type ${name} = {`);
     for (const [k, v] of Object.entries(fields)) {
       // If include symbols, add wrap with quotes
-      const name = /^[a-zA-Z_][a-zA-Z0-9_]*$/.test(k) ? k : `'${k}'`;
+      const name = wrapQuote(k);
       s.push(parseProperty(name, v));
     }
     s.push(`}`);
