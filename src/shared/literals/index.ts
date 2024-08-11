@@ -13,4 +13,5 @@ export * from "./minecraft_color.js";
 export * from "./particle_identifier.js";
 export * from "./render_controller_identifier.js";
 export * from "./sound_definition_identifier.js";
+export * from "./terrain_texture_identifier.js";
 export * from "./trade_table_path.js";
