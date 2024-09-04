@@ -1,6 +1,7 @@
 import { CreativeCategory } from "../shared/creative_category.js";
 import { ItemGroup } from "../shared/item_group.js";
 import { MoLang } from "../shared/molang.js";
+import { Range } from "../shared/range.js";
 import { BlockComponents } from "./block_components/index.js";
 
 export type Block = {
@@ -70,7 +71,7 @@ export type BlockDescription = {
   /**
    * Define block states and their possible values
    */
-  states?: Record<string, Array<MoLang>>;
+  states?: Record<string, Array<MoLang> | Range>;
   menu_category?: {
     group?: CreativeCategory | ItemGroup;
     /**
