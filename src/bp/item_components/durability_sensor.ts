@@ -1,6 +1,5 @@
 // auto generated
 import { ParticleIdentifier } from "../../shared/literals/particle_identifier.js";
-import { SoundDefinitionIdentifier } from "../../shared/literals/sound_definition_identifier.js";
 
 /**
  * Allows an item to emit effects when it receives damage. Requires the `minecraft:durability` component.
@@ -13,7 +12,7 @@ export type ItemDurabilitySensorComponent = {
     /**
      * Effects are emitted when the durability is less than or equal to this value.
      */
-    durability?: any;
+    durability?: number;
     /**
      * Particle effect to emit when the threshold is met.
      */
@@ -21,6 +20,6 @@ export type ItemDurabilitySensorComponent = {
     /**
      * Sound effect to emit when the threshold is met.
      */
-    sound_event?: SoundDefinitionIdentifier;
+    sound_event?: string;
   }>;
 };

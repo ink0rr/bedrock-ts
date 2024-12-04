@@ -1,5 +1,5 @@
 // auto generated
-import { SoundDefinitionIdentifier } from "../../shared/literals/sound_definition_identifier.js";
+import { SoundEvent } from "../../shared/sound_event.js";
 
 /**
  * Record Item Component. Used by record items to play music.
@@ -8,7 +8,7 @@ export type ItemRecordComponent = {
   /**
    * A string value correseponding to a sound event in the game code.
    */
-  sound_event?: SoundDefinitionIdentifier;
+  sound_event?: SoundEvent;
   /**
    * A float value that determines how long particles are spawned from the JukeBox Block, should approximately match length of sound event.
    */

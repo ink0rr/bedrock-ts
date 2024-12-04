@@ -15,10 +15,10 @@ export type BlockMaterialInstancesComponent = {
    */
   render_method?: "opaque" | "blend" | "alpha_test" | "double_sided";
   /**
-   * Should this material have ambient occlusion applied when lighting? If true, shadows will be created around and underneath the block.
+   * Should this material have ambient occlusion applied when lighting? If true, shadows will be created around and underneath the block. Optionally can be constructed with float to control exponent applied to ao value after lighting.
    * @default true
    */
-  ambient_occlusion?: boolean;
+  ambient_occlusion?: boolean | number;
   /**
    * Should this material have ambient occlusion applied when lighting.
    * @default true

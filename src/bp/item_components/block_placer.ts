@@ -13,4 +13,8 @@ export type ItemBlockPlacerComponent = {
    * List of block descriptors that contain blocks that this item can be used on. If left empty, all blocks will be allowed.
    */
   use_on?: Array<BlockIdentifier>;
+  /**
+   * Whether this item should replace the default item created for data-driven block it places.
+   */
+  replace_block_item?: boolean;
 };
