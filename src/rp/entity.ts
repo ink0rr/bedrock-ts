@@ -16,7 +16,7 @@ export type ClientEntity = {
   /**
    * The resource description of the entity.
    */
-  "minecraft:client_entity"?: {
+  "minecraft:client_entity": {
     description?: {
       identifier: string;
       /**
