@@ -9,7 +9,7 @@ import { ParticleComponents } from "./particle_components/index.js";
 
 export type Particle = {
   format_version: string;
-  particle_effect?: {
+  particle_effect: {
     description: ParticleDescription;
     curves?: { [key: string]: ParticleCurve };
     events?: { [key: string]: ParticleEvent };
