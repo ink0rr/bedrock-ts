@@ -1,4 +1,5 @@
 import { Filter, FilterSubject } from "../shared/filter.js";
+import { LiteralUnion, ParticleIdentifier, SoundDefinitionIdentifier } from "../shared/index.js";
 import { EntityIdentifier } from "../shared/literals/entity_identifier.js";
 import { MoLang } from "../shared/molang.js";
 import { StringOrRecord } from "../shared/string_or_record.js";
@@ -6,7 +7,7 @@ import { EntityEventIdentifier, EntityEventTrigger } from "./entity_behavior/eve
 import { EntityComponents } from "./entity_components/index.js";
 
 export type Entity = {
-  format_version: string;
+  format_version: LiteralUnion<"1.21.50">;
   "minecraft:entity": {
     description: {
       identifier: string;
@@ -96,4 +97,26 @@ export type EntityEvent = {
   emit_vibration?: "shear" | "entity_act" | "entity_interact";
   randomize?: Array<EntityEvent & { weight?: number }>;
   sequence?: Array<EntityEvent>;
+  /**
+   * Allows an entity to reset its target.
+   */
+  reset_target?: Record<string, never>;
+  /**
+   * Allows the entity to emit sounds.
+   */
+  play_sound?: {
+    /**
+     * The sound event to play.
+     */
+    sound: SoundDefinitionIdentifier;
+  };
+  /**
+   * Allows particles to be emitted at the center of the entity's bounding box
+   */
+  emit_particle?: {
+    /**
+     * Specifies the type of particle to emit.
+     */
+    particle: ParticleIdentifier;
+  };
 };
