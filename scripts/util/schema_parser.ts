@@ -554,7 +554,7 @@ export function parseSchema(json: SchemaProperty, name: string, options?: Parser
     s.push(` */`);
   }
 
-  if (fields) {
+  if (fields && Object.keys(fields).length > 0) {
     s.push(`export type ${name} = {`);
     for (const [k, v] of Object.entries(fields)) {
       // If include symbols, add wrap with quotes
