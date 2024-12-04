@@ -442,6 +442,16 @@ function parsePropertyType(prop: SchemaProperty): string {
         }
         return `[${s.join(", ")}]`;
       } else {
+        // Hacky way if the prop.items doesn't hava a type.
+        // Usually, it should be a object.
+        if (!prop.items!.type && Object.keys(prop.items!).length > 0) {
+          const data = JSON.parse(JSON.stringify(prop.items!));
+          const temp = {
+            properties: data,
+          };
+          const obj = createObject(temp);
+          return `Array<${obj}>`;
+        }
         return `Array<${parsePropertyType(prop.items!)}>`;
       }
     }
