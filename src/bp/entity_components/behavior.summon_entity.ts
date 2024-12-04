@@ -98,6 +98,10 @@ export type EntityBehaviorSummonEntityComponent = {
        */
       summon_cap?: number;
       summon_cap_radius?: number;
+      /**
+       * Event to invoke on each summoned entity on spawn.
+       */
+      summon_event?: string;
     }>;
   }>;
 };

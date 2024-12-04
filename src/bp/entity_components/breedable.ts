@@ -5,7 +5,6 @@ import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { ItemTag } from "../../shared/literals/item_tag.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";
-import { EntityComponents } from "./index.js";
 
 /**
  * Defines the way an entity can get into the 'love' state.
@@ -16,7 +15,7 @@ export type EntityBreedableComponent = {
    */
   allow_sitting?: boolean;
   /**
-   * If true, the entities will blend their attributes in the offspring after they breed.
+   * If true, the entities will blend their attributes in the offspring after they breed. For example, horses blend their health, movement, and jump_strength in their offspring.
    * @default true
    */
   blend_attributes?: boolean;
@@ -165,20 +164,8 @@ export type EntityBreedableComponent = {
    */
   transform_to_item?: ItemIdentifier;
   /**
-   * Strategy used for mutating variants and extra variants for offspring.
-   * @default none
+   * If a color mutation will not happen, the baby will get a combination of the parents' colors if the colors are compatible. Color combinations follow the rules of dye item combinations. If the colors are not compatible the baby will get one of the parents colors chosen randomly.
+   * @default true
    */
-  mutation_strategy?: "random" | "none";
-  /**
-   * Range used to determine random extra variant.
-   */
-  random_extra_variant_mutation_interval?: Array<number>;
-  /**
-   * Range used to determine random variant.
-   */
-  random_variant_mutation_interval?: Array<number>;
-  /**
-   * List of attributes that should benefit from parent centric attribute blending. For example, horses blend their health, movement, and jump_strength in their offspring.
-   */
-  parent_centric_attribute_blending?: Array<keyof EntityComponents>;
+  combine_parent_colors?: boolean;
 };

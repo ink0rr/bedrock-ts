@@ -14,4 +14,8 @@ export type EntityHomeComponent = {
    * Optional block list that the home position will be associated with. If any of the blocks no longer exist at that position, the home restriction is removed.
    */
   home_block_list?: Array<BlockIdentifier>;
+  /**
+   * Defines how the the entity will be restricted to its home position. However, entities that somehow got too far away from their home will always be able to move closer to it, if prompted to do so.
+   */
+  restriction_type?: "none" | "random_movement" | "all_movement";
 };

@@ -6,7 +6,6 @@ import { WearableSlot } from "../../shared/slot.js";
  */
 export type ItemWearableComponent = {
   slot?: WearableSlot;
-  dispensable?: boolean;
   /**
    * How much protection does the wearable item have.
    */

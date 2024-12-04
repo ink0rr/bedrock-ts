@@ -1,6 +1,6 @@
 // auto generated
 /**
- * Cool down time for a component. After you use an item it becomes unusable for the duration specified by the 'cool down time' setting in this component.
+ * Cool down time for a component. After using an item, it becomes unusable for the duration specified by the 'duration' setting of this component.
  */
 export type ItemCooldownComponent = {
   /**
@@ -8,7 +8,7 @@ export type ItemCooldownComponent = {
    */
   category?: string;
   /**
-   * The duration of time this item will spend cooling down before becoming usable again.
+   * The duration of time (in seconds) items with a matching category will spend cooling down before becoming usable again.
    */
   duration?: number;
 };
