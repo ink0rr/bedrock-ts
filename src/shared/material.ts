@@ -25,6 +25,7 @@ export type Material = LiteralUnion<
   | "entity"
   | "entity_alphablend"
   | "entity_alphablend_nocolor"
+  | "entity_alphatest"
   | "entity_alphatest_change_color"
   | "entity_alphatest_change_color_glint"
   | "entity_alphatest_glint"
