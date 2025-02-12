@@ -29,13 +29,4 @@ export type ItemStorageItemComponent = {
    * @default 64
    */
   max_slots?: number;
-  /**
-   * The maximum allowed weight of the sum of all contained items. Maximum is 64. Default is 64.
-   * @default 64
-   */
-  max_weight_limit?: number;
-  /**
-   * The weight of this item when inside another Storage Item. Default is 4. 0 means item is not allowed in another Storage Item.
-   */
-  weight_in_storage_item?: number;
 };
