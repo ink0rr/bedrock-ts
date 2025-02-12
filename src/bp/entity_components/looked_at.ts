@@ -40,6 +40,10 @@ export type EntityLookedAtComponent = {
    */
   looked_at_event?: EntityEventTrigger;
   /**
+   * Defines the minimum, continuous time the owner entity has to be looked at before being considered as such. Defaults to 0 if not explicitly specified.
+   */
+  min_looked_at_duration?: number;
+  /**
    * Defines the event to trigger when no entity is found looking at the owner entity.
    */
   not_looked_at_event?: EntityEventTrigger;

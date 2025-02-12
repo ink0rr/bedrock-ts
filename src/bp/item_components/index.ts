@@ -31,6 +31,8 @@ import { ItemShooterComponent } from "./shooter.js";
 import { ItemShouldDespawnComponent } from "./should_despawn.js";
 import { ItemStackedByDataComponent } from "./stacked_by_data.js";
 import { ItemStorageItemComponent } from "./storage_item.js";
+import { ItemStorageWeightLimitComponent } from "./storage_weight_limit.js";
+import { ItemStorageWeightModifierComponent } from "./storage_weight_modifier.js";
 import { ItemTagsComponent } from "./tags.js";
 import { ItemThrowableComponent } from "./throwable.js";
 import { ItemUseAnimationComponent } from "./use_animation.js";
@@ -70,6 +72,8 @@ export type ItemComponents = {
   "minecraft:should_despawn"?: ItemShouldDespawnComponent;
   "minecraft:stacked_by_data"?: ItemStackedByDataComponent;
   "minecraft:storage_item"?: ItemStorageItemComponent;
+  "minecraft:storage_weight_limit"?: ItemStorageWeightLimitComponent;
+  "minecraft:storage_weight_modifier"?: ItemStorageWeightModifierComponent;
   "minecraft:use_animation"?: ItemUseAnimationComponent;
   "minecraft:use_modifiers"?: ItemUseModifiersComponent;
   "minecraft:tags"?: ItemTagsComponent;

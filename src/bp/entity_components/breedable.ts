@@ -168,4 +168,17 @@ export type EntityBreedableComponent = {
    * @default true
    */
   combine_parent_colors?: boolean;
+  /**
+   * List of entity properties that should be inherited from the parent entities and potentially mutated.
+   */
+  property_inheritance?: {
+    /**
+     * The chance that the baby's property will deviate from its parents.
+     */
+    mutation_chance?: number;
+    /**
+     * A list of values to select from if mutating.
+     */
+    mutation_values?: string | number | boolean;
+  };
 };

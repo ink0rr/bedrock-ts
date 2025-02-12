@@ -323,6 +323,7 @@ import { EntityRailMovementComponent } from "./rail_movement.js";
 import { EntityRailSensorComponent } from "./rail_sensor.js";
 import { EntityRavagerBlockedComponent } from "./ravager_blocked.js";
 import { EntityReflectProjectilesComponent } from "./reflect_projectiles.js";
+import { EntityRendersWhenInvisibleComponent } from "./renders_when_invisible.js";
 import { EntityRideableComponent } from "./rideable.js";
 import { EntityScaleComponent } from "./scale.js";
 import { EntityScaleByAgeComponent } from "./scale_by_age.js";
@@ -726,6 +727,7 @@ export type EntityComponents = {
   "minecraft:looked_at"?: EntityLookedAtComponent;
   "minecraft:cannot_be_attacked"?: EntityCannotBeAttackedComponent;
   "minecraft:ignore_cannot_be_attacked"?: EntityIgnoreCannotBeAttackedComponent;
+  "minecraft:renders_when_invisible"?: EntityRendersWhenInvisibleComponent;
   "minecraft:can_power_jump"?: EntityCanPowerJumpComponent;
 } & EntityComponents.Annotations &
   EntityComponents.Behaviors;

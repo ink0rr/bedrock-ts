@@ -1,0 +1,5 @@
+// auto generated
+/**
+ * When set, the entity will render even when invisible. Appropriate rendering behavior can then be specified in the corresponding 'minecraft:client_entity'.
+ */
+export type EntityRendersWhenInvisibleComponent = Record<string, never>;

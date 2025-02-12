@@ -16,6 +16,10 @@ export type ItemIconComponent =
          * Trim overlay icon
          */
         icon_trim?: ItemTexturePath;
+        /**
+         * Dyed item icon
+         */
+        dyed?: ItemTexturePath;
       } & TrimPalette<ItemTexturePath>;
     }
   | ItemIcon;
