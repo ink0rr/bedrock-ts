@@ -1,14 +1,14 @@
 // auto generated
 import { DamageSource } from "../../shared/damage_source.js";
 import { SoundEvent } from "../../shared/sound_event.js";
-import { EntityEventEntityDamageSensorComponent } from "../entity_behavior/event.js";
+import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 export namespace EntityDamageSensorComponent {
   export type Trigger = {
     /**
      * Specifies filters for entity definitions and events.
      */
-    on_damage?: EntityEventEntityDamageSensorComponent.Trigger;
+    on_damage?: EntityEventTrigger;
     /**
      * Type of damage that triggers the events.
      * @default yes
