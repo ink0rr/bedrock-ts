@@ -52,15 +52,15 @@ export type ClientEntity = {
       /**
        * Defines the materials used in the entity.
        */
-      materials: Record<LiteralUnion<"default">, Material>;
+      materials: Partial<Record<LiteralUnion<"default">, Material>>;
       /**
        * Defines the textures used in the entity.
        */
-      textures: Record<LiteralUnion<"default">, EntityTexturePath>;
+      textures: Partial<Record<LiteralUnion<"default">, EntityTexturePath>>;
       /**
        * Defines the geometries used in the entity.
        */
-      geometry: Record<LiteralUnion<"default">, GeometryIdentifier>;
+      geometry: Partial<Record<LiteralUnion<"default">, GeometryIdentifier>>;
       queryable_geometry?: GeometryIdentifier;
       /**
        * Defines animations and animation controllers to be used in this entity.
