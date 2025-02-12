@@ -442,17 +442,36 @@ function parsePropertyType(prop: SchemaProperty): string {
         }
         return `[${s.join(", ")}]`;
       } else {
+        if (!prop.items) {
+          return "any[]";
+        }
+        // Ref
+        if (prop.items.$ref) {
+          const refType = parseRef(prop.items.$ref);
+          if (refType) {
+            return `Array<${refType}>`;
+          } else {
+            warning(`Unknown ref: ${prop.items.$ref}`);
+          }
+        }
+        // anyof
+        if (prop.items.anyOf) {
+          for (const item of prop.items.anyOf) {
+            s.push(parsePropertyType(item));
+          }
+          return `Array<${s.join(" | ")}>`;
+        }
         // Hacky way if the prop.items doesn't hava a type.
         // Usually, it should be a object.
-        if (!prop.items!.type && Object.keys(prop.items!).length > 0) {
-          const data = JSON.parse(JSON.stringify(prop.items!));
+        if (!prop.items.type && Object.keys(prop.items).length > 0) {
+          const data = JSON.parse(JSON.stringify(prop.items));
           const temp = {
             properties: data,
           };
           const obj = createObject(temp);
           return `Array<${obj}>`;
         }
-        return `Array<${parsePropertyType(prop.items!)}>`;
+        return `Array<${parsePropertyType(prop.items)}>`;
       }
     }
 
@@ -463,7 +482,15 @@ function parsePropertyType(prop: SchemaProperty): string {
           s.push(`{ [key: string]: ${parsePropertyType(v)} }`);
         }
       }
-      const obj = createObject(prop);
+      let obj = createObject(prop);
+      if (prop.additionalProperties && typeof prop.additionalProperties === "object") {
+        const additionalObj = createObject(prop.additionalProperties);
+        if (obj === "{\n}") {
+          obj = additionalObj;
+        } else {
+          obj += ` & ${additionalObj}`;
+        }
+      }
       // Check result
       if (obj === "{\n}" && s.length > 0) {
         return s.join(" | ");
