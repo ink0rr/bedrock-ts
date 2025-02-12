@@ -632,7 +632,7 @@ export function parseSchema(json: SchemaProperty, name: string, options?: Parser
       // Replace all occurences of the parsed definition
       s = s.map((line) => {
         // Make sure it's not the definition itself
-        const regex = new RegExp(`(?<!type )${parsedDefinition}`, "g");
+        const regex = new RegExp(`(?<!type )\\b${parsedDefinition}`, "g");
         return line.replace(regex, `${name}.${parsedDefinition}`);
       });
     }
