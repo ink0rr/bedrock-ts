@@ -1,3 +1,4 @@
+import { LiteralUnion } from "../shared/literal_union.js";
 import { MoLang } from "../shared/molang.js";
 
 export type Geometry = {
@@ -232,6 +233,6 @@ export type DisplayTransformation = {
 export type Vector_2f = Array<number>;
 export type Vector_3f = Array<number>;
 export type Geometries = {
-  format_version: string;
-  geometries: Array<Geometry>;
+  format_version: LiteralUnion<"1.12.0" | "1.16.0">;
+  "minecraft:geometry": Array<Geometry>;
 };
