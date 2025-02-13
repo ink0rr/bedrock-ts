@@ -309,6 +309,13 @@ const importMap = new Map<string, IMap>([
       path: 'import { BlockTag } from "../../shared/literals/block_tag.js";',
     },
   ],
+  [
+    "material_instances",
+    {
+      name: "Record<string, BlockMaterialInstancesComponent>",
+      path: 'import { BlockMaterialInstancesComponent } from "./material_instances.js";',
+    },
+  ],
 ]);
 
 function _parseRef(ref: string) {
