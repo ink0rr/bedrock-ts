@@ -7,7 +7,7 @@ import { EntityEventIdentifier, EntityEventTrigger } from "./entity_behavior/eve
 import { EntityComponents } from "./entity_components/index.js";
 
 export type Entity = {
-  format_version: LiteralUnion<"1.21.60">;
+  format_version: LiteralUnion<"1.21.70">;
   "minecraft:entity": {
     description: {
       identifier: string;
@@ -118,5 +118,35 @@ export type EntityEvent = {
      * Specifies the type of particle to emit.
      */
     particle: ParticleIdentifier;
+  };
+  /**
+   * Allows the entity to execute an event on the block at its home position, requires the 'minecraft:home' components.
+   */
+  execute_event_on_home_block?: {
+    /**
+     * The event to fire
+     */
+    event: EntityEventIdentifier;
+  };
+  /**
+   * Evaluates every filter in order and executes the first valid one.
+   */
+  first_valid?: Array<EntityEvent>;
+  /**
+   * Sets the entity's home position to its current position.
+   */
+  set_home_position?: Record<string, never>;
+  /**
+   * Stops the entity's movement.
+   */
+  stop_movement?: {
+    /**
+     * Specifies whether vertical movement should be stopped.
+     */
+    stop_vertical_movement?: boolean;
+    /**
+     * Specifies whether horizontal movement should be stopped.
+     */
+    stop_horizontal_movement?: boolean;
   };
 };
