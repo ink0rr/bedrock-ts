@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 import { SpellEffects } from "../../shared/spell_effects.js";
 
 /**
@@ -23,7 +23,7 @@ export type EntityMobEffectComponent = {
   /**
    * The set of entities that are valid to apply the mob effect to.
    */
-  entity_filter?: Filter;
+  entity_filter?: Filters;
   /**
    * Time in seconds to wait between each application of the effect.
    */

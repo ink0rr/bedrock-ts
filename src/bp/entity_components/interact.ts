@@ -114,7 +114,7 @@ export namespace EntityInteractComponent {
     take_item?: boolean;
     /**
      * Vibration to emit when the interaction occurs. Admitted values are entity_interact (used by default), shear, and none (no vibration emitted).
-     * @default entity_interact
+     * @default "entity_interact"
      */
     vibration?: "entity_interact" | "entity_act" | "shear" | "none";
   };

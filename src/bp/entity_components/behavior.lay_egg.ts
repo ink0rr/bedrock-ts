@@ -41,12 +41,12 @@ export type EntityBehaviorLayEggComponent = {
   allow_laying_from_below?: boolean;
   /**
    * Block type for the egg to lay. If this is a turtle egg, the number of eggs in the block is randomly set.
-   * @default minecraft:turtle_egg
+   * @default "minecraft:turtle_egg"
    */
   egg_type?: BlockIdentifier;
   /**
    * Sound event name for laying egg. Defaulted to lay_egg which is used for Turtles.
-   * @default lay_egg
+   * @default "lay_egg"
    */
   lay_egg_sound?: SoundEvent;
   /**

@@ -1,5 +1,5 @@
 // auto generated
-import { Filter, FilterSubject } from "../../shared/filter.js";
+import { Filters, FilterSubject } from "../../shared/filter.js";
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 
@@ -17,7 +17,7 @@ export type EntityBehaviorSummonEntityComponent = {
      * @default true
      */
     do_casting?: boolean;
-    filters?: Filter;
+    filters?: Filters;
     /**
      * Lower bound of the activation distance in blocks for this spell, must not be negative.
      * @default 1
@@ -54,12 +54,12 @@ export type EntityBehaviorSummonEntityComponent = {
     sequence?: Array<{
       /**
        * The base shape of this step. Valid values are circle and line.
-       * @default line
+       * @default "line"
        */
       shape?: "circle" | "line";
       /**
        * The target of the spell. This is where the spell will start (line will start here, circle will be centered here).
-       * @default self
+       * @default "self"
        */
       target?: FilterSubject;
       /**

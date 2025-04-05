@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";
 
@@ -15,5 +15,5 @@ export type EntityBlockSensorComponent = {
   /**
    * List of sources that break the block to listen for. If none are specified, all block breaks will be detected.
    */
-  sources?: Array<Filter>;
+  sources?: Filters;
 };

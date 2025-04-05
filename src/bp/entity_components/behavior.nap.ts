@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 
 /**
  * Allows mobs to occassionally stop and take a nap under certain conditions.
@@ -24,6 +24,6 @@ export type EntityBehaviorNapComponent = {
    * @default 6
    */
   mob_detect_height?: number;
-  can_nap_filters?: Filter;
-  wake_mob_exceptions?: Filter;
+  can_nap_filters?: Filters;
+  wake_mob_exceptions?: Filters;
 };

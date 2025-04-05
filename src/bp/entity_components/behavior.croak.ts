@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 
 /**
  * Allows the entity to croak at a random time interval with configurable conditions.
@@ -13,7 +13,7 @@ export type EntityBehaviorCroakComponent = {
   /**
    * Conditions for the behavior to start and keep running. The interval between runs only starts after passing the filters.
    */
-  filters?: Filter;
+  filters?: Filters;
   /**
    * Random range in seconds between runs of this behavior.
    */

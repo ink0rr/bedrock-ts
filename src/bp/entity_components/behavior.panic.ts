@@ -13,9 +13,8 @@ export type EntityBehaviorPanicComponent = {
   force?: boolean;
   /**
    * The list of Entity Damage Sources that will cause this mob to panic.
-   * @default all
    */
-  damage_sources?: DamageSource;
+  damage_sources?: Array<DamageSource>;
   /**
    * If true, the mob will not panic in response to damage from other mobs (only fire/lava etc).
    */

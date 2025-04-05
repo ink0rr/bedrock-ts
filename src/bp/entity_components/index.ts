@@ -90,6 +90,7 @@ import { EntityBehaviorMeleeBoxAttackComponent } from "./behavior.melee_box_atta
 import { EntityBehaviorMingleComponent } from "./behavior.mingle.js";
 import { EntityBehaviorMountPathingComponent } from "./behavior.mount_pathing.js";
 import { EntityBehaviorMoveAroundTargetComponent } from "./behavior.move_around_target.js";
+import { EntityBehaviorMoveAwayFromTargetComponent } from "./behavior.move_away_from_target.js";
 import { EntityBehaviorMoveIndoorsComponent } from "./behavior.move_indoors.js";
 import { EntityBehaviorMoveOutdoorsComponent } from "./behavior.move_outdoors.js";
 import { EntityBehaviorMoveThroughVillageComponent } from "./behavior.move_through_village.js";
@@ -152,6 +153,7 @@ import { EntityBehaviorSlimeRandomDirectionComponent } from "./behavior.slime_ra
 import { EntityBehaviorSnackingComponent } from "./behavior.snacking.js";
 import { EntityBehaviorSneezeComponent } from "./behavior.sneeze.js";
 import { EntityBehaviorSniffComponent } from "./behavior.sniff.js";
+import { EntityBehaviorSonicBoomComponent } from "./behavior.sonic_boom.js";
 import { EntityBehaviorSquidDiveComponent } from "./behavior.squid_dive.js";
 import { EntityBehaviorSquidFleeComponent } from "./behavior.squid_flee.js";
 import { EntityBehaviorSquidIdleComponent } from "./behavior.squid_idle.js";
@@ -173,9 +175,9 @@ import { EntityBehaviorSwoopAttackComponent } from "./behavior.swoop_attack.js";
 import { EntityBehaviorTakeFlowerComponent } from "./behavior.take_flower.js";
 import { EntityBehaviorTeleportToOwnerComponent } from "./behavior.teleport_to_owner.js";
 import { EntityBehaviorTemptComponent } from "./behavior.tempt.js";
-import { EntityBehaviorTimerFlag_1Component } from "./behavior.timer_flag_1.js";
-import { EntityBehaviorTimerFlag_2Component } from "./behavior.timer_flag_2.js";
-import { EntityBehaviorTimerFlag_3Component } from "./behavior.timer_flag_3.js";
+import { EntityBehaviorTimerFlag1Component } from "./behavior.timer_flag_1.js";
+import { EntityBehaviorTimerFlag2Component } from "./behavior.timer_flag_2.js";
+import { EntityBehaviorTimerFlag3Component } from "./behavior.timer_flag_3.js";
 import { EntityBehaviorTradeInterestComponent } from "./behavior.trade_interest.js";
 import { EntityBehaviorTradeWithPlayerComponent } from "./behavior.trade_with_player.js";
 import { EntityBehaviorVexCopyOwnerTargetComponent } from "./behavior.vex_copy_owner_target.js";
@@ -186,6 +188,7 @@ import { EntityBehaviorWorkComponent } from "./behavior.work.js";
 import { EntityBehaviorWorkComposterComponent } from "./behavior.work_composter.js";
 import { EntityBlockClimberComponent } from "./block_climber.js";
 import { EntityBlockSensorComponent } from "./block_sensor.js";
+import { EntityBodyRotationAxisAlignedComponent } from "./body_rotation_axis_aligned.js";
 import { EntityBodyRotationBlockedComponent } from "./body_rotation_blocked.js";
 import { EntityBoostableComponent } from "./boostable.js";
 import { EntityBossComponent } from "./boss.js";
@@ -244,6 +247,7 @@ import { EntityHomeComponent } from "./home.js";
 import { EntityHorseJumpStrengthComponent } from "./horse.jump_strength.js";
 import { EntityHurtOnConditionComponent } from "./hurt_on_condition.js";
 import { EntityIgnoreCannotBeAttackedComponent } from "./ignore_cannot_be_attacked.js";
+import { EntityInputAirControlledComponent } from "./input_air_controlled.js";
 import { EntityInputGroundControlledComponent } from "./input_ground_controlled.js";
 import { EntityInsideBlockNotifierComponent } from "./inside_block_notifier.js";
 import { EntityInsomniaComponent } from "./insomnia.js";
@@ -253,6 +257,7 @@ import { EntityInventoryComponent } from "./inventory.js";
 import { EntityIsBabyComponent } from "./is_baby.js";
 import { EntityIsChargedComponent } from "./is_charged.js";
 import { EntityIsChestedComponent } from "./is_chested.js";
+import { EntityIsCollidableComponent } from "./is_collidable.js";
 import { EntityIsDyeableComponent } from "./is_dyeable.js";
 import { EntityIsHiddenWhenInvisibleComponent } from "./is_hidden_when_invisible.js";
 import { EntityIsIgnitedComponent } from "./is_ignited.js";
@@ -377,9 +382,9 @@ export namespace EntityComponents {
     "minecraft:behavior.sniff"?: EntityBehaviorSniffComponent;
     "minecraft:behavior.stay_near_noteblock"?: EntityBehaviorStayNearNoteblockComponent;
     "minecraft:behavior.random_search_and_dig"?: EntityBehaviorRandomSearchAndDigComponent;
-    "minecraft:behavior.timer_flag_1"?: EntityBehaviorTimerFlag_1Component;
-    "minecraft:behavior.timer_flag_2"?: EntityBehaviorTimerFlag_2Component;
-    "minecraft:behavior.timer_flag_3"?: EntityBehaviorTimerFlag_3Component;
+    "minecraft:behavior.timer_flag_1"?: EntityBehaviorTimerFlag1Component;
+    "minecraft:behavior.timer_flag_2"?: EntityBehaviorTimerFlag2Component;
+    "minecraft:behavior.timer_flag_3"?: EntityBehaviorTimerFlag3Component;
     "minecraft:behavior.trade_with_player"?: EntityBehaviorTradeWithPlayerComponent;
     "minecraft:behavior.float"?: EntityBehaviorFloatComponent;
     "minecraft:behavior.take_flower"?: EntityBehaviorTakeFlowerComponent;
@@ -538,6 +543,8 @@ export namespace EntityComponents {
     "minecraft:behavior.move_around_target"?: EntityBehaviorMoveAroundTargetComponent;
     "minecraft:behavior.jump_around_target"?: EntityBehaviorJumpAroundTargetComponent;
     "minecraft:behavior.teleport_to_owner"?: EntityBehaviorTeleportToOwnerComponent;
+    "minecraft:behavior.move_away_from_target"?: EntityBehaviorMoveAwayFromTargetComponent;
+    "minecraft:behavior.sonic_boom"?: EntityBehaviorSonicBoomComponent;
   };
 }
 export type EntityComponents = {
@@ -728,6 +735,9 @@ export type EntityComponents = {
   "minecraft:cannot_be_attacked"?: EntityCannotBeAttackedComponent;
   "minecraft:ignore_cannot_be_attacked"?: EntityIgnoreCannotBeAttackedComponent;
   "minecraft:renders_when_invisible"?: EntityRendersWhenInvisibleComponent;
+  "minecraft:body_rotation_axis_aligned"?: EntityBodyRotationAxisAlignedComponent;
+  "minecraft:is_collidable"?: EntityIsCollidableComponent;
+  "minecraft:input_air_controlled"?: EntityInputAirControlledComponent;
   "minecraft:can_power_jump"?: EntityCanPowerJumpComponent;
 } & EntityComponents.Annotations &
   EntityComponents.Behaviors;

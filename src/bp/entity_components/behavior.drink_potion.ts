@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 import { PotionId } from "../../shared/potion_id.js";
 
 /**
@@ -28,6 +28,6 @@ export type EntityBehaviorDrinkPotionComponent = {
     /**
      * The filters to use when determining if this potion can be selected.
      */
-    filters?: Filter;
+    filters?: Filters;
   }>;
 };

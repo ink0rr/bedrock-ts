@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 
 /**
@@ -9,7 +9,7 @@ export type EntityCelebrateHuntComponent = {
   /**
    * The list of conditions that target of hunt must satisfy to initiate celebration.
    */
-  celebration_targets?: Filter;
+  celebration_targets?: Filters;
   /**
    * If true, celebration will be broadcasted to other entities in the radius.
    * @default true

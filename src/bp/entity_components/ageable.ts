@@ -1,7 +1,7 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
+import { ItemDescriptor } from "../../shared/item_descriptor.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
-import { ItemTag } from "../../shared/literals/item_tag.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
@@ -19,11 +19,7 @@ export type EntityAgeableComponent = {
   feed_items?:
     | Array<
         | {
-            item?:
-              | ItemIdentifier
-              | {
-                  any_tag?: Array<ItemTag>;
-                };
+            item?: ItemDescriptor;
             growth?: number;
           }
         | ItemIdentifier
@@ -41,5 +37,5 @@ export type EntityAgeableComponent = {
   /**
    * List of conditions to meet so that the entity can be fed.
    */
-  interact_filters?: Filter;
+  interact_filters?: Filters;
 };

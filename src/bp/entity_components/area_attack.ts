@@ -1,6 +1,6 @@
 // auto generated
 import { DamageSource } from "../../shared/damage_source.js";
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 
 /**
  * A component that does damage to entities that get within range.
@@ -23,7 +23,7 @@ export type EntityAreaAttackComponent = {
   /**
    * The set of entities that are valid to apply the damage to when within range.
    */
-  entity_filter?: Filter;
+  entity_filter?: Filters;
   /**
    * Attack cooldown (in seconds) for how often this entity can attack a target.
    */

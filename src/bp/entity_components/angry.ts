@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";
 
@@ -36,11 +36,11 @@ export type EntityAngryComponent = {
   /**
    * Conditions that make this entry in the list valid.
    */
-  broadcast_filters?: Filter;
+  broadcast_filters?: Filters;
   /**
    * Filter out mob types that it should not attack while angry (other Piglins).
    */
-  filters?: Filter;
+  filters?: Filters;
   /**
    * A list of entity families to broadcast anger to.
    */

@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";
 
@@ -43,7 +43,7 @@ export type EntityBehaviorMoveToBlockComponent = {
   stay_duration?: number;
   /**
    * Kind of block to find fitting the specification.
-   * @default nearest
+   * @default "nearest"
    */
   target_selection_method?: "nearest" | "random";
   /**
@@ -65,5 +65,5 @@ export type EntityBehaviorMoveToBlockComponent = {
   /**
    * Filter which blocks can be targeted.
    */
-  target_block_filters?: Filter | Array<Filter>;
+  target_block_filters?: Filters;
 };

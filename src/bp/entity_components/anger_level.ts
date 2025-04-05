@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 import { MoLang } from "../../shared/molang.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 
@@ -35,7 +35,7 @@ export type EntityAngerLevelComponent = {
   /**
    * Filter that is applied to determine if a mob can be a nuisance.
    */
-  nuisance_filter?: Filter;
+  nuisance_filter?: Filters;
   /**
    * Sounds to play when the entity is getting provoked. Evaluated in order. First matching condition wins.
    */

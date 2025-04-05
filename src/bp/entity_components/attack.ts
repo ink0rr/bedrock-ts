@@ -22,5 +22,5 @@ export type EntityAttackComponent = {
   /**
    * Duration in seconds of the status ailment applied to the damaged entity.
    */
-  effect_duration?: number;
+  effect_duration?: "infinite" | number;
 };

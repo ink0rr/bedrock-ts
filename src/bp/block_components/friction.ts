@@ -1,3 +1,6 @@
 // auto generated
-
+/**
+ * Describes the friction for this block in a range of (0.0-0.9). Friction affects an entity's movement speed when it travels on the block. Greater value results in more friction.
+ * @default 0.4
+ */
 export type BlockFrictionComponent = number;

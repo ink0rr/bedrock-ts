@@ -7,7 +7,7 @@ export type EntityCombatRegenerationComponent = {
    * The duration in seconds of Regeneration I added to the mob.
    * @default 5
    */
-  regeneration_duration?: number;
+  regeneration_duration?: "infinite" | number;
   /**
    * Determines if the mob will grant mobs of the same type combat buffs if they kill the target.
    */

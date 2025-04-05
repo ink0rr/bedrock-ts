@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 
 /**
  * Allows a mob to stalk a target, then once within range pounce onto a target, on success the target will be attacked dealing damage defined by the attack component. On failure, the mob will risk getting stuck.
@@ -47,5 +47,5 @@ export type EntityBehaviorStalkAndPounceOnTargetComponent = {
    * @default 2
    */
   strike_dist?: number;
-  stuck_blocks?: Filter;
+  stuck_blocks?: Filters;
 };

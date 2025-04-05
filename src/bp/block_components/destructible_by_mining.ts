@@ -1,5 +1,5 @@
 // auto generated
-import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
+import { ItemDescriptor } from "../../shared/item_descriptor.js";
 
 export namespace BlockDestructibleByMiningComponent {
   export type ItemSpecificSpeeds =
@@ -14,13 +14,8 @@ export namespace BlockDestructibleByMiningComponent {
       /**
        * The items for the speed modifier.
        */
-      item?: BlockDestructibleByMiningComponent.ItemDescriptor;
+      item?: ItemDescriptor;
     }>;
-  export type ItemDescriptor =
-    | ItemIdentifier
-    | {
-        tags?: "query.any_tag()" | "query.all_tags()" | string;
-      };
 }
 /**
  * Describes the destructible by mining properties for this block. If set to true, the block will take the default number of seconds to destroy. If set to false, this block is indestructible by mining. If the component is omitted, the block will take the default number of seconds to destroy.

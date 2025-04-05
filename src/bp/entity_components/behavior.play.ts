@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 
 /**
  * Allows the mob to play with other mobs by chasing each other and moving around randomly.
@@ -28,7 +28,7 @@ export type EntityBehaviorPlayComponent = {
    * The entity type(s) to consider when searching for a potential friend to play with.
    */
   friend_types?: {
-    filters?: Filter | Array<Filter>;
+    filters?: Filters;
   };
   /**
    * The max amount of seconds that the mob will play for before exiting the Goal.

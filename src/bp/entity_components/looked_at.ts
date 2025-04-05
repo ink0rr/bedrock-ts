@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
@@ -14,14 +14,14 @@ export type EntityLookedAtComponent = {
   /**
    * Defines the entities that can trigger this component.
    */
-  filters?: Filter;
+  filters?: Filters;
   /**
    * Defines which entities are considered when searching for entities looking at the owner entity.
    */
   find_players_only?: boolean;
   /**
    * Defines the type of block shape used to check for line of sight obstructions.
-   * @default collision
+   * @default "collision"
    */
   line_of_sight_obstruction_type?: "outline" | "collision" | "collision_for_camera";
   /**
@@ -59,7 +59,7 @@ export type EntityLookedAtComponent = {
   search_radius?: number;
   /**
    * Defines if and how the owner entity will set entities that are looking at it as its combat targets.
-   * @default once_and_stop_scanning
+   * @default "once_and_stop_scanning"
    */
   set_target?: "never" | "once_and_stop_scanning" | "once_and_keep_scanning";
 };
