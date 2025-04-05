@@ -29,7 +29,7 @@ export type DamageSource =
   | "stalagmite"
   | "starve"
   | "suffocation"
-  | "suicide"
+  | "self_destruct"
   | "temperature"
   | "thorns"
   | "void"
