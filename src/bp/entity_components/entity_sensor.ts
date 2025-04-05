@@ -1,11 +1,15 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 import { EntityEventIdentifier } from "../entity_behavior/event.js";
 
 /**
  * A component that owns multiple subsensors, each one firing an event when a set of conditions are met by other entities within the defined range
  */
 export type EntityEntitySensorComponent = {
+  /**
+   * Limits the search to Players only for all subsensors.
+   */
+  find_players_only?: boolean;
   /**
    * If true, the subsensors' range is additive on top of the entity's size.
    * @default true
@@ -21,7 +25,7 @@ export type EntityEntitySensorComponent = {
      */
     cooldown?: number;
     event?: EntityEventIdentifier;
-    event_filters?: Filter;
+    event_filters?: Filters;
     /**
      * The maximum number of entities that must pass the filter conditions for the event to send.
      * @default -1
@@ -40,5 +44,9 @@ export type EntityEntitySensorComponent = {
      * If true requires all nearby entities to pass the filter conditions for the events to send.
      */
     require_all?: boolean;
+    /**
+     * Vertical offset applied to the entity's position when computing the distance from other entities.
+     */
+    y_offset?: number;
   }>;
 };

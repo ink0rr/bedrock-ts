@@ -11,7 +11,7 @@ export type EntityBehaviorMoveToLiquidComponent = {
   goal_radius?: number;
   /**
    * The material type of the liquid block to find.
-   * @default Any
+   * @default "Any"
    */
   material_type?: "Any" | "Water" | "Lava";
   /**

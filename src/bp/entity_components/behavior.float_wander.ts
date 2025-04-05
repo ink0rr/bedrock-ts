@@ -9,13 +9,23 @@ export type EntityBehaviorFloatWanderComponent = {
    */
   float_duration?: Array<number>;
   /**
-   * If true, the mob will randomly pick a new point while moving to the previously selected one.
+   * If true, the MoveControl flag will be added to the behavior which means that it can no longer be active at the same time as other behaviors with MoveControl.
+   * @default true
    */
-  random_reselect?: boolean;
+  float_wander_has_move_control?: boolean;
   /**
    * If true, the point has to be reachable to be a valid target.
    */
   must_reach?: boolean;
+  /**
+   * If true, the mob will randomly pick a new point while moving to the previously selected one.
+   */
+  random_reselect?: boolean;
+  /**
+   * If true, the mob will respect home position restrictions when choosing new target positions. If false, it will choose target position without considering home restrictions.
+   * @default true
+   */
+  use_home_position_restriction?: boolean;
   /**
    * Distance in blocks on ground that the mob will look for a new spot to move to. Must be at least 1.
    * @default 10

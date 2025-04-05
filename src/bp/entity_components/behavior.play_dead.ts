@@ -1,6 +1,6 @@
 // auto generated
 import { DamageSource } from "../../shared/damage_source.js";
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 
 /**
  * Allows this entity to pretend to be dead to avoid being targeted by attackers.
@@ -37,5 +37,5 @@ export type EntityBehaviorPlayDeadComponent = {
   /**
    * The list of other triggers that are required for the mob to activate play dead.
    */
-  filters?: Filter | Array<Filter>;
+  filters?: Filters;
 };

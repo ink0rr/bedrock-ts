@@ -1,6 +1,5 @@
 // auto generated
-import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
-import { ItemTag } from "../../shared/literals/item_tag.js";
+import { ItemDescriptor } from "../../shared/item_descriptor.js";
 
 /**
  * Defines the way an entity can get into the 'bribed' state.
@@ -14,10 +13,5 @@ export type EntityBribeableComponent = {
   /**
    * The list of items that can be used to bribe the entity.
    */
-  bribe_items?: Array<
-    | ItemIdentifier
-    | {
-        any_tag?: Array<ItemTag>;
-      }
-  >;
+  bribe_items?: Array<ItemDescriptor>;
 };

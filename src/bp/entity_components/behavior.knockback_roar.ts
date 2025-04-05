@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
@@ -46,11 +46,11 @@ export type EntityBehaviorKnockbackRoarComponent = {
   /**
    * The list of conditions another entity must meet to be a valid target to apply knockback to.
    */
-  knockback_filters?: Filter;
+  knockback_filters?: Filters;
   /**
    * The list of conditions another entity must meet to be a valid target to apply damage to.
    */
-  damage_filters?: Filter;
+  damage_filters?: Filters;
   /**
    * Event that is triggered when the roar ends.
    */

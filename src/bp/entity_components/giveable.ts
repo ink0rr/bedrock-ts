@@ -1,6 +1,5 @@
 // auto generated
-import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
-import { ItemTag } from "../../shared/literals/item_tag.js";
+import { ItemDescriptor } from "../../shared/item_descriptor.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
@@ -16,12 +15,7 @@ export type EntityGiveableComponent = {
         /**
          * The list of items that can be given to the entity to place in their inventory.
          */
-        items?: Array<
-          | ItemIdentifier
-          | {
-              any_tag?: Array<ItemTag>;
-            }
-        >;
+        items?: Array<ItemDescriptor>;
         /**
          * Event to fire when the correct item is given.
          */
@@ -35,12 +29,7 @@ export type EntityGiveableComponent = {
         /**
          * The list of items that can be given to the entity to place in their inventory.
          */
-        items?: Array<
-          | ItemIdentifier
-          | {
-              any_tag?: Array<ItemTag>;
-            }
-        >;
+        items?: Array<ItemDescriptor>;
         /**
          * Event to fire when the correct item is given.
          */

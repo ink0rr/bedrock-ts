@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 import { HexColor } from "../../shared/hex_color.js";
 import { SoundEvent } from "../../shared/sound_event.js";
 
@@ -18,7 +18,7 @@ export type EntityBehaviorSendEventComponent = {
     cast_duration?: number;
     particle_color?: number | HexColor;
     weight?: number;
-    filters?: Filter;
+    filters?: Filters;
     start_sound_event?: SoundEvent;
     sequence?: Array<{
       /**

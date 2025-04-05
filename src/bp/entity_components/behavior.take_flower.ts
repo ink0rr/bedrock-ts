@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 
 /**
  * Allows the mob to accept flowers from another mob with the minecraft:offer_flower behavior.
@@ -9,7 +9,7 @@ export type EntityBehaviorTakeFlowerComponent = {
   /**
    * Conditions that need to be met for the behavior to start.
    */
-  filters?: Filter;
+  filters?: Filters;
   /**
    * Maximum rotation (in degrees), on the Y-axis, this entity can rotate its head while trying to look at the target.
    * @default 30

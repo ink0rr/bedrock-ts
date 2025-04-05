@@ -1,5 +1,7 @@
 // auto generated
+import { Filters } from "../../shared/filter.js";
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
+import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { LegacyParticle } from "../../shared/literals/legacy_particle.js";
 import { MoLang } from "../../shared/molang.js";
 import { PotionId } from "../../shared/potion_id.js";
@@ -69,13 +71,14 @@ export type EntityProjectileComponent = {
       spawn_mob?: EntityIdentifier;
       spawn_definition?: EntityIdentifier;
       spawn_baby?: boolean;
+      on_spawn?: EntityEventTrigger;
     };
     mob_effect?: {
       effect?: SpellEffects;
-      duration?: number;
-      durationeasy?: number;
-      durationnormal?: number;
-      durationhard?: number;
+      duration?: "infinite" | number;
+      durationeasy?: "infinite" | number;
+      durationnormal?: "infinite" | number;
+      durationhard?: "infinite" | number;
       amplifier?: number;
       ambient?: boolean;
       visible?: boolean;
@@ -93,6 +96,7 @@ export type EntityProjectileComponent = {
       num_particles?: number;
       on_entity_hit?: boolean;
       on_other_hit?: boolean;
+      particle_item_name?: Record<ItemIdentifier, Filters>;
     };
     catch_fire?: {
       /**

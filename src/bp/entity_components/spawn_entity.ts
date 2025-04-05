@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { SoundEvent } from "../../shared/sound_event.js";
@@ -40,7 +40,7 @@ export type EntitySpawnEntityComponent = {
         spawn_event?: EntityEventIdentifier;
         /**
          * Item identifier of the item to spawn.
-         * @default egg
+         * @default "egg"
          */
         spawn_item?: ItemIdentifier;
         /**
@@ -49,13 +49,13 @@ export type EntitySpawnEntityComponent = {
         spawn_method?: "born";
         /**
          * Identifier of the sound effect to play when the entity is spawned.
-         * @default plop
+         * @default "plop"
          */
         spawn_sound?: SoundEvent;
         /**
          * If present, the specified entity will only spawn if the filter evaluates to true.
          */
-        filters?: Filter | Array<Filter>;
+        filters?: Filters;
         /**
          * If true, this component will only ever spawn the specified entity once.
          */
@@ -91,7 +91,7 @@ export type EntitySpawnEntityComponent = {
         spawn_event?: EntityEventIdentifier;
         /**
          * Item identifier of the item to spawn.
-         * @default egg
+         * @default "egg"
          */
         spawn_item?: ItemIdentifier;
         /**
@@ -100,13 +100,13 @@ export type EntitySpawnEntityComponent = {
         spawn_method?: "born";
         /**
          * Identifier of the sound effect to play when the entity is spawned.
-         * @default plop
+         * @default "plop"
          */
         spawn_sound?: SoundEvent;
         /**
          * If present, the specified entity will only spawn if the filter evaluates to true.
          */
-        filters?: Filter | Array<Filter>;
+        filters?: Filters;
         /**
          * If true, this component will only ever spawn the specified entity once.
          */

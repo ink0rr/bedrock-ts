@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 
 /**
  * Despawns the Actor when the despawn rules or optional filters evaluate to true.
@@ -12,7 +12,7 @@ export type EntityDespawnComponent = {
   /**
    * The list of conditions that must be satisfied before the Actor is despawned. If a filter is defined then standard despawn rules are ignored.
    */
-  filters?: Filter;
+  filters?: Filters;
   despawn_from_distance?: {
     /**
      * Maximum distance for standard despawn rules to instantly despawn the mob.

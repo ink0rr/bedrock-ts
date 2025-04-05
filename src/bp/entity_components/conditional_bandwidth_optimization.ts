@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 
 export namespace EntityConditionalBandwidthOptimizationComponent {
   export type ConditionalValues = {
@@ -15,7 +15,7 @@ export namespace EntityConditionalBandwidthOptimizationComponent {
      * When set to true, smaller motion packets will be sent during drop packet intervals, resulting in the same amount of packets being sent as without optimizations but with much less data being sent. This should be used when actors are travelling very quickly or teleporting to prevent visual oddities.
      */
     use_motion_prediction_hints?: boolean;
-    conditional_values?: Array<Filter>;
+    conditional_values?: Filters;
   };
   export type DefaultValues = {
     /**

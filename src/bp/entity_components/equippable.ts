@@ -1,7 +1,7 @@
 // auto generated
+import { ItemDescriptor } from "../../shared/item_descriptor.js";
 import { ActionText } from "../../shared/literals/action_text.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
-import { ItemTag } from "../../shared/literals/item_tag.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
@@ -15,12 +15,7 @@ export type EntityEquippableComponent = {
     /**
      * The list of items that can go in this slot.
      */
-    accepted_items?: Array<
-      | ItemIdentifier
-      | {
-          any_tag?: Array<ItemTag>;
-        }
-    >;
+    accepted_items?: Array<ItemDescriptor>;
     /**
      * Text to be displayed when the entity can be equipped with this item when playing with Touch-screen controls.
      */

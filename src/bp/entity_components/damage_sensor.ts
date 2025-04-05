@@ -11,14 +11,14 @@ export namespace EntityDamageSensorComponent {
     on_damage?: EntityEventTrigger;
     /**
      * Type of damage that triggers the events.
-     * @default yes
+     * @default "none"
      */
     cause?: DamageSource;
     /**
      * If true, the damage dealt to the entity will take away health from it, set to false to make the entity ignore that damage.
-     * @default true
+     * @default "yes"
      */
-    deals_damage?: boolean;
+    deals_damage?: "yes" | "no" | "no_but_side_effects_apply";
     /**
      * A multiplier that modifies the base damage from the damage cause. If deals_damage is true the multiplier can only reduce the damage the entity will take to a minimum of 1.
      * @default 1

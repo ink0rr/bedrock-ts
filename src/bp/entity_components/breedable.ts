@@ -1,9 +1,9 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
+import { ItemDescriptor } from "../../shared/item_descriptor.js";
 import { BlockIdentifier } from "../../shared/literals/block_identifier.js";
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
-import { ItemTag } from "../../shared/literals/item_tag.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
@@ -27,18 +27,11 @@ export type EntityBreedableComponent = {
   /**
    * The filters to run when attempting to fall in love.
    */
-  love_filters?: Filter;
+  love_filters?: Filters;
   /**
    * The list of items that can be used to get the entity into the 'love' state.
    */
-  breed_items?:
-    | Array<
-        | ItemIdentifier
-        | {
-            any_tag?: Array<ItemTag>;
-          }
-      >
-    | ItemIdentifier;
+  breed_items?: Array<ItemDescriptor> | ItemIdentifier;
   /**
    * The list of entity definitions that this entity can breed with.
    */
@@ -171,14 +164,17 @@ export type EntityBreedableComponent = {
   /**
    * List of entity properties that should be inherited from the parent entities and potentially mutated.
    */
-  property_inheritance?: {
-    /**
-     * The chance that the baby's property will deviate from its parents.
-     */
-    mutation_chance?: number;
-    /**
-     * A list of values to select from if mutating.
-     */
-    mutation_values?: string | number | boolean;
-  };
+  property_inheritance?: Record<
+    string,
+    {
+      /**
+       * The chance that the baby's property will deviate from its parents.
+       */
+      mutation_chance?: number;
+      /**
+       * A list of values to select from if mutating.
+       */
+      mutation_values?: string | number | boolean;
+    }
+  >;
 };

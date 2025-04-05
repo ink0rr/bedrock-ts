@@ -18,7 +18,7 @@ export type EntityAmbientSoundIntervalComponent = {
   value?: number;
   /**
    * Level sound event to be played as the ambient sound.
-   * @default ambient
+   * @default "ambient"
    */
   event_name?: SoundEvent;
   /**

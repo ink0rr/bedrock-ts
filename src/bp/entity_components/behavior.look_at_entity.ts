@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 
 /**
  * Allows the mob to look at nearby entities.
@@ -33,5 +33,5 @@ export type EntityBehaviorLookAtEntityComponent = {
   /**
    * Filter to determine the conditions for this mob to look at the entity.
    */
-  filters?: Filter;
+  filters?: Filters;
 };

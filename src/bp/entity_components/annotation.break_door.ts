@@ -12,7 +12,7 @@ export type EntityAnnotationBreakDoorComponent = {
   break_time?: number;
   /**
    * The minimum difficulty that the world must be on for this entity to break doors.
-   * @default hard
+   * @default "hard"
    */
   min_difficulty?: Difficulty;
 };

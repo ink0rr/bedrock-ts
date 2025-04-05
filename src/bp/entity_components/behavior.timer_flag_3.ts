@@ -4,7 +4,7 @@ import { EntityEventTrigger } from "../entity_behavior/event.js";
 /**
  * Fires an event when this behavior starts, then waits for a duration before stopping.
  */
-export type EntityBehaviorTimerFlag_3Component = {
+export type EntityBehaviorTimerFlag3Component = {
   priority?: number;
   /**
    * Goal cooldown range in seconds.

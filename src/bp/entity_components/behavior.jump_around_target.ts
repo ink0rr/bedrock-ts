@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 
 export type EntityBehaviorJumpAroundTargetComponent = {
   priority?: number;
@@ -17,5 +17,5 @@ export type EntityBehaviorJumpAroundTargetComponent = {
   required_vertical_space?: number;
   snap_to_surface_block_range?: number;
   jump_angles?: Array<number>;
-  filters?: Filter;
+  filters?: Filters;
 };

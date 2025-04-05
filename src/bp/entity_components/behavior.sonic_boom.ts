@@ -1,4 +1,3 @@
-// auto generated
 import { SoundEvent } from "../../shared/sound_event.js";
 
 /**

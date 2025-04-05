@@ -1,6 +1,5 @@
 // auto generated
-import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
-import { ItemTag } from "../../shared/literals/item_tag.js";
+import { ItemDescriptor } from "../../shared/item_descriptor.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";
 
 /**
@@ -19,11 +18,7 @@ export type EntityTamemountComponent = {
     /**
      * Name of the item this entity dislikes and will cause it to get angry if used while untamed.
      */
-    item?:
-      | ItemIdentifier
-      | {
-          any_tag?: Array<ItemTag>;
-        };
+    item?: ItemDescriptor;
   }>;
   /**
    * The list of items that can be used to increase the entity's temper and speed up the taming process.
@@ -32,11 +27,7 @@ export type EntityTamemountComponent = {
     /**
      * Name of the item this entity likes and can be used to increase this entity's temper.
      */
-    item?:
-      | ItemIdentifier
-      | {
-          any_tag?: Array<ItemTag>;
-        };
+    item?: ItemDescriptor;
     /**
      * The amount of temper this entity gains when fed this item.
      */

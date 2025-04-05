@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 
 /**
  * Keeps track of entity group size in the given radius.
@@ -13,5 +13,5 @@ export type EntityGroupSizeComponent = {
   /**
    * The list of conditions that must be satisfied for other entities to be counted towards group size.
    */
-  filters?: Filter;
+  filters?: Filters;
 };

@@ -1,7 +1,6 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
-import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
-import { ItemTag } from "../../shared/literals/item_tag.js";
+import { Filters } from "../../shared/filter.js";
+import { ItemDescriptor } from "../../shared/item_descriptor.js";
 import { SpellEffects } from "../../shared/spell_effects.js";
 
 /**
@@ -15,7 +14,7 @@ export type EntityHealableComponent = {
   /**
    * The filter group that defines the conditions for using this item to heal the entity.
    */
-  filters?: Filter;
+  filters?: Filters;
   /**
    * The array of items that can be used to heal this entity.
    */
@@ -23,21 +22,17 @@ export type EntityHealableComponent = {
     /**
      * Item identifier that can be used to heal this entity.
      */
-    item?:
-      | ItemIdentifier
-      | {
-          any_tag?: Array<ItemTag>;
-        };
+    item?: ItemDescriptor;
     /**
      * The amount of health this entity gains when fed this item.
      * @default 1
      */
     heal_amount?: number;
-    filters?: Filter;
+    filters?: Filters;
     effects?: Array<{
       name?: SpellEffects;
       chance?: number;
-      duration?: number;
+      duration?: "infinite" | number;
       amplifier?: number;
     }>;
   }>;

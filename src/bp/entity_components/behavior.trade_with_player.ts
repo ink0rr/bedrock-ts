@@ -1,5 +1,5 @@
 // auto generated
-import { Filter } from "../../shared/filter.js";
+import { Filters } from "../../shared/filter.js";
 
 /**
  * Allows the player to trade with this mob. When the goal starts, it will stop the mob's navigation.
@@ -14,5 +14,5 @@ export type EntityBehaviorTradeWithPlayerComponent = {
   /**
    * Conditions that need to be met for the behavior to start.
    */
-  filters?: Filter;
+  filters?: Filters;
 };

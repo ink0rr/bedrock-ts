@@ -10,7 +10,7 @@ export type EntityBehaviorEatBlockComponent = {
   priority?: number;
   /**
    * A molang expression defining the success chance the entity has to consume a block.
-   * @default 0.02
+   * @default "0.02"
    */
   success_chance?: MoLang;
   /**
