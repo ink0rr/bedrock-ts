@@ -8,6 +8,7 @@ export * from "./difficulty.js";
 export * from "./filter.js";
 export * from "./game_rule.js";
 export * from "./hex_color.js";
+export * from "./item_descriptor.js";
 export * from "./item_group.js";
 export * from "./literal_union.js";
 export * from "./literals/index.js";
