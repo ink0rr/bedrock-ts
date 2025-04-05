@@ -1,656 +1,376 @@
-import * as path from "node:path";
+import path from "node:path";
 import { warning } from "./log";
+import { pascalCase, wrapQuote } from "./util";
 
-function snakeToCamel(s: string) {
-  return s.replace(/([-_.][a-z])/gi, ($1) => {
-    return $1.toUpperCase().replace("-", "").replace("_", "").replace(".", "");
-  });
-}
-
-export function snakeToPascal(s: string) {
-  return snakeToCamel(s).replace(/^[a-z]/, (l) => l.toUpperCase());
-}
-
-function wrapQuote(s: string) {
-  const regex = /^[a-zA-Z_][a-zA-Z0-9_]*$/;
-  return regex.test(s) ? s : `'${s}'`;
-}
-
-export type SchemaProperty = {
+export type Schema = {
+  $ref?: string;
   title?: string;
   description?: string;
-  type?: string;
+  type?: string | Array<string>;
   enum?: Array<number | string>;
-  $ref?: string;
-  anyOf?: SchemaProperty[];
-  oneOf?: SchemaProperty[];
-  allOf?: SchemaProperty[];
-  then?: SchemaProperty;
-  items?: SchemaProperty | SchemaProperty[];
+  anyOf?: Array<Schema>;
+  oneOf?: Array<Schema>;
+  allOf?: Array<Schema>;
+  then?: Schema;
+  else?: Schema;
+  items?: Schema | Array<Schema>;
   default?: never;
-  properties?: Record<string, SchemaProperty>;
-  definitions?: Record<string, SchemaProperty>;
+  properties?: Record<string, Schema>;
+  definitions?: Record<string, Schema>;
   doNotSuggest?: boolean;
   const?: never;
-  patternProperties?: Record<string, SchemaProperty>;
-  additionalProperties?: SchemaProperty | boolean;
-};
-export type ParserOptions = {
-  useNamespace?: boolean;
-  refParser?: (ref: string) => string | undefined;
-  importResolver?: (data: string) => string;
+  patternProperties?: Record<string, Schema>;
+  additionalProperties?: Schema | boolean;
+  propertyNames?: Schema;
+  minimum?: number;
+  maximum?: number;
 };
 
-const types = new Map<string, string>([
-  ["integer", "number"],
-  ["object", "Record<string, never>"],
-]);
-type IMap = {
-  name: string;
-  path: string;
-};
-const importMap = new Map<string, IMap>([
-  [
-    "entity_identifiers",
-    {
-      name: "EntityIdentifier",
-      path: 'import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";',
-    },
-  ],
-  [
-    "item_identifiers",
-    {
-      name: "ItemIdentifier",
-      path: 'import { ItemIdentifier } from "../../shared/literals/item_identifier.js";',
-    },
-  ],
-  [
-    "block_identifiers",
-    {
-      name: "BlockIdentifier",
-      path: 'import { BlockIdentifier } from "../../shared/literals/block_identifier.js";',
-    },
-  ],
-  [
-    "eventDefinition",
-    {
-      name: "EntityEventTrigger",
-      path: 'import { EntityEventTrigger } from "../entity_behavior/event.js";',
-    },
-  ],
-  [
-    "family",
-    {
-      name: "TypeFamily",
-      path: 'import { TypeFamily } from "../../shared/type_family.js";',
-    },
-  ],
-  [
-    "filter",
-    {
-      name: "Filter",
-      path: 'import { Filter } from "../../shared/filter.js";',
-    },
-  ],
-  [
-    "soundEvent",
-    {
-      name: "SoundEvent",
-      path: 'import { SoundEvent } from "../../shared/sound_event.js";',
-    },
-  ],
-  [
-    "damageType",
-    {
-      name: "DamageSource",
-      path: 'import { DamageSource } from "../../shared/damage_source.js";',
-    },
-  ],
-  [
-    "effectName",
-    {
-      name: "SpellEffects",
-      path: 'import { SpellEffects } from "../../shared/spell_effects.js";',
-    },
-  ],
-  [
-    "effectDefinition",
-    {
-      name: "SpellEffectDefinition",
-      path: 'import { SpellEffectDefinition } from "../entity_behavior/spell_effect.js";',
-    },
-  ],
-  [
-    "actionText",
-    {
-      name: "ActionText",
-      path: 'import { ActionText } from "../../shared/literals/action_text.js";',
-    },
-  ],
-  [
-    "slotType",
-    {
-      name: "Slot",
-      path: 'import { Slot } from "../../shared/slot.js";',
-    },
-  ],
-  [
-    "inventoryType",
-    {
-      name: "ContainerType",
-      path: 'import { ContainerType } from "../../shared/container_type.js";',
-    },
-  ],
-  [
-    "potionIds",
-    {
-      name: "PotionId",
-      path: 'import { PotionId } from "../../shared/potion_id.js";',
-    },
-  ],
-  [
-    "trade_table_paths",
-    {
-      name: "TradeTablePath",
-      path: 'import { TradeTablePath } from "../../shared/literals/trade_table_path.js";',
-    },
-  ],
-  [
-    "loot_table_paths",
-    {
-      name: "LootTablePath",
-      path: 'import { LootTablePath } from "../../shared/literals/loot_table_path.js";',
-    },
-  ],
-  [
-    "blockState",
-    {
-      name: "BlockState",
-      path: 'import { BlockState } from "../../shared/block_state.js";',
-    },
-  ],
-  [
-    "gameDifficulty",
-    {
-      name: "Difficulty",
-      path: 'import { Difficulty } from "../../shared/difficulty.js";',
-    },
-  ],
-  [
-    "subject",
-    {
-      name: "FilterSubject",
-      path: 'import { FilterSubject } from "../../shared/filter.js";',
-    },
-  ],
-  [
-    "item_tags",
-    {
-      name: "ItemTag",
-      path: 'import { ItemTag } from "../../shared/literals/item_tag.js";',
-    },
-  ],
-  [
-    "entityType",
-    {
-      name: "EntityBehaviorType",
-      path: 'import { EntityBehaviorType } from "../entity_behavior/type.js";',
-    },
-  ],
-  [
-    "prioritizedEntityType",
-    {
-      name: "EntityBehaviorPrioritizedType",
-      path: 'import { EntityBehaviorPrioritizedType } from "../entity_behavior/prioritized_type.js";',
-    },
-  ],
-  [
-    "componentsList",
-    {
-      name: "keyof EntityComponents",
-      path: 'import { EntityComponents } from "./index.js";',
-    },
-  ],
-  [
-    "embedded",
-    {
-      name: "MoLang",
-      path: 'import { MoLang } from "../../shared/molang.js";',
-    },
-  ],
-  [
-    "hexColor",
-    {
-      name: "HexColor",
-      path: 'import { HexColor } from "../../shared/hex_color.js";',
-    },
-  ],
-  [
-    "eventEnum",
-    {
-      name: "EntityEventIdentifier",
-      path: 'import { EntityEventIdentifier } from "../entity_behavior/event.js";',
-    },
-  ],
-  [
-    "particleDefinition",
-    {
-      name: "EntityBehaviorParticleDefinition",
-      path: 'import { EntityBehaviorParticleDefinition } from "../entity_behavior/particle.js";',
-    },
-  ],
-  [
-    "particleName",
-    {
-      name: "LegacyParticle",
-      path: 'import { LegacyParticle } from "../../shared/literals/legacy_particle.js";',
-    },
-  ],
-  [
-    "navigation",
-    {
-      name: "EntityBehaviorNavigation",
-      path: 'import { EntityBehaviorNavigation } from "../entity_behavior/navigation.js";',
-    },
-  ],
-  [
-    "geometry",
-    {
-      name: "GeometryIdentifier",
-      path: 'import { GeometryIdentifier } from "../../shared/literals/geometry_identifier.js";',
-    },
-  ],
-  [
-    "particle_identifiers",
-    {
-      name: "ParticleIdentifier",
-      path: 'import { ParticleIdentifier } from "../../shared/literals/particle_identifier.js";',
-    },
-  ],
-  [
-    "soundDefinition",
-    {
-      name: "SoundDefinitionIdentifier",
-      path: 'import { SoundDefinitionIdentifier } from "../../shared/literals/sound_definition_identifier.js";',
-    },
-  ],
-  [
-    "itemTexture",
-    {
-      name: "ItemIcon",
-      path: 'import { ItemIcon } from "../../shared/literals/item_icon.js";',
-    },
-  ],
-  [
-    "minecraftColor",
-    {
-      name: "MinecraftColor",
-      path: 'import { MinecraftColor } from "../../shared/literals/minecraft_color.js";',
-    },
-  ],
-  [
-    "itemWearableType",
-    {
-      name: "WearableSlot",
-      path: 'import { WearableSlot } from "../../shared/slot.js";',
-    },
-  ],
-  [
-    "terrainTexture",
-    {
-      name: "TerrainTextureIdentifier",
-      path: 'import { TerrainTextureIdentifier } from "../../shared/literals/terrain_texture_identifier.js";',
-    },
-  ],
-  [
-    "block_tags",
-    {
-      name: "BlockTag",
-      path: 'import { BlockTag } from "../../shared/literals/block_tag.js";',
-    },
-  ],
-  [
-    "material_instances",
-    {
-      name: "Record<string, BlockMaterialInstancesComponent>",
-      path: 'import { BlockMaterialInstancesComponent } from "./material_instances.js";',
-    },
-  ],
-]);
-
-function _parseRef(ref: string) {
-  switch (ref) {
-    case "../../../blockCulling/dynamic/identifierEnum.json":
-      return "string";
+export class SchemaParser {
+  typeMap = new Map<string, string>([
+    ["integer", "number"],
+    ["object", "Record<string, never>"],
+  ]);
+  constructor() {}
+  protected defaultRefParser(ref: string): RefData | string {
+    const filename = path.basename(ref, ".json");
+    switch (filename) {
+      case "degree":
+      case "behaviorPrioerity":
+        return "number";
+      case "componentGroupEnum":
+      case "customComponentEnum":
+        return "string";
+    }
+    return "string";
   }
-
-  const key = path.basename(ref, ".json");
-  const value = importMap.get(key);
-  if (value) {
-    return value.name;
+  protected async parseRef(ref: string, parser?: RefParser): Promise<RefData | string> {
+    if (ref.startsWith("#/definitions/")) {
+      return this.refDefinition(ref);
+    }
+    return parser ? await parser(ref) : this.defaultRefParser(ref);
   }
-
-  switch (key) {
-    case "degree":
-    case "behaviorPriority":
-      return "number";
-    case "componentGroupEnum":
-    case "customComponentEnum":
-      return "string";
+  protected async createObject(
+    schema: Schema,
+    { refParser }: RefParserParameter = {},
+  ): Promise<string> {
+    const str: string[] = [];
+    str.push("{");
+    for (const [key, value] of Object.entries(schema.properties || {})) {
+      const name = wrapQuote(key);
+      str.push(await this.parseProperty({ name, schema: value, skip: false, refParser }));
+    }
+    str.push("}");
+    return str.join("\n");
   }
-
-  // definitions
-  if (ref.startsWith("#/definitions/")) {
-    const def = ref.replace("#/definitions/", "");
-    const typeName = snakeToPascal(def);
-    return typeName;
+  protected createJsDoc(schema: Schema) {
+    const str: string[] = [];
+    if (schema.description) {
+      str.push(`/**`);
+      str.push(` * ${schema.description}`);
+      if (schema.default) {
+        str.push(` * @default ${JSON.stringify(schema.default)}`);
+      }
+      str.push(` */`);
+    }
+    return str.join("\n");
   }
+  private refDefinition(ref: string): string {
+    const name = ref.replace("#/definitions/", "");
+    return `<useNamespace>${pascalCase(name)}</useNamespace>`;
+  }
+  private async parsePropertyType(
+    schema: Schema,
+    options?: ParsePropertyTypeOptions,
+  ): Promise<string> {
+    const { refParser } = options || {};
+    if (schema.doNotSuggest) {
+      return "";
+    }
+    // Constants
+    if (schema.const) {
+      if (typeof schema.const === "string") {
+        return `"${schema.const}"`;
+      }
+      return schema.const;
+    }
+    // of
+    const fields = {
+      anyOf: "|",
+      oneOf: "|",
+      allOf: "&",
+    } as const;
+    for (const [key, value] of Object.entries(fields)) {
+      const data = schema[key as keyof typeof fields];
+      if (data) {
+        const str: string[] = [];
+        const types = (
+          await Promise.all(data.map(async (x) => await this.parsePropertyType(x, { refParser })))
+        ).join(` ${value} `);
 
-  return undefined;
-}
-let parseRef = _parseRef;
-
-function resolveImports(data: string) {
-  const s = new Set<string>();
-  for (const [_, value] of importMap) {
-    // const regex = new RegExp(`(?<=\\b${value.name}\\b)`, "g");
-    // if (data.match(regex)) {
-    //   s.add(value.path);
-    // }
-    const tests = [
-      value.name + "\n",
-      value.name + ">",
-      value.name + "[]",
-      value.name + " |",
-      value.name + ";",
-      value.name + ",", // for the last item
-      `: ${value.name} }`, // value of pair type
-      "&" + value.name,
-    ];
-    for (const test of tests) {
-      if (data.includes(test)) {
-        s.add(value.path);
+        str.push(`${types}`);
+        return str.join("");
       }
     }
-  }
-  return Array.from(s).join("\n");
-}
-
-function createObject(prop: SchemaProperty) {
-  const s = [`{`];
-  const fields = prop.properties ?? {};
-  for (const [k, v] of Object.entries(fields)) {
-    const name = wrapQuote(k);
-    s.push(parseProperty(name, v));
-  }
-  s.push(`}`);
-
-  return s.join("\n");
-}
-
-function parsePropertyType(prop: SchemaProperty): string {
-  const s: string[] = [];
-  if (prop.doNotSuggest) return "";
-
-  // Constants
-  if (prop.const) {
-    if (typeof prop.const === "string") {
-      return `"${prop.const}"`;
+    // then
+    if (schema.then) {
+      return await this.parsePropertyType(schema.then, { refParser });
     }
-    return prop.const;
-  }
-
-  if (prop.anyOf) {
-    if (prop.type === "object") {
-      for (const p of prop.anyOf) {
-        s.push(createObject(p));
-      }
-      return s.join(" | ");
-    } else if (prop.type === "boolean") {
-      return "boolean";
-    } else {
-      for (const p of prop.anyOf) {
-        s.push(parsePropertyType(p));
-      }
-      return s.join(" | ");
+    // Enum
+    if (schema.enum) {
+      return schema.enum.map((v) => JSON.stringify(v)).join(" | ");
     }
-  } else if (prop.oneOf) {
-    for (const p of prop.oneOf) {
-      s.push(parsePropertyType(p));
-    }
-    return s.join(" | ");
-  } else if (prop.allOf) {
-    for (const p of prop.allOf) {
-      s.push(parsePropertyType(p));
-    }
-    return s.join(" & ");
-  } else if (prop.then) {
-    // workaround solution for projectile
-    return parsePropertyType(prop.then);
-  } else {
-    if (prop.$ref) {
-      const refType = parseRef(prop.$ref);
-      if (refType) {
-        return refType;
-      } else {
-        warning(`Unknown ref: ${prop.$ref}`);
-      }
-    }
-
-    if (prop.type && Array.isArray(prop.type)) {
-      return prop.type.map((v) => types.get(v) || v).join(" | ");
-    }
-
-    if (prop.type === "array") {
-      // return `Array<${parsePropertyType(prop.items!)}>`
-      if (Array.isArray(prop.items)) {
-        for (const item of prop.items) {
-          s.push(parsePropertyType(item));
+    // Ref
+    // if (schema.$ref && !schema.type) {
+    if (schema.$ref) {
+      const ref = await this.parseRef(schema.$ref, refParser);
+      if (ref) {
+        if (typeof ref === "string") {
+          return ref;
         }
-        return `[${s.join(", ")}]`;
+        const { type, import: _import } = ref;
+        if (_import) {
+          return type + `<import>${_import}</import>`;
+        }
+        return type;
       } else {
-        if (!prop.items) {
-          return "any[]";
+        warning(`Ref not found: ${schema.$ref}`);
+      }
+    }
+    // Doesn't have but default
+    if (!schema.type && schema.default) {
+      return typeof schema.default;
+    }
+    // Type
+    if (schema.type) {
+      if (Array.isArray(schema.type)) {
+        return schema.type.map((v) => this.typeMap.get(v) || v).join(" | ");
+      }
+      if (schema.type === "array") {
+        if (Array.isArray(schema.items)) {
+          const result = await Promise.all(
+            schema.items.map(async (item) => await this.parsePropertyType(item, { refParser })),
+          );
+          return `[${result.join(", ")}]`;
+        }
+        if (!schema.items) {
+          warning(`Array type without items: ${schema.type}`);
+          return `Array<any>`;
         }
         // Ref
-        if (prop.items.$ref) {
-          const refType = parseRef(prop.items.$ref);
-          if (refType) {
-            return `Array<${refType}>`;
-          } else {
-            warning(`Unknown ref: ${prop.items.$ref}`);
+        if (schema.items.$ref) {
+          const type = await this.parseRef(schema.items.$ref, refParser);
+          if (type) {
+            if (typeof type === "string") {
+              return `Array<${type}>`;
+            }
+            const { type: typeName, import: _import } = type;
+            if (_import) {
+              return `Array<${typeName}<import>${_import}</import>>`;
+            }
+            return `Array<${typeName}>`;
           }
+          warning(`Ref not found: ${schema.items.$ref}`);
         }
-        // anyof
-        if (prop.items.anyOf) {
-          for (const item of prop.items.anyOf) {
-            s.push(parsePropertyType(item));
-          }
-          return `Array<${s.join(" | ")}>`;
+        // anyOf
+        if (schema.items.anyOf) {
+          const result = await Promise.all(
+            schema.items.anyOf.map(
+              async (item) => await this.parsePropertyType(item, { refParser }),
+            ),
+          );
+          return `Array<${result.join(" | ")}>`;
         }
         // Hacky way if the prop.items doesn't hava a type.
         // Usually, it should be a object.
-        if (!prop.items.type && Object.keys(prop.items).length > 0) {
-          const data = JSON.parse(JSON.stringify(prop.items));
+        if (!schema.items.type && Object.keys(schema.items).length > 0) {
+          const data = JSON.parse(JSON.stringify(schema.items));
           const temp = {
             properties: data,
           };
-          const obj = createObject(temp);
+          const obj = await this.createObject(temp, { refParser });
           return `Array<${obj}>`;
         }
-        return `Array<${parsePropertyType(prop.items)}>`;
+        return `Array<${await this.parsePropertyType(schema.items, { refParser })}>`;
       }
     }
-
-    if (prop.type === "object" || prop.properties) {
+    if (schema.type === "object" || schema.properties) {
+      const str: string[] = [];
       // Pattern
-      if (prop.patternProperties) {
-        for (const [k, v] of Object.entries(prop.patternProperties)) {
-          s.push(`{ [key: string]: ${parsePropertyType(v)} }`);
+      if (schema.patternProperties) {
+        // TODO: Fix this
+        for (const value of Object.values(schema.patternProperties)) {
+          str.push(`{ [key: string]: ${await this.parsePropertyType(value, { refParser })} }`);
+          break;
         }
+        // const values = Object.values(schema.patternProperties);
+        // if (values.length === 1) {
+        //   const result = await this.parsePropertyType(values[0], { refParser });
+        //   str.push(result);
+        // } else {
+        //   const result = await Promise.all(
+        //     values.map(async (item) => await this.parsePropertyType(item, { refParser })),
+        //   );
+        //   str.push(result.join(" | "));
+        // }
       }
-      let obj = createObject(prop);
-      if (prop.additionalProperties && typeof prop.additionalProperties === "object") {
-        const additionalObj = createObject(prop.additionalProperties);
-        if (obj === "{\n}") {
-          obj = additionalObj;
+      let obj = await this.createObject(schema, { refParser });
+      if (schema.additionalProperties && typeof schema.additionalProperties === "object") {
+        const additional = await this.parsePropertyType(schema.additionalProperties, {
+          refParser,
+        });
+        if (schema.propertyNames) {
+          const propertyName = await this.parsePropertyType(schema.propertyNames, { refParser });
+          obj = `Record<${propertyName}, ${additional}>`;
         } else {
-          obj += ` & ${additionalObj}`;
+          if (obj === "{\n}") {
+            obj = additional;
+          } else {
+            obj += ` & ${additional}`;
+          }
         }
       }
       // Check result
-      if (obj === "{\n}" && s.length > 0) {
-        return s.join(" | ");
-      }
       if (obj === "{\n}") {
+        if (str.length > 0) {
+          return str.join(" | ");
+        }
         return "Record<string, never>";
       }
       return obj;
-      // return s.join(" | ") + " | " + createObject(prop);
     }
-
-    if (prop.enum) {
-      return prop.enum.map((v) => JSON.stringify(v)).join(" | ");
+    const retval = schema.type ? this.typeMap.get(schema.type) || schema.type : undefined;
+    if (retval) {
+      return retval;
     }
-
-    // Doesn't have type but has default
-    if (!prop.type && prop.default) {
-      return typeof prop.default;
-    }
+    warning(`Type not found:`, JSON.stringify(schema));
+    return "Record<string, never>";
   }
-
-  return prop.type ? types.get(prop.type) || prop.type : "any";
-}
-
-function parseProperty(name: string, prop: SchemaProperty, skipField = false) {
-  const s: string[] = [];
-
-  const propType = parsePropertyType(prop);
-  if (!propType) return "";
-
-  if (prop.description) {
-    s.push(`/**`);
-    s.push(` * ${prop.description}`);
-    if (prop.default) s.push(` * @default ${prop.default}`);
-    s.push(` */`);
-  }
-
-  if (!skipField) s.push(`${name}?: ${propType};`);
-  else s.push(`${propType};`);
-  return s.join("\n");
-}
-
-export function parseSchema(json: SchemaProperty, name: string, options?: ParserOptions) {
-  parseRef = options?.refParser ?? _parseRef;
-  const { properties: fields, definitions, doNotSuggest, type, additionalProperties } = json;
-  if (doNotSuggest) return "";
-
-  // Direct type
-  if (type && type !== "object") {
-    const s = `export type ${name} = ${parsePropertyType(json)};`;
-    const imports = resolveImports(s);
-    return `${imports}\n${s}`;
-  }
-
-  let s: string[] = [];
-  let hasNamespace = false;
-  const parsedDefinitions = new Set<string>();
-
-  // Definitions
-  if (definitions) {
-    // Namespace
-    if (options?.useNamespace) {
-      hasNamespace = true;
-      s.push(`export namespace ${name} {`);
+  private async parseProperty({ name, schema, skip = false, refParser }: ParsePropertyArgs) {
+    const str: string[] = [];
+    const type = await this.parsePropertyType(schema, { refParser });
+    if (!type) {
+      return "";
     }
-    for (const [k, v] of Object.entries(definitions)) {
-      const typeName = snakeToPascal(k);
-      const kk = wrapQuote(k);
-      s.push(`export type ${typeName} = ${parseProperty(kk, v, true)};`);
-      parsedDefinitions.add(typeName);
+    if (schema.description) {
+      str.push(this.createJsDoc(schema));
     }
-  }
-
-  // Close namespace
-  if (hasNamespace) {
-    const last = s[s.length - 1];
-    if (last === `export namespace ${name} {`) {
-      s.pop();
-      hasNamespace = false;
+    if (!skip) {
+      str.push(`${name}?: ${type};`);
     } else {
-      s.push(`}`);
+      str.push(`${type}`);
     }
+    return str.join("\n");
   }
-
-  if (json.description) {
-    s.push(`/**`);
-    s.push(` * ${json.description}`);
-    s.push(` */`);
-  }
-
-  if (fields && Object.keys(fields).length > 0) {
-    s.push(`export type ${name} = {`);
-    for (const [k, v] of Object.entries(fields)) {
-      // If include symbols, add wrap with quotes
-      const name = wrapQuote(k);
-      s.push(parseProperty(name, v));
+  async parse(schema: Schema, name: string, opts?: ParseOptions): Promise<string> {
+    const { properties, definitions, doNotSuggest, type, description } = schema;
+    const { refParser } = opts || {};
+    const str: string[] = [];
+    const _definitions = new Set<string>();
+    let namespace = false;
+    if (doNotSuggest) {
+      return "";
     }
-    s.push(`}`);
-  } else {
-    // Additional properties, just workaround for blocks/material instances
-    if (typeof additionalProperties === "object") {
-      s.push(`export type ${name} =`);
-      s.push(parsePropertyType(additionalProperties));
-    } else {
-      if (json.anyOf) {
-        s.push(`export type ${name} = `);
-        s.push(`  ${json.anyOf.map((v: any) => parsePropertyType(v)).join(" | ")};`);
-      } else if (json.oneOf) {
-        s.push(`export type ${name} = `);
-        s.push(`  ${json.oneOf.map((v: any) => parsePropertyType(v)).join(" | ")};`);
-      } else if (json.allOf) {
-        s.push(`export type ${name} = `);
-        s.push(`  ${json.allOf.map((v: any) => parsePropertyType(v)).join(" & ")};`);
-      } else if (json.$ref) {
-        const refType = parseRef(json.$ref);
-        if (refType) {
-          s.push(`export type ${name} = ${refType};`);
-        } else {
-          s.push(`export type ${name} = Record<string, never>;`);
-          warning(`Unknown ref: ${json.$ref}`);
-        }
-      } else {
-        // Empty object
-        s.push(`export type ${name} = Record<string, never>;`);
+    // if (typeof type === "string" && type !== "object" && !schema.$ref && !schema.items) {
+    //   if (description) {
+    //     str.push(this.createJsDoc(schema));
+    //   }
+    //   const typeName = this.typeMap.get(type) || type;
+    //   str.push(`export type ${name} = ${typeName};`);
+    //   return str.join("\n");
+    // }
+
+    if (definitions) {
+      namespace = true;
+      str.push(`export namespace <namespace>${name}</namespace> {`);
+      for (const [key, value] of Object.entries(definitions)) {
+        const typeName = pascalCase(key);
+        const name = wrapQuote(key);
+        str.push(
+          `export type ${typeName} = ${await this.parseProperty({ name, schema: value, skip: true, refParser })};`,
+        );
+        _definitions.add(typeName);
       }
     }
-  }
+    // Close namespace
+    if (namespace) {
+      const last = str[str.length - 1];
+      if (last === `export namespace <namespace>${name}</namespace> {`) {
+        str.pop();
+        namespace = false;
+      } else {
+        str.push(`}`);
+      }
+    }
 
-  const importResolver = options?.importResolver ?? resolveImports;
+    if (description) {
+      str.push(this.createJsDoc(schema));
+    }
 
-  const imports = importResolver(s.join("\n"));
-  if (imports) {
-    s.unshift(importResolver(s.join("\n")), "");
-  }
+    if (properties && Object.keys(properties).length > 0) {
+      str.push(`export type ${name} = {`);
+      for (const [key, value] of Object.entries(properties)) {
+        const name = wrapQuote(key);
+        str.push(await this.parseProperty({ name, schema: value, skip: false, refParser }));
+      }
+      str.push("}");
+    } else {
+      const typeName = await this.parsePropertyType(schema, { refParser });
+      if (typeName) {
+        str.push(`export type ${name} = ${typeName};`);
+      } else {
+        warning(`Type not found: ${name}`);
+        str.push(`export type ${name} = Record<string, never>;`);
+      }
+    }
 
-  // Idiot way for resolving namespaces
-  if (hasNamespace) {
-    for (const parsedDefinition of parsedDefinitions) {
-      // Replace all occurences of the parsed definition
-      s = s.map((line) => {
-        // Make sure it's not the definition itself
-        const regex = new RegExp(`(?<!type )\\b${parsedDefinition}`, "g");
-        return line.replace(regex, `${name}.${parsedDefinition}`);
+    const importRegex = /<import>(.*?)<\/import>/g;
+    const useNamespaceRegex = /<useNamespace>(.*?)<\/useNamespace>/g;
+    const imports = new Set<string>();
+    for (let i = 0; i < str.length; i++) {
+      const v = str[i];
+      // Namespace
+      if (namespace) {
+        str[i] = v.replace(/<namespace>(.*?)<\/namespace>/g, name);
+      }
+      // Resolve imports
+      const match = v.match(importRegex);
+      if (match) {
+        for (const m of match) {
+          const importPath = m.replace(importRegex, "$1");
+          imports.add(importPath);
+        }
+        str[i] = v.replace(importRegex, "");
+      }
+      // Resolve useNamespace
+      str[i] = str[i].replace(useNamespaceRegex, (_, p1) => {
+        return name + "." + p1;
       });
     }
+    if (imports.size > 0) {
+      str.unshift(...imports, "");
+    }
+
+    return str.join("\n");
   }
-
-  // Namespace
-  // if (options?.useNamespace) {
-  //   s.push(`}`);
-  //   s.push(`declare type ${name} = ${name}.${name};`);
-  //   s.push(`export { ${name} };`);
-  // }
-
-  return s.join("\n");
 }
+
+export type ParsePropertyArgs = {
+  name: string;
+  schema: Schema;
+  skip?: boolean;
+} & RefParserParameter;
+
+export type ParsePropertyTypeOptions = RefParserParameter;
+
+export type ParseOptions = RefParserParameter;
+
+export type RefData = {
+  type: string;
+  import?: string;
+};
+
+type RefParserParameter = {
+  refParser?: RefParser;
+};
+type RefParser = (ref: string) => Promise<RefData | string>;
