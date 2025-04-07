@@ -130,7 +130,10 @@ export type FilterTest =
   | WeatherAtPosition
   | Weather
   | HomeDistance
-  | IsBoundToCreakingHeart;
+  | IsBoundToCreakingHeart
+  | IsNavigating
+  | IsBaby
+  | OwnerDistance;
 
 type ActorHealth = {
   test: "actor_health";
@@ -599,4 +602,19 @@ type HomeDistance = {
 type IsBoundToCreakingHeart = {
   test: "is_bound_to_creaking_heart";
   value?: boolean;
+};
+
+type IsNavigating = {
+  test: "is_navigating";
+  value?: boolean;
+};
+
+type IsBaby = {
+  test: "is_baby";
+  value?: boolean;
+};
+
+type OwnerDistance = {
+  test: "owner_distance";
+  value?: number;
 };
