@@ -1,12 +1,8 @@
 // auto generated
 import { TerrainTextureIdentifier } from "../../shared/literals/terrain_texture_identifier.js";
 
-/**
- * The material instances for a block. Maps face or material_instance names in a geometry file to an actual material instance. You can assign a material instance object to any of these faces: 'up', 'down', 'north', 'south', 'east', 'west', or '*'. You can also give an instance the name of your choosing such as 'my_instance', and then assign it to a face by doing 'north':'my_instance'.
- */
-export type BlockMaterialInstancesComponent = Record<
-  "*" | "up" | "down" | "sides" | "north" | "south" | "east" | "west" | string,
-  {
+export namespace BlockMaterialInstancesComponent {
+  export type MaterialInstance = {
     /**
      * Name of a texture from the terrain_texture.json file.
      */
@@ -26,5 +22,19 @@ export type BlockMaterialInstancesComponent = Record<
      * @default true
      */
     face_dimming?: boolean;
-  }
->;
+  };
+}
+/**
+ * The material instances for a block. Maps face or material_instance names in a geometry file to an actual material instance. You can assign a material instance object to any of these faces: 'up', 'down', 'north', 'south', 'east', 'west', or '*'. You can also give an instance the name of your choosing such as 'my_instance', and then assign it to a face by doing 'north':'my_instance'.
+ */
+export type BlockMaterialInstancesComponent = {
+  "*"?: Record<string, never>;
+  up?: Record<string, never>;
+  down?: Record<string, never>;
+  sides?: Record<string, never>;
+  north?: Record<string, never>;
+  south?: Record<string, never>;
+  east?: Record<string, never>;
+  west?: Record<string, never>;
+} & string &
+  Record<string, never>;

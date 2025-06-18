@@ -12,7 +12,15 @@ export type BlockTransformationComponent = {
    */
   scale?: Array<number>;
   /**
-   * The block's rotation
+   * The point to apply scale around.
+   */
+  scale_pivot?: Array<number>;
+  /**
+   * The block's rotation.
    */
   rotation?: Array<number>;
+  /**
+   * The point to apply rotation around.
+   */
+  rotation_pivot?: Array<number>;
 };

@@ -7,23 +7,29 @@ export type ItemEnchantableComponent = {
    * What enchantments can be applied.
    */
   slot?:
+    | "all"
     | "armor_feet"
-    | "armor_torso"
     | "armor_head"
     | "armor_legs"
+    | "armor_torso"
     | "axe"
     | "bow"
+    | "carrot_stick"
     | "cosmetic_head"
     | "crossbow"
     | "elytra"
     | "fishing_rod"
     | "flintsteel"
+    | "g_armor"
+    | "g_digging"
+    | "g_tool"
     | "hoe"
+    | "none"
     | "pickaxe"
     | "shears"
     | "shield"
     | "shovel"
-    | "sword"
-    | "all";
+    | "spear"
+    | "sword";
   value?: number;
 };

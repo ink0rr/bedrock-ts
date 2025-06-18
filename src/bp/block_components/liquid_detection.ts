@@ -15,7 +15,7 @@ export type BlockLiquidDetectionComponent = {
     /**
      * How the block reacts to flowing water.
      */
-    on_liquid_touches?: "blocking" | "broken" | "no_reaction";
+    on_liquid_touches?: "blocking" | "broken" | "popped" | "no_reaction";
     /**
      * When a block contains a liquid, controls the directions in which the liquid can't flow out from the block. Also controls the directions in which a block can stop liquid flowing into it if `no_reaction` is set for the `on_liquid_touches` field.
      */

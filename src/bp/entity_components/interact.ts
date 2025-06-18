@@ -34,6 +34,7 @@ export namespace EntityInteractComponent {
       | "slot.armor.chest"
       | "slot.armor.legs"
       | "slot.armor.feet"
+      | "slot.armor.body"
       | number;
     /**
      * The entity's equipment slot to equip the item to, if any, upon successful interaction.
@@ -43,6 +44,7 @@ export namespace EntityInteractComponent {
       | "slot.armor.chest"
       | "slot.armor.legs"
       | "slot.armor.feet"
+      | "slot.armor.body"
       | number;
     /**
      * Allows to repair one of the entity's items.

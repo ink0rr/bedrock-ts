@@ -30,7 +30,21 @@ export type EntityBehaviorRandomLookAroundAndSitComponent = {
    */
   probability?: number;
   /**
-   * The mob will stay sitting on reload
+   * If the goal should continue to be used as long as the mob is leashed.
    */
-  continue_sitting_on_reload?: boolean;
+  continue_if_leashed?: boolean;
+  /**
+   * The rightmost angle a mob can look at on the horizontal plane with respect to its initial facing direction.
+   * @default 30
+   */
+  max_angle_of_view_horizontal?: number;
+  /**
+   * The leftmost angle a mob can look at on the horizontal plane with respect to its initial facing direction.
+   * @default -30
+   */
+  min_angle_of_view_horizontal?: number;
+  /**
+   * The cooldown in seconds before the goal can be used again.
+   */
+  random_look_around_cooldown?: number;
 };

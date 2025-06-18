@@ -28,7 +28,7 @@ export type EntityBehaviorNearestPrioritizedAttackableTargetComponent = {
    * Determines the amount of time in seconds that this mob will look for a target before forgetting about it and looking for a new one when the target isn't visible any more.
    * @default 3
    */
-  must_see_forget_duration?: boolean;
+  must_see_forget_duration?: number;
   /**
    * If true, the target will change to the current closest entity whenever a different entity is closer.
    */

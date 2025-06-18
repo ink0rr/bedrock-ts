@@ -1,4 +1,5 @@
 // auto generated
+import { Filters } from "../../shared/filter.js";
 import { EntityIdentifier } from "../../shared/literals/entity_identifier.js";
 
 export type EntityBehaviorFireAtTargetComponent = {
@@ -6,6 +7,10 @@ export type EntityBehaviorFireAtTargetComponent = {
   projectile_def?: EntityIdentifier;
   attack_range?: [number, number];
   attack_cooldown?: number;
+  /**
+   * Conditions that need to be met for the behavior to start.
+   */
+  filters?: Filters;
   pre_shoot_delay?: number;
   post_shoot_delay?: number;
   ranged_fov?: number;
