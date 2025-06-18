@@ -6,7 +6,7 @@ import { EntityEventTrigger } from "../entity_behavior/event.js";
 /**
  * Allows the mob to be tempted by food they like.
  */
-export type EntityBehaviorTemptComponent = {
+export type EntityBehaviorFloatTemptComponent = {
   priority?: number;
   /**
    * If true, the mob can stop being tempted if the player moves too fast while close to this mob.

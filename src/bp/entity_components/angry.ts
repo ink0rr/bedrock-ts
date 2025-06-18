@@ -24,6 +24,11 @@ export type EntityAngryComponent = {
    */
   broadcast_anger_on_being_attacked?: boolean;
   /**
+   * If false, when this mob is killed it does not spread its anger to other entities of the same entity definition within the broadcastRange.
+   * @default true
+   */
+  broadcast_anger_when_dying?: boolean;
+  /**
    * Distance in blocks within which other entities of the same entity definition will become angry.
    * @default 20
    */

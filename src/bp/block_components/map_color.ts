@@ -7,6 +7,10 @@ export namespace BlockMapColorComponent {
      * The color is represented as a hex value in the format '#RRGGBB'. May also be expressed as an array of [R, G, B] from 0 to 255.
      */
     color?: HexColor | Array<number>;
+    /**
+     * Tint multiplied to the color. Tint method logic varies, but often refers to the 'rain' and 'temperature' of the biome the block is placed in to compute the tint.
+     */
+    tint_method?: string;
   };
 }
 /**
