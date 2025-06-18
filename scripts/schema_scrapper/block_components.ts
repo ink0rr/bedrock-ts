@@ -4,7 +4,7 @@ import { info } from "../util/log";
 import { parseComponentSchemas } from "./parser";
 
 export async function parseBlockComponents() {
-  const version = "v1.21.70";
+  const version = "v1.21.80";
   info(`version ${version}`);
   const dest = path.join("src", "bp", "block_components");
   const arg = {

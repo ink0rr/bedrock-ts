@@ -41,7 +41,7 @@ async function sonicBoom(): Promise<Patch> {
 const patches = [canPowerJump, moveAwayFromTarget, sonicBoom] satisfies Array<() => Promise<Patch>>;
 
 export async function parseEntityComponents() {
-  const version = "v1.21.70";
+  const version = "v1.21.80";
   info(`version ${version}`);
   const dest = path.join("src", "bp", "entity_components");
   const arg = {
