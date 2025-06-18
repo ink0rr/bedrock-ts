@@ -3,8 +3,7 @@ import { writeFile } from "../util/fs";
 import { info } from "../util/log";
 import { parseComponentSchemas } from "./parser";
 
-export async function parseBlockComponents() {
-  const version = "v1.21.80";
+export async function parseBlockComponents(version = "v1.21.90") {
   info(`version ${version}`);
   const dest = path.join("src", "bp", "block_components");
   const arg = {
