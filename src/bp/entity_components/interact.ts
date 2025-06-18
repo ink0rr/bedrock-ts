@@ -37,6 +37,10 @@ export namespace EntityInteractComponent {
       | "slot.armor.body"
       | number;
     /**
+     * Will offset the item drop position this amount in the y direction. Requires 'drop_item_slot' to be specified.
+     */
+    drop_item_y_offset?: number;
+    /**
      * The entity's equipment slot to equip the item to, if any, upon successful interaction.
      */
     equip_item_slot?:

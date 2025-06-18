@@ -3,6 +3,7 @@ import { BlockCraftingTableComponent } from "./crafting_table.js";
 import { BlockCustomComponentsComponent } from "./custom_components.js";
 import { BlockDestructibleByExplosionComponent } from "./destructible_by_explosion.js";
 import { BlockDestructibleByMiningComponent } from "./destructible_by_mining.js";
+import { BlockDestructionParticlesComponent } from "./destruction_particles.js";
 import { BlockDisplayNameComponent } from "./display_name.js";
 import { BlockEntityFallOnComponent } from "./entity_fall_on.js";
 import { BlockFlammableComponent } from "./flammable.js";
@@ -27,6 +28,7 @@ export type BlockComponents = {
   "minecraft:custom_components"?: BlockCustomComponentsComponent;
   "minecraft:destructible_by_explosion"?: BlockDestructibleByExplosionComponent;
   "minecraft:destructible_by_mining"?: BlockDestructibleByMiningComponent;
+  "minecraft:destruction_particles"?: BlockDestructionParticlesComponent;
   "minecraft:display_name"?: BlockDisplayNameComponent;
   "minecraft:entity_fall_on"?: BlockEntityFallOnComponent;
   "minecraft:flammable"?: BlockFlammableComponent;

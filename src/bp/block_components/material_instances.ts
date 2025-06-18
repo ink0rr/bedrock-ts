@@ -11,7 +11,15 @@ export namespace BlockMaterialInstancesComponent {
      * The render method to use.
      * @default "opaque"
      */
-    render_method?: "opaque" | "blend" | "alpha_test" | "double_sided" | "alpha_test_single_sided";
+    render_method?:
+      | "opaque"
+      | "blend"
+      | "alpha_test"
+      | "double_sided"
+      | "alpha_test_single_sided"
+      | "blend_to_opaque"
+      | "alpha_test_to_opaque"
+      | "alpha_test_single_sided_to_opaque";
     /**
      * Should this material have ambient occlusion applied when lighting? If true, shadows will be created around and underneath the block. Optionally can be constructed with float to control exponent applied to ao value after lighting.
      * @default true
@@ -22,6 +30,14 @@ export namespace BlockMaterialInstancesComponent {
      * @default true
      */
     face_dimming?: boolean;
+    /**
+     * Tint multiplied to the color. Tint method logic varies, but often refers to the rain and temperature of the biome the block is placed in to compute the tint.
+     */
+    tint_method?: string;
+    /**
+     * Controls rotating the face UVs randomly based on block position.
+     */
+    isotropic?: boolean;
   };
 }
 /**

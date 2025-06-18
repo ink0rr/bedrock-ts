@@ -57,6 +57,7 @@ import { EntityBehaviorFindUnderwaterTreasureComponent } from "./behavior.find_u
 import { EntityBehaviorFireAtTargetComponent } from "./behavior.fire_at_target.js";
 import { EntityBehaviorFleeSunComponent } from "./behavior.flee_sun.js";
 import { EntityBehaviorFloatComponent } from "./behavior.float.js";
+import { EntityBehaviorFloatTemptComponent } from "./behavior.float_tempt.js";
 import { EntityBehaviorFloatWanderComponent } from "./behavior.float_wander.js";
 import { EntityBehaviorFollowCaravanComponent } from "./behavior.follow_caravan.js";
 import { EntityBehaviorFollowMobComponent } from "./behavior.follow_mob.js";
@@ -543,6 +544,7 @@ export namespace EntityComponents {
     "minecraft:behavior.move_around_target"?: EntityBehaviorMoveAroundTargetComponent;
     "minecraft:behavior.jump_around_target"?: EntityBehaviorJumpAroundTargetComponent;
     "minecraft:behavior.teleport_to_owner"?: EntityBehaviorTeleportToOwnerComponent;
+    "minecraft:behavior.float_tempt"?: EntityBehaviorFloatTemptComponent;
     "minecraft:behavior.move_away_from_target"?: EntityBehaviorMoveAwayFromTargetComponent;
     "minecraft:behavior.sonic_boom"?: EntityBehaviorSonicBoomComponent;
   };
