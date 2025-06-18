@@ -133,7 +133,9 @@ export type FilterTest =
   | IsBoundToCreakingHeart
   | IsNavigating
   | IsBaby
-  | OwnerDistance;
+  | OwnerDistance
+  | IsRidingSelf
+  | IsVehicleFamily;
 
 type ActorHealth = {
   test: "actor_health";
@@ -617,4 +619,14 @@ type IsBaby = {
 type OwnerDistance = {
   test: "owner_distance";
   value?: number;
+};
+
+type IsRidingSelf = {
+  test: "is_riding_self";
+  value?: boolean;
+};
+
+type IsVehicleFamily = {
+  test: "is_vehicle_family";
+  value?: TypeFamily;
 };
