@@ -1,7 +1,7 @@
 import { HexColor } from "../shared/hex_color.js";
 import { LiteralUnion } from "../shared/literal_union.js";
 import { AnimationIdentifier } from "../shared/literals/animation_identifier.js";
-import { EntityTexturePath } from "../shared/literals/entity_texture_path.js";
+import { EntityTexturePath } from "../shared/literals/asset_path.js";
 import { GeometryIdentifier } from "../shared/literals/geometry_identifier.js";
 import { ItemIcon } from "../shared/literals/item_icon.js";
 import { ParticleIdentifier } from "../shared/literals/particle_identifier.js";

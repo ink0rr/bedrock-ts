@@ -1,4 +1,4 @@
-import { ItemTexturePath } from "../../shared/literals/entity_texture_path.js";
+import { ItemTexturePath } from "../../shared/literals/asset_path.js";
 import { ItemIcon } from "../../shared/literals/item_icon.js";
 import { TrimPalette } from "../../shared/trim_palette.js";
 

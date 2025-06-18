@@ -6,7 +6,7 @@ import { parseComponentSchemas } from "./parser";
 import { getVersion } from "./version";
 
 async function itemIconComponent() {
-  const text = `import { ItemTexturePath } from "../../shared/literals/entity_texture_path.js";
+  const text = `import { ItemTexturePath } from "../../shared/literals/asset_path.js";
   import { ItemIcon } from "../../shared/literals/item_icon.js";
   import { TrimPalette } from "../../shared/trim_palette.js";
   
