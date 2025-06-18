@@ -47,6 +47,7 @@ export type TypeFamily = LiteralUnion<
   | "goat"
   | "guardian"
   | "guardian_elder"
+  | "happy_ghast"
   | "hoglin"
   | "hoglin_adult"
   | "hoglin_baby"
