@@ -1,6 +1,5 @@
 import { BlockCollisionBoxComponent } from "./collision_box.js";
 import { BlockCraftingTableComponent } from "./crafting_table.js";
-import { BlockCustomComponentsComponent } from "./custom_components.js";
 import { BlockDestructibleByExplosionComponent } from "./destructible_by_explosion.js";
 import { BlockDestructibleByMiningComponent } from "./destructible_by_mining.js";
 import { BlockDestructionParticlesComponent } from "./destruction_particles.js";
@@ -25,7 +24,6 @@ import { BlockTransformationComponent } from "./transformation.js";
 export type BlockComponents = {
   "minecraft:collision_box"?: BlockCollisionBoxComponent;
   "minecraft:crafting_table"?: BlockCraftingTableComponent;
-  "minecraft:custom_components"?: BlockCustomComponentsComponent;
   "minecraft:destructible_by_explosion"?: BlockDestructibleByExplosionComponent;
   "minecraft:destructible_by_mining"?: BlockDestructibleByMiningComponent;
   "minecraft:destruction_particles"?: BlockDestructionParticlesComponent;
