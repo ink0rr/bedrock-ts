@@ -1,11 +1,12 @@
 import { CreativeCategory } from "../shared/creative_category.js";
 import { ItemGroup } from "../shared/item_group.js";
+import { LiteralUnion } from "../shared/literal_union.js";
 import { MoLang } from "../shared/molang.js";
 import { Range } from "../shared/range.js";
 import { BlockComponents } from "./block_components/index.js";
 
 export type Block = {
-  format_version: string;
+  format_version: LiteralUnion<"1.21.90">;
   "minecraft:block": {
     description: BlockDescription;
     components?: BlockComponents;
