@@ -4,7 +4,6 @@ import { ItemBundleInteractionComponent } from "./bundle_interaction.js";
 import { ItemCanDestroyInCreativeComponent } from "./can_destroy_in_creative.js";
 import { ItemCompostableComponent } from "./compostable.js";
 import { ItemCooldownComponent } from "./cooldown.js";
-import { ItemCustomComponentsComponent } from "./custom_components.js";
 import { ItemDamageComponent } from "./damage.js";
 import { ItemDamageAbsorptionComponent } from "./damage_absorption.js";
 import { ItemDiggerComponent } from "./digger.js";
@@ -45,7 +44,6 @@ export type ItemComponents = {
   "minecraft:can_destroy_in_creative"?: ItemCanDestroyInCreativeComponent;
   "minecraft:compostable"?: ItemCompostableComponent;
   "minecraft:cooldown"?: ItemCooldownComponent;
-  "minecraft:custom_components"?: ItemCustomComponentsComponent;
   "minecraft:damage"?: ItemDamageComponent;
   "minecraft:damage_absorption"?: ItemDamageAbsorptionComponent;
   "minecraft:digger"?: ItemDiggerComponent;

@@ -2,8 +2,8 @@ import {
   LiteralUnion,
   MoLang,
   ParticleIdentifier,
-  ParticleTexturePath,
   SoundEvent,
+  TexturePath,
 } from "../shared/index.js";
 import { ParticleComponents } from "./particle_components/index.js";
 
@@ -20,7 +20,7 @@ export type Particle = {
 export type ParticleDescription = {
   identifier: string;
   basic_render_parameters: {
-    texture: ParticleTexturePath;
+    texture: TexturePath;
     material: "particles_alpha" | "particles_blend" | "particles_add";
   };
 };

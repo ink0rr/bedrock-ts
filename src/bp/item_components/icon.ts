@@ -1,4 +1,4 @@
-import { ItemTexturePath } from "../../shared/literals/asset_path.js";
+import { TexturePath } from "../../shared/literals/asset_path.js";
 import { ItemIcon } from "../../shared/literals/item_icon.js";
 import { TrimPalette } from "../../shared/trim_palette.js";
 
@@ -11,15 +11,15 @@ export type ItemIconComponent =
         /**
          * Default item icon
          */
-        default?: ItemTexturePath;
+        default?: TexturePath;
         /**
          * Trim overlay icon
          */
-        icon_trim?: ItemTexturePath;
+        icon_trim?: TexturePath;
         /**
          * Dyed item icon
          */
-        dyed?: ItemTexturePath;
-      } & TrimPalette<ItemTexturePath>;
+        dyed?: TexturePath;
+      } & TrimPalette<TexturePath>;
     }
   | ItemIcon;

@@ -41,4 +41,9 @@ export enum PotionId {
   TurtleMaster_2,
   SlowFalling_0,
   SlowFalling_1,
+  Slowness_3,
+  WindCharging,
+  Weaving,
+  Oozing,
+  Infestation,
 }

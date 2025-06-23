@@ -1,10 +1,10 @@
 import {
   AnimationIdentifier,
-  EntityTexturePath,
   LiteralUnion,
   ParticleIdentifier,
   RenderControllerIdentifier,
   SoundDefinitionIdentifier,
+  TexturePath,
   TrimPalette,
 } from "../shared/index.js";
 import { GeometryIdentifier } from "../shared/literals/geometry_identifier.js";
@@ -29,7 +29,7 @@ export type Attachable = {
       /**
        * Defines the textures used in the attachable.
        */
-      textures: Record<LiteralUnion<"default">, EntityTexturePath> & TrimPalette<EntityTexturePath>;
+      textures: Record<LiteralUnion<"default">, TexturePath> & TrimPalette<TexturePath>;
       /**
        * Defines the geometries used in the attachable.
        */

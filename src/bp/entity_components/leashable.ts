@@ -19,10 +19,18 @@ export namespace EntityLeashableComponent {
      */
     max_distance?: number;
     /**
+     * Adjusts the rotation at which the entity reaches equilibrium, when 'spring_type' is set to 'dampened' or 'quad_dampened'.
+     */
+    rotation_adjustment?: number;
+    /**
      * Distance in blocks at which the 'spring' effect starts acting to keep this entity close to the entity that leashed it.
      * @default 4
      */
     soft_distance?: number;
+    /**
+     * Defines the type of spring-like force that pulls the entity towards its leash holder.
+     */
+    spring_type?: "bouncy" | "dampened" | "quad_dampened";
   };
 }
 /**
@@ -30,7 +38,13 @@ export namespace EntityLeashableComponent {
  */
 export type EntityLeashableComponent = {
   /**
-   * Event to call when this entity is unleashed.
+   * If true, players can cut both incoming and outgoing leashes by using shears on the entity.
+   * @default true
+   */
+  can_be_cut?: boolean;
+  /**
+   * If true, players can leash this entity even if it is already leashed to another entity.
+   * @default true
    */
   can_be_stolen?: boolean;
   /**
