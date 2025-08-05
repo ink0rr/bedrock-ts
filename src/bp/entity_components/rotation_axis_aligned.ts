@@ -1,0 +1,5 @@
+// auto generated
+/**
+ * Causes the entity to automatically rotate to align with the nearest cardinal direction based on its current facing direction. Combining this with the "minecraft:body_rotation_blocked" component will cause the entity's body to align with the nearest cardinal direction and remain fixed in that orientation, regardless of changes in its facing direction.
+ */
+export type EntityRotationAxisAlignedComponent = Record<string, never>;

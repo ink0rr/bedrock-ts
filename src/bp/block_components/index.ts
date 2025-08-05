@@ -15,6 +15,7 @@ import { BlockLiquidDetectionComponent } from "./liquid_detection.js";
 import { BlockLootComponent } from "./loot.js";
 import { BlockMapColorComponent } from "./map_color.js";
 import { BlockMaterialInstancesComponent } from "./material_instances.js";
+import { BlockMovableComponent } from "./movable.js";
 import { BlockPlacementFilterComponent } from "./placement_filter.js";
 import { BlockRedstoneConductivityComponent } from "./redstone_conductivity.js";
 import { BlockReplaceableComponent } from "./replaceable.js";
@@ -39,6 +40,7 @@ export type BlockComponents = {
   "minecraft:liquid_detection"?: BlockLiquidDetectionComponent;
   "minecraft:map_color"?: BlockMapColorComponent;
   "minecraft:material_instances"?: BlockMaterialInstancesComponent;
+  "minecraft:movable"?: BlockMovableComponent;
   "minecraft:placement_filter"?: BlockPlacementFilterComponent;
   "minecraft:redstone_conductivity"?: BlockRedstoneConductivityComponent;
   "minecraft:replaceable"?: BlockReplaceableComponent;
