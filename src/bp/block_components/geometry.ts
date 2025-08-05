@@ -25,4 +25,9 @@ export type BlockGeometryComponent =
        * The description identifier of the culling rules to use for this block. This identifier must match an existing culling rules in any of the currently loaded resource packs.
        */
       culling?: string;
+      culling_layer?: string;
+      /**
+       * A boolean locking UV orientation of all bones in the geometry, or an array of strings locking UV orientation of specific bones in the geometry. For performance reasons it is recommended to use the boolean.
+       */
+      uv_lock?: boolean | Array<string>;
     };

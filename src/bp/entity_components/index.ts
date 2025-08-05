@@ -118,6 +118,7 @@ import { EntityBehaviorOwnerHurtTargetComponent } from "./behavior.owner_hurt_ta
 import { EntityBehaviorPanicComponent } from "./behavior.panic.js";
 import { EntityBehaviorPetSleepWithOwnerComponent } from "./behavior.pet_sleep_with_owner.js";
 import { EntityBehaviorPickupItemsComponent } from "./behavior.pickup_items.js";
+import { EntityBehaviorPlaceBlockComponent } from "./behavior.place_block.js";
 import { EntityBehaviorPlayComponent } from "./behavior.play.js";
 import { EntityBehaviorPlayDeadComponent } from "./behavior.play_dead.js";
 import { EntityBehaviorPlayerRideTamedComponent } from "./behavior.player_ride_tamed.js";
@@ -173,6 +174,7 @@ import { EntityBehaviorSwimUpForBreathComponent } from "./behavior.swim_up_for_b
 import { EntityBehaviorSwimWanderComponent } from "./behavior.swim_wander.js";
 import { EntityBehaviorSwimWithEntityComponent } from "./behavior.swim_with_entity.js";
 import { EntityBehaviorSwoopAttackComponent } from "./behavior.swoop_attack.js";
+import { EntityBehaviorTakeBlockComponent } from "./behavior.take_block.js";
 import { EntityBehaviorTakeFlowerComponent } from "./behavior.take_flower.js";
 import { EntityBehaviorTeleportToOwnerComponent } from "./behavior.teleport_to_owner.js";
 import { EntityBehaviorTemptComponent } from "./behavior.tempt.js";
@@ -190,7 +192,6 @@ import { EntityBehaviorWorkComposterComponent } from "./behavior.work_composter.
 import { EntityBlockClimberComponent } from "./block_climber.js";
 import { EntityBlockSensorComponent } from "./block_sensor.js";
 import { EntityBodyRotationAlwaysFollowsHeadComponent } from "./body_rotation_always_follows_head.js";
-import { EntityBodyRotationAxisAlignedComponent } from "./body_rotation_axis_aligned.js";
 import { EntityBodyRotationBlockedComponent } from "./body_rotation_blocked.js";
 import { EntityBoostableComponent } from "./boostable.js";
 import { EntityBossComponent } from "./boss.js";
@@ -334,6 +335,7 @@ import { EntityReflectProjectilesComponent } from "./reflect_projectiles.js";
 import { EntityRemoveInPeacefulComponent } from "./remove_in_peaceful.js";
 import { EntityRendersWhenInvisibleComponent } from "./renders_when_invisible.js";
 import { EntityRideableComponent } from "./rideable.js";
+import { EntityRotationAxisAlignedComponent } from "./rotation_axis_aligned.js";
 import { EntityScaleComponent } from "./scale.js";
 import { EntityScaleByAgeComponent } from "./scale_by_age.js";
 import { EntitySchedulerComponent } from "./scheduler.js";
@@ -548,6 +550,8 @@ export namespace EntityComponents {
     "minecraft:behavior.jump_around_target"?: EntityBehaviorJumpAroundTargetComponent;
     "minecraft:behavior.teleport_to_owner"?: EntityBehaviorTeleportToOwnerComponent;
     "minecraft:behavior.float_tempt"?: EntityBehaviorFloatTemptComponent;
+    "minecraft:behavior.place_block"?: EntityBehaviorPlaceBlockComponent;
+    "minecraft:behavior.take_block"?: EntityBehaviorTakeBlockComponent;
     "minecraft:behavior.move_away_from_target"?: EntityBehaviorMoveAwayFromTargetComponent;
     "minecraft:behavior.sonic_boom"?: EntityBehaviorSonicBoomComponent;
   };
@@ -740,12 +744,12 @@ export type EntityComponents = {
   "minecraft:cannot_be_attacked"?: EntityCannotBeAttackedComponent;
   "minecraft:ignore_cannot_be_attacked"?: EntityIgnoreCannotBeAttackedComponent;
   "minecraft:renders_when_invisible"?: EntityRendersWhenInvisibleComponent;
-  "minecraft:body_rotation_axis_aligned"?: EntityBodyRotationAxisAlignedComponent;
   "minecraft:is_collidable"?: EntityIsCollidableComponent;
   "minecraft:input_air_controlled"?: EntityInputAirControlledComponent;
   "minecraft:body_rotation_always_follows_head"?: EntityBodyRotationAlwaysFollowsHeadComponent;
   "minecraft:leashable_to"?: EntityLeashableToComponent;
   "minecraft:remove_in_peaceful"?: EntityRemoveInPeacefulComponent;
+  "minecraft:rotation_axis_aligned"?: EntityRotationAxisAlignedComponent;
   "minecraft:can_power_jump"?: EntityCanPowerJumpComponent;
 } & EntityComponents.Annotations &
   EntityComponents.Behaviors;
