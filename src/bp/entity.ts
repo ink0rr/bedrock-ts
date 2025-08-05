@@ -7,7 +7,7 @@ import { EntityEventIdentifier, EntityEventTrigger } from "./entity_behavior/eve
 import { EntityComponents } from "./entity_components/index.js";
 
 export type Entity = {
-  format_version: LiteralUnion<"1.21.90">;
+  format_version: LiteralUnion<"1.21.100">;
   "minecraft:entity": {
     description: {
       identifier: string;
