@@ -12,6 +12,7 @@ export * from "./item_tag.js";
 export * from "./legacy_particle.js";
 export * from "./loot_table_path.js";
 export * from "./minecraft_color.js";
+export * from "./music_definition_identifier.js";
 export * from "./particle_identifier.js";
 export * from "./render_controller_identifier.js";
 export * from "./sound_definition_identifier.js";
