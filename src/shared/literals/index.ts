@@ -1,6 +1,7 @@
 export * from "./action_text.js";
 export * from "./animation_identifier.js";
 export * from "./asset_path.js";
+export * from "./biome_identifier.js";
 export * from "./block_identifier.js";
 export * from "./block_tag.js";
 export * from "./entity_identifier.js";
