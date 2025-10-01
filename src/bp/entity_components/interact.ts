@@ -35,6 +35,8 @@ export namespace EntityInteractComponent {
       | "slot.armor.legs"
       | "slot.armor.feet"
       | "slot.armor.body"
+      | "slot.weapon.mainhand"
+      | "slot.weapon.offhand"
       | number;
     /**
      * Will offset the item drop position this amount in the y direction. Requires 'drop_item_slot' to be specified.
@@ -49,6 +51,8 @@ export namespace EntityInteractComponent {
       | "slot.armor.legs"
       | "slot.armor.feet"
       | "slot.armor.body"
+      | "slot.weapon.mainhand"
+      | "slot.weapon.offhand"
       | number;
     /**
      * Allows to repair one of the entity's items.
@@ -60,6 +64,9 @@ export namespace EntityInteractComponent {
         | "slot.armor.chest"
         | "slot.armor.legs"
         | "slot.armor.feet"
+        | "slot.armor.body"
+        | "slot.weapon.mainhand"
+        | "slot.weapon.offhand"
         | number;
     };
     /**

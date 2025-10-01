@@ -13,6 +13,7 @@ import { ItemDurabilitySensorComponent } from "./durability_sensor.js";
 import { ItemDyeableComponent } from "./dyeable.js";
 import { ItemEnchantableComponent } from "./enchantable.js";
 import { ItemEntityPlacerComponent } from "./entity_placer.js";
+import { ItemFireResistantComponent } from "./fire_resistant.js";
 import { ItemFoodComponent } from "./food.js";
 import { ItemFuelComponent } from "./fuel.js";
 import { ItemGlintComponent } from "./glint.js";
@@ -53,6 +54,7 @@ export type ItemComponents = {
   "minecraft:dyeable"?: ItemDyeableComponent;
   "minecraft:enchantable"?: ItemEnchantableComponent;
   "minecraft:entity_placer"?: ItemEntityPlacerComponent;
+  "minecraft:fire_resistant"?: ItemFireResistantComponent;
   "minecraft:food"?: ItemFoodComponent;
   "minecraft:fuel"?: ItemFuelComponent;
   "minecraft:glint"?: ItemGlintComponent;

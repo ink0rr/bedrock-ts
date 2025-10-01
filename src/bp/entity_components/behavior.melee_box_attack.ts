@@ -37,7 +37,6 @@ export type EntityBehaviorMeleeBoxAttackComponent = {
    * If true, this mob will chase after the target as long as it's a valid target.
    */
   track_target?: boolean;
-  look_distance?: number;
   untrackable_cooldown_delay?: number;
   target_tracking?: {
     refresh_period_min?: number;
