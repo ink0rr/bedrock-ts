@@ -17,6 +17,7 @@ import { BlockMapColorComponent } from "./map_color.js";
 import { BlockMaterialInstancesComponent } from "./material_instances.js";
 import { BlockMovableComponent } from "./movable.js";
 import { BlockPlacementFilterComponent } from "./placement_filter.js";
+import { BlockRandomOffsetComponent } from "./random_offset.js";
 import { BlockRedstoneConductivityComponent } from "./redstone_conductivity.js";
 import { BlockReplaceableComponent } from "./replaceable.js";
 import { BlockSelectionBoxComponent } from "./selection_box.js";
@@ -43,6 +44,7 @@ export type BlockComponents = {
   "minecraft:movable"?: BlockMovableComponent;
   "minecraft:placement_filter"?: BlockPlacementFilterComponent;
   "minecraft:redstone_conductivity"?: BlockRedstoneConductivityComponent;
+  "minecraft:random_offset"?: BlockRandomOffsetComponent;
   "minecraft:replaceable"?: BlockReplaceableComponent;
   "minecraft:selection_box"?: BlockSelectionBoxComponent;
   "minecraft:tick"?: BlockTickComponent;

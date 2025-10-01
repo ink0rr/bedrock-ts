@@ -1,5 +1,6 @@
 // auto generated
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
+import { ItemTag } from "../../shared/literals/item_tag.js";
 
 /**
  * Defines a list of items the mob wants to share or pick up.
@@ -35,7 +36,7 @@ export type EntityShareablesComponent = {
     /**
      * The name of the item. Aux value can be specified, for instance 'minecraft:skull:1'.
      */
-    item?: ItemIdentifier;
+    item?: ItemIdentifier | ItemTag;
     item_aux?: number;
     /**
      * Defines the item this entity wants to craft with the item defined above. Should be an item name.
