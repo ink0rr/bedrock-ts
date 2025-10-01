@@ -4,7 +4,7 @@ import { LiteralUnion } from "../shared/literal_union.js";
 import { ItemComponents } from "./item_components/index.js";
 
 export type Item = {
-  format_version: LiteralUnion<"1.21.90">;
+  format_version: LiteralUnion<"1.21.110">;
   "minecraft:item": {
     description: {
       identifier: string;
