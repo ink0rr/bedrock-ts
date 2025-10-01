@@ -10,7 +10,42 @@ export type ClientAnimation = {
   bones?: Record<
     string,
     {
-      rotation?: Record<number, [number, number, number]>;
+      relative_to?: {
+        rotation: "entity";
+      };
+      position?:
+        | [number, number, number]
+        | Record<
+            number,
+            | [number, number, number]
+            | {
+                pre?: [number, number, number];
+                post?: [number, number, number];
+                lerp_mode?: "linear" | "catmullrom";
+              }
+          >;
+      rotation?:
+        | [number, number, number]
+        | Record<
+            number,
+            | [number, number, number]
+            | {
+                pre?: [number, number, number];
+                post?: [number, number, number];
+                lerp_mode?: "linear" | "catmullrom";
+              }
+          >;
+      scale?:
+        | number
+        | Record<
+            number,
+            | [number, number, number]
+            | {
+                pre?: [number, number, number];
+                post?: [number, number, number];
+                lerp_mode?: "linear" | "catmullrom";
+              }
+          >;
     }
   >;
   loop?: boolean;
