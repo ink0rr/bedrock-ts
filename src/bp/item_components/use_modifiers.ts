@@ -4,6 +4,10 @@
  */
 export type ItemUseModifiersComponent = {
   /**
+   * Whether an item emits vibrations when it starts or stops being used
+   */
+  emit_vibrations?: boolean;
+  /**
    * Modifier value to scale the players movement speed when item is in use.
    */
   movement_modifier?: number;

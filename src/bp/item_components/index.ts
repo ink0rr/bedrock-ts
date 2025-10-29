@@ -33,6 +33,7 @@ import { ItemStackedByDataComponent } from "./stacked_by_data.js";
 import { ItemStorageItemComponent } from "./storage_item.js";
 import { ItemStorageWeightLimitComponent } from "./storage_weight_limit.js";
 import { ItemStorageWeightModifierComponent } from "./storage_weight_modifier.js";
+import { ItemSwingDurationComponent } from "./swing_duration.js";
 import { ItemTagsComponent } from "./tags.js";
 import { ItemThrowableComponent } from "./throwable.js";
 import { ItemUseAnimationComponent } from "./use_animation.js";
@@ -74,6 +75,7 @@ export type ItemComponents = {
   "minecraft:storage_item"?: ItemStorageItemComponent;
   "minecraft:storage_weight_limit"?: ItemStorageWeightLimitComponent;
   "minecraft:storage_weight_modifier"?: ItemStorageWeightModifierComponent;
+  "minecraft:swing_duration"?: ItemSwingDurationComponent;
   "minecraft:use_animation"?: ItemUseAnimationComponent;
   "minecraft:use_modifiers"?: ItemUseModifiersComponent;
   "minecraft:tags"?: ItemTagsComponent;
