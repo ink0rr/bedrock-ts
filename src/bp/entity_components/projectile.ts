@@ -60,6 +60,7 @@ export type EntityProjectileComponent = {
       channeling?: boolean;
       set_last_hurt_requires_damage?: boolean;
       destroy_on_hit_requres_damage?: boolean;
+      apply_knockback_to_blocking_targets?: boolean;
     };
     spawn_chance?: {
       first_spawn_percent_chance?: number;
