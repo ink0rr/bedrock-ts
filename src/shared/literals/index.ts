@@ -5,6 +5,7 @@ export * from "./biome_identifier.js";
 export * from "./block_identifier.js";
 export * from "./block_tag.js";
 export * from "./entity_identifier.js";
+export * from "./fog_identifier.js";
 export * from "./geometry_identifier.js";
 export * from "./item_icon.js";
 export * from "./item_identifier.js";
