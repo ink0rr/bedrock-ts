@@ -4,6 +4,10 @@
  */
 export type EntityDashActionComponent = {
   /**
+   * Whether the entity can dash underwater.
+   */
+  can_dash_underwater?: boolean;
+  /**
    * The dash cooldown in seconds. Default value is 1.000000.
    */
   cooldown_time?: number;

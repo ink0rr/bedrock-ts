@@ -1,6 +1,7 @@
 // auto generated
 import { Filters } from "../../shared/filter.js";
 import { ItemDescriptor } from "../../shared/item_descriptor.js";
+import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { SpellEffects } from "../../shared/spell_effects.js";
 
 /**
@@ -35,5 +36,6 @@ export type EntityHealableComponent = {
       duration?: "infinite" | number;
       amplifier?: number;
     }>;
+    result_item?: ItemIdentifier;
   }>;
 };

@@ -20,6 +20,7 @@ export type EntityAgeableComponent = {
     | Array<
         | {
             item?: ItemDescriptor;
+            result_item?: ItemIdentifier;
             growth?: number;
           }
         | ItemIdentifier
@@ -33,7 +34,6 @@ export type EntityAgeableComponent = {
    * Event to run when this entity grows up.
    */
   grow_up?: EntityEventTrigger;
-  transform_to_item?: ItemIdentifier;
   /**
    * List of conditions to meet so that the entity can be fed.
    */
