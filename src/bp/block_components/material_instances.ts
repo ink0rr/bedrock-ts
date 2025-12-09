@@ -38,6 +38,8 @@ export namespace BlockMaterialInstancesComponent {
      * Controls rotating the face UVs randomly based on block position.
      */
     isotropic?: boolean;
+    shaded?: boolean;
+    alpha_masked_tint?: boolean;
   };
 }
 /**

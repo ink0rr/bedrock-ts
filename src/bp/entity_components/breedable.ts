@@ -31,7 +31,15 @@ export type EntityBreedableComponent = {
   /**
    * The list of items that can be used to get the entity into the 'love' state.
    */
-  breed_items?: Array<ItemDescriptor> | ItemIdentifier;
+  breed_items?:
+    | Array<
+        | ItemIdentifier
+        | {
+            item?: ItemDescriptor;
+            result_item?: ItemIdentifier;
+          }
+      >
+    | ItemIdentifier;
   /**
    * The list of entity definitions that this entity can breed with.
    */

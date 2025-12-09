@@ -7,11 +7,16 @@ import { EntityEventIdentifier } from "../entity_behavior/event.js";
  */
 export type EntityAddriderComponent = {
   /**
-   * The entity type that will be riding this entity.
+   * List of riders to be added to the entity. Can only spawn as many riders as "minecraft:rideable" has "seat_count".
    */
-  entity_type?: EntityIdentifier;
-  /**
-   * The spawn event that will be used when the riding entity is created.
-   */
-  spawn_event?: EntityEventIdentifier;
+  riders?: Array<{
+    /**
+     * The entity type that will be riding this entity.
+     */
+    entity_type?: EntityIdentifier;
+    /**
+     * The spawn event that will be used when the riding entity is created.
+     */
+    spawn_event?: EntityEventIdentifier;
+  }>;
 };

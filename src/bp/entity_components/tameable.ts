@@ -1,4 +1,5 @@
 // auto generated
+import { ItemDescriptor } from "../../shared/item_descriptor.js";
 import { ItemIdentifier } from "../../shared/literals/item_identifier.js";
 import { EntityEventTrigger } from "../entity_behavior/event.js";
 
@@ -14,7 +15,15 @@ export type EntityTameableComponent = {
   /**
    * The list of items that can be used to tame this entity.
    */
-  tame_items?: Array<ItemIdentifier> | ItemIdentifier;
+  tame_items?:
+    | Array<
+        | ItemIdentifier
+        | {
+            item?: ItemDescriptor;
+            result_item?: ItemIdentifier;
+          }
+      >
+    | ItemIdentifier;
   /**
    * Event to run when this entity becomes tamed.
    */

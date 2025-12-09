@@ -24,6 +24,10 @@ export type EntityExhaustionValuesComponent = {
    */
   jump?: number;
   /**
+   * Amount of exhaustion applied when using the lunge enchantment.
+   */
+  lunge?: number;
+  /**
    * Amount of exhaustion applied when mining.
    * @default 0.005
    */
