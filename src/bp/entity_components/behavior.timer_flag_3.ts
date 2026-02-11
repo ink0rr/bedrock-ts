@@ -9,11 +9,11 @@ export type EntityBehaviorTimerFlag3Component = {
   /**
    * Goal cooldown range in seconds.
    */
-  cooldown_range?: Array<number>;
+  cooldown_range?: Array<number> | number;
   /**
    * Goal duration range in seconds.
    */
-  duration_range?: Array<number>;
+  duration_range?: Array<number> | number;
   on_start?: EntityEventTrigger;
   on_end?: EntityEventTrigger;
 };

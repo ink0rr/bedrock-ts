@@ -79,4 +79,8 @@ export type EntityShareablesComponent = {
      */
     pickup_only?: boolean;
   }>;
+  /**
+   * Controls if the mob is able to pick up more of the same item if it is already holding that item
+   */
+  singular_pickup?: boolean;
 };

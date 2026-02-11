@@ -6,7 +6,7 @@ import { Range } from "../shared/range.js";
 import { BlockComponents } from "./block_components/index.js";
 
 export type Block = {
-  format_version: LiteralUnion<"1.21.100">;
+  format_version: LiteralUnion<"1.26.0">;
   "minecraft:block": {
     description: BlockDescription;
     components?: BlockComponents;

@@ -28,4 +28,5 @@ export type EntityMobEffectComponent = {
    * Time in seconds to wait between each application of the effect.
    */
   cooldown_time?: number;
+  ambient?: boolean;
 };

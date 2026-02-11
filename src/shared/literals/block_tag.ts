@@ -13,6 +13,7 @@ export type BlockTag = LiteralUnion<
   | "jungle"
   | "log"
   | "metal"
+  | "minecraft:cornerable_stairs"
   | "minecraft:crop"
   | "minecraft:diamond_tier_destructible"
   | "minecraft:iron_tier_destructible"
