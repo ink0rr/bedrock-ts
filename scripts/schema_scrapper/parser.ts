@@ -1,5 +1,5 @@
 import path from "node:path/posix";
-import { readJson, writeFile } from "../util/fs";
+import { readJson } from "../util/fs";
 import { info, warning } from "../util/log";
 import { RefData, Schema, SchemaParser } from "../util/schema_parser";
 import { pascalCase } from "../util/util";
@@ -311,6 +311,7 @@ const schemaParser = new SchemaParser();
 type Parsed = {
   filepath: string;
   typeName: string;
+  content: string;
 };
 export type ParseComponentSchemasArg = {
   dirpath: string;
@@ -353,13 +354,11 @@ export async function parseComponentSchemas({
       continue;
     }
     info(`Parsing ${key}`);
-    const _dest = path.join(dest, `${filename}`);
-    await writeFile(_dest + ".ts", `// auto generated\n${text}`, {
-      parser: "typescript",
-    });
+    const content = `// auto generated\n${text}`;
     parsed.set(key, {
-      filepath: _dest + ".js",
+      filepath: path.join(dest, `${filename}.ts`),
       typeName,
+      content,
     });
   }
   return parsed;

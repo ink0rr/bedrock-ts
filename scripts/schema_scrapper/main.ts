@@ -1,4 +1,3 @@
-import { rm } from "fs/promises";
 import { parseArgs } from "util";
 import { error, info } from "../util/log";
 import { parseBlockComponents } from "./block_components";
@@ -26,7 +25,6 @@ async function main() {
 
   info("Parsing Block Components...");
   try {
-    await rm("./src/bp/block_components", { recursive: true, force: true });
     await parseBlockComponents(version);
   } catch (e) {
     error(e);
@@ -34,7 +32,6 @@ async function main() {
 
   info("Parsing Item Components...");
   try {
-    await rm("./src/bp/item_components", { recursive: true, force: true });
     await parseItemComponents(version);
   } catch (e) {
     error(e);
@@ -42,7 +39,6 @@ async function main() {
 
   info("Parsing Entity Components...");
   try {
-    await rm("./src/bp/entity_components", { recursive: true, force: true });
     await parseEntityComponents(version);
   } catch (e) {
     error(e);
@@ -50,7 +46,6 @@ async function main() {
 
   info("Parsing Particle Components...");
   try {
-    await rm("./src/rp/particle_components", { recursive: true, force: true });
     await parseParticleComponents();
   } catch (e) {
     error(e);

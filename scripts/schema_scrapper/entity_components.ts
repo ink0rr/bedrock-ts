@@ -1,6 +1,7 @@
+import { rm } from "node:fs/promises";
 import path from "node:path/posix";
 import { writeFile } from "../util/fs";
-import { info } from "../util/log";
+import { error, info } from "../util/log";
 import { parseComponentSchema, parseComponentSchemas } from "./parser";
 
 async function canPowerJump(): Promise<Patch> {
@@ -48,7 +49,7 @@ export async function parseEntityComponents(version = "v1.21.90") {
     typePrefix: "Entity",
     typeSuffix: "Component",
   };
-  const [annotations, behaviors, components] = await Promise.all([
+  const results = await Promise.all([
     await parseComponentSchemas({
       dirpath: `entity/${version}/annotations`,
       ...arg,
@@ -61,7 +62,15 @@ export async function parseEntityComponents(version = "v1.21.90") {
       dirpath: `entity/${version}/components`,
       ...arg,
     }),
-  ]);
+  ]).catch((e) => {
+    error(`Failed to parse entity components:`, e);
+    return undefined;
+  });
+  if (!results) {
+    return;
+  }
+  await rm("./src/bp/entity_components", { recursive: true, force: true });
+  const [annotations, behaviors, components] = results;
   const entries = {
     Annotations: annotations,
     Behaviors: behaviors,
@@ -75,8 +84,9 @@ export async function parseEntityComponents(version = "v1.21.90") {
       await writeFile(filepath + ".ts", text, { parser: "typescript" });
       info(`Patching: ${key}`);
       entries[category].set(key, {
-        filepath: filepath + ".js",
+        filepath: filepath + ".ts",
         typeName,
+        content: text,
       });
     }),
   );
@@ -87,9 +97,11 @@ export async function parseEntityComponents(version = "v1.21.90") {
       str.push("};");
     }
     str.push(`export type ${type} = {`);
-    for (const [key, { filepath, typeName }] of map) {
+    for (const [key, { filepath, typeName, content }] of map) {
+      const js = path.basename(filepath, ".ts") + ".js";
+      await writeFile(filepath, content, { parser: "typescript" });
       str.push(`"${key}"?: ${typeName};`);
-      str.unshift(`import { ${typeName} } from "./${path.basename(filepath)}";`);
+      str.unshift(`import { ${typeName} } from "./${js}";`);
     }
     if (type === "EntityComponents") {
       str.push("} & EntityComponents.Annotations & EntityComponents.Behaviors;");
