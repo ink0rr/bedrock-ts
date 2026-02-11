@@ -34,7 +34,7 @@ export namespace BlockPlacementFilterComponent {
 /**
  * Sets rules for under what conditions the block can be placed/survive.
  */
-export type BlockPlacementFilterComponent = BlockPlacementFilterComponent.PlacementRule & {
+export type BlockPlacementFilterComponent = {
   /**
    * List of conditions where the block can be placed/survive.
    */

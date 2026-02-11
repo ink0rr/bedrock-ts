@@ -17,11 +17,10 @@ export type EntityBehaviorNearestAttackableTargetComponent = {
   /**
    * Time range (in seconds) between searching for an attack target, range is in (0, 'attack_interval']. Only used if 'attack_interval' is greater than 0, otherwise 'scan_interval' is used.
    */
-  attack_interval?: number;
-  /**
-   * Alias for 'attack_interval'; provides the same functionality as 'attack_interval'.
-   */
-  attack_interval_min?: number;
+  attack_interval?: {
+    range_min?: number;
+    range_max?: number;
+  };
   /**
    * Filters which types of targets are valid for this entity.
    */
@@ -71,4 +70,8 @@ export type EntityBehaviorNearestAttackableTargetComponent = {
    * Maximum distance this entity can be from the target when following it, otherwise the target becomes invalid. This value is only used if the entity doesn't declare 'minecraft:follow_range'.
    */
   within_radius?: number;
+  /**
+   * Probability (0.0 to 1.0) that this entity will accept a found target. Checked each time a valid target is found during scanning.
+   */
+  target_acquistion_probability?: number;
 };

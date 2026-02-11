@@ -22,5 +22,9 @@ export type BlockLiquidDetectionComponent = {
     stops_liquid_flowing_from_direction?: Array<
       "up" | "down" | "north" | "south" | "east" | "west"
     >;
+    /**
+     * Whether or not to use the block's collision box to visually clip the water.
+     */
+    use_liquid_clipping?: boolean;
   }>;
 };

@@ -107,4 +107,8 @@ export type EntityBehaviorUseKineticWeaponComponent = {
    * Maximum rotation, in degrees, on the Y-axis while the mob is trying to look at its target.
    */
   y_max_head_rotation?: number;
+  /**
+   * Allows the mob to override its mount's navigation behavior with the logic defined by this goal. Requires the mount to be running the "minecraft:behavior.mount_pathing" goal, which default behavior will be ignored.
+   */
+  hijack_mount_navigation?: boolean;
 };

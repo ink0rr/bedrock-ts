@@ -38,7 +38,6 @@ export namespace BlockMaterialInstancesComponent {
      * Controls rotating the face UVs randomly based on block position.
      */
     isotropic?: boolean;
-    shaded?: boolean;
     alpha_masked_tint?: boolean;
   };
 }
@@ -49,7 +48,6 @@ export type BlockMaterialInstancesComponent = {
   "*"?: Record<string, never>;
   up?: Record<string, never>;
   down?: Record<string, never>;
-  sides?: Record<string, never>;
   north?: Record<string, never>;
   south?: Record<string, never>;
   east?: Record<string, never>;

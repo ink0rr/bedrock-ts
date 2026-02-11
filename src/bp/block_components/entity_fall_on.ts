@@ -5,6 +5,7 @@
 export type BlockEntityFallOnComponent = {
   /**
    * The minimum distance in blocks that an actor needs to fall to count as a valid fall.
+   * @default 1
    */
   min_fall_distance?: number;
 };

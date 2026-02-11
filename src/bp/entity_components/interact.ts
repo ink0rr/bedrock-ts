@@ -88,7 +88,7 @@ export namespace EntityInteractComponent {
     /**
      * List of sounds to play when the interaction occurs.
      */
-    play_sounds?: SoundEvent | Array<SoundEvent>;
+    play_sounds?: SoundEvent | Array<SoundEvent> | string;
     /**
      * List of entities to spawn when the interaction occurs.
      */
